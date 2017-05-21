@@ -1,4 +1,52 @@
-MENSAJES GENERALES
-	\begin{Citemize}
-	\item {\bf [MSJ1.1]} Error al conectar a la BD.
-	\end{Citemize}
+%%%%MENSAJES GENERALES
+
+%Control de inventario
+
+\begin{Message}{MSJ2.1b1}{Campos Incompletos}
+		\MSGitem[Tipo:] Error	
+		\MSGitem[Objetivo: ] Notificar al actor que debe llenar todos los campos
+		\MSGitem[Redacción: ] Error. Debes llenar todos los campos
+	\end{Message}
+	
+	\begin{Message}{MSJ2.1b2}{Formato Inválido}
+		\MSGitem[Tipo:] Error	
+		\MSGitem[Objetivo: ] Notificar al actor que hay formatos incorrectos
+		\MSGitem[Redacción: ] Error. Debes introducir el formato correspondiente
+	\end{Message}
+	
+	\begin{Message}{MSJ2.1b3}{Error en conexion}
+		\MSGitem[Tipo:] Error	
+		\MSGitem[Objetivo: ] Notificar al actor que no hay conexión en ese momento con la base de datos
+		\MSGitem[Redacción: ] Error con la conexión a la base de datos
+	\end{Message}
+	
+	\begin{Message}{MSJ2.1b4}{Registro exitoso}
+		\MSGitem[Tipo:] Confirmación	
+		\MSGitem[Objetivo: ] Notificar al actor que la operación de registro fue exitosa
+		\MSGitem[Redacción: ] Se registró exitosamente
+	\end{Message}
+	
+	\begin{Message}{MSJ2.1b5}{Registro con anterioridad}
+		\MSGitem[Tipo:] Error	
+		\MSGitem[Objetivo: ] Notificar al actor que ya ha registrado ese dato
+		\MSGitem[Redacción: ] Error. Has realizado el registro con anterioridad
+	\end{Message}
+	
+	\begin{Message}{MSJ2.3ca1}{Eliminación existosa}
+		\MSGitem[Tipo:] Confirmación	
+		\MSGitem[Objetivo: ] Notificar al actor que la operación de eliminación fue exitosa
+		\MSGitem[Redacción: ] Se eliminó exitosamente
+	\end{Message}
+	
+	\begin{Message}{MSJ2.3ca2}{Eliminación de libro}
+		\MSGitem[Tipo:] Error	
+		\MSGitem[Objetivo: ] Notificar al usuario que no puede realizar la operación
+		\MSGitem[Redacción: ] Error. No puedes eliminar ese libro porque se encuentra en préstamo
+	\end{Message}
+	
+	\begin{Message}{MSJ2.3cc1}{Eliminación de equipo audiovisual}
+		\MSGitem[Tipo:] Error	
+		\MSGitem[Objetivo: ] Notificar al usuario que no puede realizar la operación
+		\MSGitem[Redacción: ] Error. No puedes eliminar ese equipo porque se encuentra en préstamo
+	\end{Message}
+	
