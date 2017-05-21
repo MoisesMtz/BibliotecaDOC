@@ -1,0 +1,88 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU2.1b}{Registrar material}{
+		Un nuevo material se podrá almacenar después de haber elegido el tipo de material que se requiera guardar
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Procesos Técnicos}
+		\UCitem{Propósito}{Mostrar el menú de los tipos de materiales que puede registrar para seleccionar alguno de ellos y continuar con el registro del mismo}
+		\UCitem{Entradas}{
+			\begin{itemize}
+				\item Selección de material
+				\begin{itemize}
+					\item Libros
+					\item TT
+					\item Equipo Audiovisual
+					\item Equipo de cómputo
+				\end{itemize}
+			\end{itemize}
+		}
+		\UCitem{Salidas}{
+			\begin{itemize}
+				\item Ninguna
+			\end{itemize}		
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El actor debe haber iniciado su sesión
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Ninguna
+			\end{itemize}
+		}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item Martínez Vilchis Juan Moisés
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item 
+			\end{itemize}					
+		}
+		\UCitem{Estatus}{
+			\begin{itemize}
+				\item En revisión [21 / Mayo / 2017]
+			\end{itemize}					
+		}
+\end{UseCase}
+
+%-------------------------------------- COMIENZA descripción Trayectoria Principal
+		
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Solicita registrar un nuevo material haciendo click sobre el botón \IUbutton{Registrar} sobre el menú de la derecha en la Pantalla \IUref{IU2}{Inventario}
+		\UCpaso[\UCsist] Despliega un menú de los materiales para registrar
+		\UCpaso[\UCactor] Selecciona una opción del menú. \Trayref{A} \Trayref{B} \Trayref{C} \Trayref{D}
+\end{UCtrayectoria}
+
+%--------------- COMIENZAN las Trayectorias Alternativas
+%---------- TRAYECTORIA A
+
+\begin{UCtrayectoriaA}{A}{Solicita registrar un nuevo Libro presionando el botón \IUbutton{Libros}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1ba}{ConsultarLibros} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.1ba}
+		\end{UCtrayectoriaA}
+%---------- TRAYECTORIA B
+
+\begin{UCtrayectoriaA}{B}{Solicita registrar un nuevo TT presionando el botón \IUbutton{TT}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1bb}{ConsultarTT} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.1bb}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA C
+
+\begin{UCtrayectoriaA}{C}{Solicita registrar un nuevo Equipo audiovisual presionando el botón \IUbutton{Equipo audiovisual}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1bc}{RegistrarEqAudio} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.1bc}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA D
+
+\begin{UCtrayectoriaA}{D}{Solicita registrar un nuevo TT presionando el botón \IUbutton{TT}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1bd}{RegistrarEqComp} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.1bd}
+\end{UCtrayectoriaA}
+
