@@ -1,8 +1,297 @@
-%---------------------------------------------------------
-\section{Reglas de Negocio}
 
-\begin{BussinesRule}{RN01}{Duplicidad de roles.} 
+\begin{BussinesRule}{RN4.1}{Campos no nulos.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] Ningún dato en el formulario del lector puede ser nulo.
 	\BRitem[Tipo:] Restricción (validación).
-	\BRitem[Descripción:]No podrán haber dos roles con el mismo nombre.
+	\BRitem[Nivel:] Obligatorio.
 \end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.2}{Formato del número de boleta del IPN.}
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez
+	\BRitem[Descripción:] La boleta está compuesta por:
+		\begin{itemize} 
+			\item Año de ingreso del estudiante(4 dígitos).
+			\item Número de matrícula de la escuela(2 dígitos).
+			\item Número de estudiante(4 dígitos).
+		\end{itemize}
+	Ejemplo:\\
+		Año de ingreso: 2014\\
+		Escom: 63\\
+		No. Estudiante: 147\\
+		Su boleta seŕa: 2014630147\\
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.3}{Formato del nombre.}
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El nombre esta compuesto por:
+		\begin{itemize} 
+			\item Nombre
+			\item Primer apellido
+			\item Segundo apellido 
+		\end{itemize}
+		Todo el nombre debe estar compuestos por letras.\\\\
+Ejemplo \\
+	Nombre: Luis Ángel, Apellido Paterno: Martínez, Apellido Materno: Gómez.
+	\BRitem[Tipo:] Restricción(validación)
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.4}{Formato del CURP.}
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El formato del CURP esta compuesto por::
+		\begin{itemize}
+			\item Primera letra y la primera vocal del primer apellido,
+			\item Primera letra del segundo apellido,
+			\item Primera letra del nombre,
+			\item Fecha de nacimiento sin espacios en orden de año, mes y dia; ejemplo 940608 (08 de Junio de 1994),
+			\item letra del sexo (H o M);
+			\item Dos letras correspondientes a la entidad de nacimiento;
+			\item Primera consonante interna (no inicial) del primer apellido;
+			\item Primera consonante interna (no inicial) del segundo apellido;
+			\item Primera consonante interna (no inicial) del nombre,
+			\item Dígito del 0-9 para fechas de nacimiento hasta el año 1999 y A-Z para fechas de nacimiento a partir del 2000,
+			\item Dígito, para evitar duplicaciones.			
+		\end{itemize}
+
+Ejemplo:\\
+	Nombre: Luis Ángel Sánchez Fernańdez, Sexo: Masculino, Fecha de nacimiento: 05 de Julio de 1994 y Estado: Colima.\\
+	Su CURP será: SAFL940705HCMNRS09.
+
+	\BRitem[Tipo:] Restricción(validación)
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.5}{Formato de la fecha.}
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] La fecha tiene el siguiente formato :
+		\begin{itemize} 
+			\item Dia(DD)/ 
+			\item Mes(MM)/
+			\item Año (AAAA)
+		\end{itemize}
+Ejemplo \\
+	16/05/2017
+	\BRitem[Tipo:] Restricción(validación)
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.6}{Formato de la dirección.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:]El formato de la dirección debe ser:
+		\begin{itemize}
+			\item Tipo y nombre de la vialidad, 
+			\item Número del domicilio, 
+			\item Colonia, 
+			\item Código postal, 
+			\item Municipio, 
+			\item Entidad federativa.
+		\end{itemize}
+	Ejemplo: Av. Rosales, No.5217, Col. Panamericana, C.P. 07770, Naucalpan de Juárez, Puebla.	
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.7}{Formato de teléfono.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El teléfono debe de estar formado solamente con números.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.8}{Formato del semestre.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El formato del semestre será elegido desde un menú en el cual se podra elegir la opción que va desde:
+		\begin{itemize}
+			\item 1er semestre
+			\item 2do semestre
+			\item .
+			\item ..
+			\item ...
+			\item 10mo semestre en adelante
+		\end{itemize}
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.9}{Formato del email.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El formato del email puede estar formado por letras, numeros.\\
+Ejemplo:\\
+	luis-calles@hotmail.com\\
+	xxxxx@xxxx.com\\
+
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.10}{Formato de la contraseña.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] La contraseña debe de tener un tamaño mínimo de 8 caracteres y un máximo de 16 caracteres, la cual está compuesta por:
+		\begin{itemize}	
+			\item Letras mayúsculas.
+			\item Letras minúsculas.
+			\item Dígitos.
+			\item Caracteres no alfanúmericos, es decir, caracteres especiales.
+		\end{itemize}
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.11}{Formato de la credencial.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El formato de la credencial debe de contener los siguientes datos:
+		\begin{itemize}	
+			\item ID del lector.
+			\item Nombre completo del lector.
+		\end{itemize}
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.12}{Formato del número de empleado del IPN.}
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez
+	\BRitem[Descripción:] El número del empleado esta compuesto por:
+		\begin{itemize} 
+			\item Año de ingreso del docente(4 dígitos).
+			\item Dos dígitos para saber de donde es egresado(01 egresado del IPN, 10 egresado de otra universidad).
+			\item Número de trabajador(4 dígitos).
+		\end{itemize}
+	Ejemplo:\\
+		Año de ingreso: 2014\\
+		Egersado de ESCOM: 01\\
+		No. trabajador: 3147\\
+		Su número de trabajador: 201403147\\
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.13}{Formato del departamento.} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El formato del departamento será elegido desde un menú en el cual se podra elegir la opción que va desde:
+		\begin{itemize}
+			\item Formación básica
+			\item Ciencias e ingeniería de la computación
+			\item Ingeniería en sistemas computacionales
+			\item Formación integral e institucional
+		\end{itemize}
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.14}{Lector no registrado en el sistema} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] Verificar que el lector no este dado de alta el sistema. Prop+osito evitar duplicidad de lectores en el sistema.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.15}{Lector no registrado en el sistema} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] Verificar que el lector no este dado de alta el sistema. Propósito evitar duplicidad de lectores en el sistema.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.16}{Alumno vigente en el instituto} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] Verificar que el alumno este inscrito en el instituto en el semestre actual.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.17}{Registro de alta del lector llenado correctamente } 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] Verificar que el registro del lector sea llenado correctamente. Que la información ingresada en el formulario corresponda a los formatos de cada campo.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.18}{Registro de alta del lector llenado correctamente } 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] Verificar que el registro del lector sea llenado correctamente. Que la información ingresada en el formulario corresponda a los formatos de cada campo.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.19}{Comprobar identidad del lector } 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] Verificar que la identificacion del lector corresponda con los datos del perfil del lector.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.20}{El lector tiene multas} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El lector no puede actualizar sus datos hasta que no pague las multas pendientes que tenga.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.21}{El lector tiene adeudos de material} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El lector no puede actualizar sus datos hasta que no entregue el material adeudado que tenga. Con adeudado se refiere a material entregado que no ha sido entregado en su fecha de entrega.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.22}{Lector dado de alta} 
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El lector esta dado de alta en el sistema.
+	\BRitem[Tipo:] Restricción (validación).
+	\BRitem[Nivel:] Obligatorio.
+\end{BussinesRule}
+
+%---------------------------------------------------------
+
+\begin{BussinesRule}{RN4.23}{Lector sin credencial.}
+	\BRitem[Tipo:] Restricción (validación).
+	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
+	\BRitem[Descripción:] El lector que extravio su credencial, puede renovar su crendecial.
+\end{BussinesRule}
+
+%---------------------------------------------------------
 
