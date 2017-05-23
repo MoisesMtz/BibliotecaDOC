@@ -1,34 +1,16 @@
 \chapter{Condiciones}
 \label{appendix:Condiciones}
 
+%==================EJEMPLO=======================================
+\subsection{C0.1 Alumno en baja }
+\cdtLabel{C0.1}{}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: No se puede generar la credencial si el usuario tiene adeudos.
+	
+
 %====================CELULA1=====================================
 %Introducir los correspondientes a la GESTIÓN DE EMPLEADOS
-\subsection{C1.1 Autorizacion de registro}
-\cdtLabel{C1.1}{}
-	\UCli Tipo: Restricción (validación).
-	\UCli Autor: Salas Hernandez Abiran Natanael
-	\UCli Descripción: El jefe de biblioteca solo puede registrar los datos del personal cuando se tenga la aprobación de la biblioteca general con sus datos y rol asignado.
-
-\subsection{C1.2 Duplicidad de personal}
-\cdtLabel{C1.2}{}
-	\UCli Tipo: Restricción (validación).
-	\UCli Autor: Guarneros Santana Víctor Hugo
-	\UCli Descripción: No podrá haber duplicidad en la información del personal , esto incluye mismo identificador y mismo nombre completo.
-
-\subsection{C1.3 Autorizacion de Modificacion}
-\cdtLabel{C1.3}{}
-	\UCli Tipo: Restricción (validación).
-	\UCli Autor: Cerón Rodríguez Monserrat
-	\UCli Descripcion: El jefe de biblioteca solo puede modifcar los datos del empleado cuando se tenga la aprobación de la biblioteca general.
-
-\subsection{C1.4 Autorizacion de Eliminacion}
-\cdtLabel{C1.4}{}
-	\UCli Tipo: Restricción (validación).
-	\UCli Autor: López Rojas Guillermo Eder 
-	\UCli Descripcion: El jefe de biblioteca solo puede eliminar al empleado, cuando se tenga la aprobación de la biblioteca general con el reporte correspondiente a los motivos de eliminación y las fechas exactas de lo mismo.
-
-
-
 
 
 
@@ -39,9 +21,173 @@
 
 %====================CELULA3=====================================
 %Introducir los correspondientes a la GESTIÓN DE PRÉSTAMOS
+\subsection{C3.1 Lector acreedor a Prestamo a Domicilio }
+\cdtLabel{C3.1}{Lector acreedor a Prestamo a Domicilio}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El préstamo a domicilio solo será para lector internos (alumnos, docentes, egresados) registrados en el sistema bibliotecario y para lectores externos que cuenten con su formato firmado y sellado por la biblioteca correspondiente.
 
+\subsection{C3.2 Lector con Multas }
+\cdtLabel{C3.2}{Lector con Multas}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El lector (interno o externo) que cuente con multas que estén en calidad de “Sin Pagar”, no podrá sacar material de la biblioteca.
+	
+\subsection{C3.3 Devoluciones Atrasadas }
+\cdtLabel{C3.3}{Devoluciones Atrasadas}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El lector (interno o externo) que cuente con material en su posesión y que haya excedido el tiempo límite de entrega no podrá pedir más material en calidad de Préstamo, hasta que entregue dicho material.
+	
+\subsection{C3.4 Credencial Vigente }
+\cdtLabel{C3.4}{Credencial Vigente}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El lector interno que desee realizar algún proceso de la biblioteca (prestamos, devoluciones, prestamos interbibliotecarios) debe de contar con su credencial vigente y actualizada, de lo contrario no podrá hacerlas.
 
+\subsection{C3.5 Duración del Préstamo }
+\cdtLabel{C3.5}{Duración del Préstamo}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: La duración del préstamo a domicilio es de 8 días naturales (incluyendo sábados y domingos).
+	
+\subsection{C3.6 Numero de Prestamos }
+\cdtLabel{C3.6}{Numero de Prestamos}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El número de material por préstamo está limitado a 3 libros, 2 CD´S y un CD de TT, el usuario interno puede seguir pidiendo Material si es que no ha llegado al límite antes dicho y si no tiene multas o devoluciones pendientes.
+	
+\subsection{C3.7 Préstamo de TT }
+\cdtLabel{C3.7}{Préstamo de TT}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El material de TT solo será préstamo por una hora (60 minutos), para la consulta del mismo.
 
+\subsection{C3.8 Limite de Prestamo Alcanzado }
+\cdtLabel{C3.8}{Limite de Prestamo Alcanzado}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Si un usuario quiere pedir algún ejemplar en calidad de préstamo y ya tiene el límite de préstamos en su posesión deberá regresar por lo menos un ejemplar de los que tiene en su poder para realizar dicho préstamo.
+
+\subsection{C3.9 Disponibilidad de Libro }
+\cdtLabel{C3.9}{Disponibilidad de Libro}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El Libro que solicita el usuario debe estar disponible para su préstamo y dicho ejemplar tener la etiqueta de libro para préstamo.
+	
+\subsection{C3.10 Número de Ejemplares }
+\cdtLabel{C3.10}{Número de Ejemplares}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El lector no puede pedir mas de un ejemplar del mismo tipo en calidad de préstamo.
+	
+\subsection{C3.11 Observaciones de Material }
+\cdtLabel{C3.11}{Observaciones de Material}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: En cada proceso de préstamo el bibliotecario revisara y anotara en el sistema las observaciones físicas del material que será prestado para que quede registrado.
+	
+\subsection{C3.12 Registro de Préstamo }
+\cdtLabel{C3.12}{Registro de Préstamo}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El préstamo generara un ID el cual se le asociara los datos del usuario, la fecha de realización y el material que se prestó y el estado de estos cambiara a “Prestado”, y se guardara en la BD.
+	
+\subsection{C3.13 Llenado formulario de Préstamo Interbibliotecario }
+\cdtLabel{C3.13}{Llenado formulario de Préstamo Interbibliotecario}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Ningún dato en el registro del préstamo puede ser nulo y todos los campos del formulario deben estar llenos.
+	
+\subsection{C3.14 Formato Interbibliotecario }
+\cdtLabel{C3.14}{Formato Interbibliotecario}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Cada Formato de préstamo interbibliotecario debe de contar con un No. de Folio que sea único e irrepetible.
+	
+\subsection{C3.15 Convenio interbibliotecario }
+\cdtLabel{C3.15}{Convenio interbibliotecario}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Para solicitar un préstamo o prestar un libro a un usuario de otra biblioteca, la biblioteca externa debe tener convenio con la nuestra y estar dada de alta en el sistema. 
+
+\subsection{C3.16 Préstamo a Lector Externo }
+\cdtLabel{C3.16}{Préstamo a Lector Externo}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El lector externo solo se le permite pedir “libros” en calidad de préstamo. 
+	
+\subsection{C3.17 Limite de Préstamos Interbibliotecarios a Lector }
+\cdtLabel{C3.17}{Limite de Préstamos Interbibliotecarios a Lector}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El lector se le permite solo 2 préstamos.
+	
+\subsection{C3.18 Limite de Préstamo Interbibliotecario por documento }
+\cdtLabel{C3.18}{Limite de Préstamo Interbibliotecario por documento}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Solo se permite el préstamo de un libro por cada formato interbibliotecario.
+	
+\subsection{C3.19 Registro Devolución de Material }
+\cdtLabel{C3.19}{Registro Devolución de Material}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Al registrar la devolución del material, el estado de este pasara a “disponible”.
+	
+\subsection{C3.20 Estado Fisico del Material }
+\cdtLabel{C3.20}{Estado Fisico del Material}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Si el material es regresado en mal estado y no existían observaciones sobre esto previamente, se asumirá que el usuario las causó y se generará una penalización monetaria. A continuación, se muestra una tabla describiendo el estado en que el libro es regresado y el costo que genera.
+	
+\subsection{C3.21 Pérdida de Material }
+\cdtLabel{C3.21}{Pérdida de Material}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Se le generara al usuario una multa por el costo total del material en calidad de “Perdido”.
+	
+\subsection{C3.22 Devolución a destiempo de libros y M. Audiovisual }
+\cdtLabel{C3.22}{Devolución a destiempo de libros y M. Audiovisual}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El usuario pagará 6 pesos por cada día de retardo en la entrega del material.
+	
+\subsection{C3.23 Devolución a destiempo de Material de TT´s}
+\cdtLabel{C3.23}{Devolución a destiempo de Material de TT´s}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El usuario pagará 6 pesos por cada hora de retardo en la entrega de un Material de TT.
+	
+\subsection{C3.24 ID Multas }
+\cdtLabel{C3.24}{ID Multas}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: La multa contara con un ID propio e irrepetible, fecha de expedición, los datos del usuario acreedor y el concepto de la multa.
+	
+\subsection{C3.25 Multa Pagada }
+\cdtLabel{C3.25}{Multa Pagada}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Al registrarse el pago de la multa el estado de esta será cambiado a “Pagada”.
+	
+\subsection{C3.26 Cancelar Multa }
+\cdtLabel{C3.26}{Cancelar Multa}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Solo se puede cancelar una multa cuando el concepto de esta es por Perdida de Libro y no ha sido pagada.
+	
+\subsection{C3.27 Consulta de Préstamo Internos e Interbibliotecarios }
+\cdtLabel{C3.27}{Consulta de Préstamo Internos e Interbibliotecarios}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: El jefe de la biblioteca es el único que puede consultar los préstamos que se han hecho y los prestamos interbibliotecarios que se han pedido.
+	
+\subsection{C3.28 Datos de la Consulta }
+\cdtLabel{C3.28}{Datos de la Consulta}
+	\UCli Tipo: Restricción (validación).
+	\UCli Autor: Cortés Pérez Edy
+	\UCli Descripción: Los datos introducidos para la consulta de préstamos internos e interbibliotecarios deben de existir en la Base de Datos.
 %====================CELULA4=====================================
 %Introducir los correspondientes a la GESTIÓN DE USUARIOS
 
