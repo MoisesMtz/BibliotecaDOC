@@ -1,0 +1,108 @@
+%========================================================
+%Proceso
+%========================================================
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P0.1}{Préstamo interbibliotecario} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  Proceso que realiza el \cdtRef{Actor:Lector}{lector} para poder llevarse a su casa uno o más libros de otras escuelas.
+  
+Los préstamos sólo procederán si el \cdtRef{Actor:Lector}{lector} no tiene multas o reposiciones pendientes y va en quinto semestre o mayor.\\
+  Una vez que el usuario cumple con los requisitos para el préstamo, el \cdtRef{Actor:Bibliotecario}{bibliotecario} registrará el libro a pedir en un formato que se imprimirá y se sellará como aprobación. Con este formato el alumno podrá ir a la biblioteca externa y pedir el libro. 
+  
+   %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P0.1}{Prestamo interbibliotecario} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C3/Images/prestamoi.png}{P0.1}{Prestamo interbibliotecario}
+
+} {P0.1:Cuenta}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Bibliotecario}{bibliotecario}  \cdtRef{Actor:Bibliotecarioe}{bibliotecario externo} y \cdtRef{Actor:Lector}{lector} 
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Llevarse libros hasta por una semana de una biblioteca externa. 
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+  	\begin{UClist}
+     	\UCli  \cdtIdRef{D0.1}{Credencial de Estudiante}.
+     	\UCli  \cdtIdRef{D0.1}{Formato de libro a pedir}.
+    \end {UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    \cdtRef{Actor:Lector}{Lector}
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+      \UCli Notificación \cdtIdRef{MSJ0.1}{El lector tiene multas pendientes }.
+    \end{UClist}
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Aspirante
+  \Ppaso Lector
+
+    \begin{enumerate}
+	 %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Lector}{Busca libro} Para que el lector saque un libro de una biblioteca externa, primero debe de revisar si existe en la biblioteca que quiere sacarlo. 
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T2-P0.1:Lector}{Solicita préstamo} Para solicitar el préstamo se llena un formato con los datos del libro a pedir, la escuela a la que se pedirá y los datos del lector. Este formato será dado al bibliotecario 
+	\begin{itemize}
+	  %Evento 1
+	  \item Si el usuario no cuenta con credencial el proceso termina.
+	  %Evento 2
+	  \item Si el usuario tiene multas o devoluciones pendientes debe resolver su situación para continuar.
+	   %Evento 2
+	  \item Si el usuario tiene 2 libros prestados de otras bibliotecas actualmente debe devolver alguno para continuar.
+	  %Evento 2
+	  \item Si el usuario no va mínimo en 5to semestre  el préstamo no procederá.
+	\end{itemize}
+    \Ppaso[\itarea] \cdtLabelTask{T3-P0.1:Lector}{Recibe Libro} Una vez se cuenta con el formato lleno, se entregará en la biblioteca de la que se quiere pedir el libro y en caso de proceder, el usuario recibirá el libro pedido.
+    \Ppaso[\itarea] \cdtLabelTask{T4-P0.1:Lector}{Devuelve el libro} El libro tendrá que ser devuelto en fecha y forma a la biblioteca pedida, si es así ésta dará un acuse de entrega que deberá ser entregado al \cdtRef{Actor:Bibliotecario}{bibliotecario}  para terminar el proceso.
+    \end{enumerate}
+
+  %Actor: SAEV2.0
+  \Ppaso Bibliotecario
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Bibliotecario}{Verifica Usuario} Para que el sistema autorice una solicitud de préstamo, primero debe de contarse con la credencial del lector, en caso de que éste no la tenga, se le muestra la notificación  \cdtIdRef{NS1}{Credencial obligatoria para préstamo} y se terminará el proceso. 
+Si el lector cuenta con la credencial, el bibliotecario debe verificar la condición \cdtIdRef{C1}{Usuario apto para préstamo}. Si la condición es falsa, es decir, el usuario tiene devoluciones atrasadas o multas pendientes se le notificará que debe resolver su situación para proceder con el préstamo interbibliotecario . Cuando la condición es verdadera, es decir el usuario puede sacar libros, se continuará con la tarea \cdtRefTask{T3-P0.1:Bibliotecario}{Imprime y firma solicitud}. 
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T3-P0.1:Bibliotecario}{Imprime y firma solicitud} Una vez que se cumplen las condiciones, se procederá a registrar el préstamo de los libros, considerando la condición \cdtIdRef{C2}{Máximo de préstamos}. Una vez se agotan los préstamos o se prestan todos los materiales solicitados termina el proceso. El registro de préstamo se hará llenando un formato que será autorizado por la escuela y con el cuál el usuario podrá sacar el libro especificado en la otra institución. 
+       \Ppaso[\itarea] \cdtLabelTask{T4-P0.1:Bibliotecario}{Registra fin del préstamo} Una vez  el lector devuelve el libro en la biblioteca externa deberá entregar el acuse que finalizará el proceso. 
+
+	%Condiciones
+	\begin{itemize}
+	  %Condición
+	  \item  \cdtIdRef{C1}{Usuario apto para préstamo} el sistema pasa a la tarea \\cdtRefTask{T3-P0.1:Bibliotecario}{Multas}
+	  %Condición
+	  \item \cdtIdRef{C2}{Máximo de préstamos} Si el libro causa que se excedan los préstamos permitidos dependiendo el tipo de usuario, el préstamo no procederá y se le sugirirá iniciar la devolución de un libro.
+\end{itemize}
+
+    \end{enumerate}
+
+\end{PDescripcion}

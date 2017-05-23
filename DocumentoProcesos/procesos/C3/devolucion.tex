@@ -1,0 +1,101 @@
+%========================================================
+%Proceso
+%========================================================
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P0.1}{Devolución} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  Proceso que realiza el \cdtRef{Actor:Lector}{lector} para regresar a la biblioteca los materiales prestados. Una vez entregado el material se procederá a 
+  analizar si la devolución genera una multa ya sea por maltrato o por devolución atrasada, así mismo, si el material es perdido se tendrá que pagar el 
+  costo del mismo.
+  
+   %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P0.1}{Devolución} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C3/Images/devolucion.png}{P0.1}{Devolución}
+
+} {P0.1:Cuenta}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Bibliotecario}{bibliotecario}  y \cdtRef{Actor:Lector}{lector} 
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Regresar a la biblioteca los materiales prestados al \cdtRef{Actor:Lector}{lector} 
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+  	\begin{UClist}
+     	\UCli  \cdtIdRef{D0.1}{Credencial de Estudiante}.
+    \end {UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    \cdtRef{Actor:Aspirante}{Aspirante}
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+      \UCli Notificación \cdtIdRef{MSJ0.1}{El lector tiene multas pendientes }.
+    \end{UClist}
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Aspirante
+  \Ppaso Lector
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Lector}{Devuelve material} El lector entrega credencial y material a regresar. Si el lector perdió algún material, notificará al bibliotecario y continuará con la tarea \cdtRefTask{T2-P0.1:Lector}{Reposición de material}. En caso de que la devolución genere multas por devolución tardía o multas por maltrato se continuará con el proceso MULTAS.
+	%Eventos
+	\begin{itemize}
+	  %Evento 1
+	  \item Si el usuario no cuenta con credencial el proceso termina.
+	\end{itemize}
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P0.1:Lector}{Reposición de material} Si el lector perdió algún material esperará a que el bibliotecario le genere una multa cuyo monto sea el valor del material perdido.  Después de esto el usuario decidirá cuándo pagar el costo del material, mientras no lo haga, no podrá pedir préstamos tanto internos como externos. Al momento de pagar deberá entregar el comprobante al bibliotecario.
+
+    \end{enumerate}
+
+  %Actor: SAEV2.0
+  \Ppaso Bibliotecario
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Bibliotecario}{Recibe material} Una vez recibido el material se registrará su reingreso a la biblioteca como lo dice la condición \cdtIdRef{RN3.19}{Registro Devolución de Material}  y si la devolución genera multas se continuará con la tarea \cdtRefTask{T2-P0.1:Aspirante}{Ingresa información}. En caso de que el material haya sido perdido, se continuará con la tarea \Ppaso[\itarea] \cdtLabelTask{T3-P0.1:Bibliotecario}{Registra pérdida} 
+      \begin{itemize}
+	  %Evento 1
+	  \item Se muestra el mensaje \cdtIdRef{MSJ3.11}{Devolución Exitosa} y termina el proceso
+	\end{itemize}
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P0.1:Bibliotecario}{Genera  Multas} Calcula las multas automáticamente si se trata sólo de devolución tardía y en caso de que haya multas por maltrato, el bibliotecario eligirá cuáles aplican y se sumarán a la multa total. una vez generado el reporte se procederá con el proceso de Multas
+      %Tarea c
+      \Ppaso[\itarea] \cdtLabelTask{T3-P0.1:Bibliotecario}{Registra pérdida} Si el material fue perdido se registrará su pérdida en el inventario y se generará un reporte cuyo monto será el costo total del material. Ésto procederá como una multa normal, se le rentendrá la credencial al alumno y no se le podrán prestar libros. 
+      \Ppaso[\itarea] \cdtLabelTask{T4-P0.1:Bibliotecario}{Registra pago} Una vez gerada la multa para reponer el costo del libro, si el usuario la paga y entrega un comprobante se le regresará su credencial y se le podrán volver a prestar libros 
+      \begin{itemize}
+	  %Evento 1
+	  \item Se muestra el mensaje \cdtIdRef{MSJ3.12}{Pago de multa} y termina el proceso
+	\end{itemize}
+
+    \end{enumerate}
+
+\end{PDescripcion}
