@@ -93,10 +93,18 @@ dentro de la biblioteca.
 
       %Tarea a
       \Ppaso[\itarea] \cdtLabelTask{T1-P1.1:Jefe de Biblioteca}{Solicitud de nuevo personal.}Un administrativo genera una solicitud de personal a biblioteca general, esta puede ser aceptada o rechazada. En caso de rechazo finaliza el proceso, por último si la solicitud es aceptada se puede proceder a la siguiente tarea. 
+      %Condiciones
+  \begin{itemize}
+    %Condición
+    \item \cdtIdRef{C1.1}{Autorizacion de registro} el sistema pasa a la tarea \cdtRefTask{T2-P1.1:Jefe de Biblioteca}{Registro de personal.}
+  \end{itemize}
 
 \Ppaso[\itarea] \cdtLabelTask{T2-P1.1:Jefe de Biblioteca}{Registro de personal.} El administrativo recibe un documento donde se especifican los datos del nuevo personal como son nombre completo, cedula profesional y finalmente se asigna el rol que desempeñaran dentro de la biblioteca.
 
-	
+	\begin{itemize}
+    %Condición
+    \item \cdtIdRef{C1.2}{Duplicidad de personal} el sistema pasa a verificar la tarea \cdtRefTask{T2-P1.1:Jefe de Biblioteca}{Registro de personal.}
+  \end{itemize}
 
     \end{enumerate}
     
