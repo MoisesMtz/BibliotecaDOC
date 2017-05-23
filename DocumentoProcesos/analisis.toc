@@ -32,83 +32,114 @@
 \contentsline {subsection}{\numberline {1.8.1}Resumen}{18}{subsection.1.8.1}
 \contentsline {subsection}{\numberline {1.8.2}Elementos del proceso}{18}{subsection.1.8.2}
 \contentsline {subsection}{\numberline {1.8.3}Descripci\IeC {\'o}n de Tareas}{19}{subsection.1.8.3}
-\contentsline {section}{\numberline {1.9}P4.1 Dar de Alta Lector}{21}{section.1.9}
+\contentsline {section}{\numberline {1.9}P3.1 Pr\IeC {\'e}stamo de material}{21}{section.1.9}
 \contentsline {subsection}{\numberline {1.9.1}Resumen}{21}{subsection.1.9.1}
 \contentsline {subsection}{\numberline {1.9.2}Elementos del proceso}{21}{subsection.1.9.2}
 \contentsline {subsection}{\numberline {1.9.3}Descripci\IeC {\'o}n de Tareas}{22}{subsection.1.9.3}
-\contentsline {section}{\numberline {1.10}P4.2 Dar de Baja Lector}{23}{section.1.10}
-\contentsline {subsection}{\numberline {1.10.1}Resumen}{23}{subsection.1.10.1}
+\contentsline {section}{\numberline {1.10}P3.2 Pr\IeC {\'e}stamo interbibliotecario}{24}{section.1.10}
+\contentsline {subsection}{\numberline {1.10.1}Resumen}{24}{subsection.1.10.1}
 \contentsline {subsection}{\numberline {1.10.2}Elementos del proceso}{24}{subsection.1.10.2}
 \contentsline {subsection}{\numberline {1.10.3}Descripci\IeC {\'o}n de Tareas}{24}{subsection.1.10.3}
-\contentsline {section}{\numberline {1.11}P4.3 Actualizar datos de Lector}{26}{section.1.11}
+\contentsline {section}{\numberline {1.11}P3.3 Devoluci\IeC {\'o}n}{26}{section.1.11}
 \contentsline {subsection}{\numberline {1.11.1}Resumen}{26}{subsection.1.11.1}
 \contentsline {subsection}{\numberline {1.11.2}Elementos del proceso}{26}{subsection.1.11.2}
 \contentsline {subsection}{\numberline {1.11.3}Descripci\IeC {\'o}n de Tareas}{27}{subsection.1.11.3}
-\contentsline {section}{\numberline {1.12}P4.4 Consultar historial de Lector}{28}{section.1.12}
+\contentsline {section}{\numberline {1.12}P3.4 Generar Multas}{28}{section.1.12}
 \contentsline {subsection}{\numberline {1.12.1}Resumen}{28}{subsection.1.12.1}
 \contentsline {subsection}{\numberline {1.12.2}Elementos del proceso}{28}{subsection.1.12.2}
 \contentsline {subsection}{\numberline {1.12.3}Descripci\IeC {\'o}n de Tareas}{29}{subsection.1.12.3}
-\contentsline {section}{\numberline {1.13}P5.1 Gestion de credenciales}{30}{section.1.13}
+\contentsline {section}{\numberline {1.13}P4.1 Dar de Alta Lector}{30}{section.1.13}
 \contentsline {subsection}{\numberline {1.13.1}Resumen}{30}{subsection.1.13.1}
 \contentsline {subsection}{\numberline {1.13.2}Elementos del proceso}{30}{subsection.1.13.2}
-\contentsline {subsection}{\numberline {1.13.3}Descripci\IeC {\'o}n de Tareas}{30}{subsection.1.13.3}
-\contentsline {section}{\numberline {1.14}P5.2 Solicitud de renovaci\IeC {\'o}n de credencial}{33}{section.1.14}
-\contentsline {subsection}{\numberline {1.14.1}Resumen}{33}{subsection.1.14.1}
+\contentsline {subsection}{\numberline {1.13.3}Descripci\IeC {\'o}n de Tareas}{31}{subsection.1.13.3}
+\contentsline {section}{\numberline {1.14}P4.2 Dar de Baja Lector}{32}{section.1.14}
+\contentsline {subsection}{\numberline {1.14.1}Resumen}{32}{subsection.1.14.1}
 \contentsline {subsection}{\numberline {1.14.2}Elementos del proceso}{33}{subsection.1.14.2}
 \contentsline {subsection}{\numberline {1.14.3}Descripci\IeC {\'o}n de Tareas}{33}{subsection.1.14.3}
-\contentsline {section}{\numberline {1.15}P5.3 Solicitud de renovaci\IeC {\'o}n de credencial}{36}{section.1.15}
-\contentsline {subsection}{\numberline {1.15.1}Resumen}{36}{subsection.1.15.1}
-\contentsline {subsection}{\numberline {1.15.2}Elementos del proceso}{37}{subsection.1.15.2}
-\contentsline {subsection}{\numberline {1.15.3}Descripci\IeC {\'o}n de Tareas}{37}{subsection.1.15.3}
-\contentsline {chapter}{\numberline {2}Actores del sistema}{39}{chapter.2}
-\contentsline {chapter}{\numberline {A}Mensajes}{41}{appendix.Alph1}
-\contentsline {subsection}{\numberline {A.0.1}MSJ1.1 Operaci\IeC {\'o}n Exitosa }{41}{subsection.Alph1.0.1}
-\contentsline {subsection}{\numberline {A.0.2}MSJ1.2 Hay empleados a modificar }{41}{subsection.Alph1.0.2}
-\contentsline {subsection}{\numberline {A.0.3}MSJ1.3 Informacion incorrecta }{41}{subsection.Alph1.0.3}
-\contentsline {subsection}{\numberline {A.0.4}MSJ1.4 Modificacion Exitosa }{41}{subsection.Alph1.0.4}
-\contentsline {subsection}{\numberline {A.0.5}MSJ1.5 Eliminacion Exitosa }{41}{subsection.Alph1.0.5}
-\contentsline {subsection}{\numberline {A.0.6}MSJ4.1 Lector no registrado }{41}{subsection.Alph1.0.6}
-\contentsline {subsection}{\numberline {A.0.7}MSJ4.2 Alumno dado de baja }{42}{subsection.Alph1.0.7}
-\contentsline {subsection}{\numberline {A.0.8}MSJ4.3 Tiene Adeudos pendientes }{42}{subsection.Alph1.0.8}
-\contentsline {subsection}{\numberline {A.0.9}MSJ4.4 Tiene Multas pendientes }{42}{subsection.Alph1.0.9}
-\contentsline {subsection}{\numberline {A.0.10}MSJ4.5 Operaci\IeC {\'o}n Exitosa }{42}{subsection.Alph1.0.10}
-\contentsline {subsection}{\numberline {A.0.11}MSJ4.6 El lector aun no tiene historial }{42}{subsection.Alph1.0.11}
-\contentsline {subsection}{\numberline {A.0.12}MSJ4.7 Inscribete}{42}{subsection.Alph1.0.12}
-\contentsline {chapter}{\numberline {B}Formularios}{43}{appendix.Alph2}
-\contentsline {subsection}{\numberline {B.0.1}F4.1 Dar de alta Lector }{43}{subsection.Alph2.0.1}
-\contentsline {subsection}{\numberline {B.0.2}F1.1 Registrar Personal }{43}{subsection.Alph2.0.2}
-\contentsline {subsection}{\numberline {B.0.3}F1.2 Modificar Personal }{43}{subsection.Alph2.0.3}
-\contentsline {subsection}{\numberline {B.0.4}F4.2 Actualizar Lector }{44}{subsection.Alph2.0.4}
-\contentsline {chapter}{\numberline {C}Condiciones}{45}{appendix.Alph3}
-\contentsline {subsection}{\numberline {C.0.1}C1.1 Autorizacion de registro}{45}{subsection.Alph3.0.1}
-\contentsline {subsection}{\numberline {C.0.2}C1.2 Duplicidad de personal}{45}{subsection.Alph3.0.2}
-\contentsline {subsection}{\numberline {C.0.3}C1.3 Autorizacion de Modificacion}{45}{subsection.Alph3.0.3}
-\contentsline {subsection}{\numberline {C.0.4}C1.4 Autorizacion de Eliminacion}{45}{subsection.Alph3.0.4}
-\contentsline {subsection}{\numberline {C.0.5}C3.1 Lector acreedor a Prestamo a Domicilio}{46}{subsection.Alph3.0.5}
-\contentsline {subsection}{\numberline {C.0.6}C3.2 Lector con Multas}{46}{subsection.Alph3.0.6}
-\contentsline {subsection}{\numberline {C.0.7}C3.3 Devoluciones Atrasadas}{46}{subsection.Alph3.0.7}
-\contentsline {subsection}{\numberline {C.0.8}C3.4 Credencial Vigente}{46}{subsection.Alph3.0.8}
-\contentsline {subsection}{\numberline {C.0.9}C3.5 Duraci\IeC {\'o}n del Pr\IeC {\'e}stamo}{46}{subsection.Alph3.0.9}
-\contentsline {subsection}{\numberline {C.0.10}C3.6 Numero de Prestamos}{46}{subsection.Alph3.0.10}
-\contentsline {subsection}{\numberline {C.0.11}C3.7 Pr\IeC {\'e}stamo de TT}{47}{subsection.Alph3.0.11}
-\contentsline {subsection}{\numberline {C.0.12}C3.8 Limite de Prestamo Alcanzado}{47}{subsection.Alph3.0.12}
-\contentsline {subsection}{\numberline {C.0.13}C3.9 Disponibilidad de Libro}{47}{subsection.Alph3.0.13}
-\contentsline {subsection}{\numberline {C.0.14}C3.10 N\IeC {\'u}mero de Ejemplares}{47}{subsection.Alph3.0.14}
-\contentsline {subsection}{\numberline {C.0.15}C3.11 Observaciones de Material}{47}{subsection.Alph3.0.15}
-\contentsline {subsection}{\numberline {C.0.16}C3.12 Registro de Pr\IeC {\'e}stamo}{48}{subsection.Alph3.0.16}
-\contentsline {subsection}{\numberline {C.0.17}C3.13 Llenado formulario de Pr\IeC {\'e}stamo Interbibliotecario}{48}{subsection.Alph3.0.17}
-\contentsline {subsection}{\numberline {C.0.18}C3.14 Formato Interbibliotecario}{48}{subsection.Alph3.0.18}
-\contentsline {subsection}{\numberline {C.0.19}C3.15 Convenio interbibliotecario}{48}{subsection.Alph3.0.19}
-\contentsline {subsection}{\numberline {C.0.20}C3.16 Pr\IeC {\'e}stamo a Lector Externo}{48}{subsection.Alph3.0.20}
-\contentsline {subsection}{\numberline {C.0.21}C3.17 Limite de Pr\IeC {\'e}stamos Interbibliotecarios a Lector}{48}{subsection.Alph3.0.21}
-\contentsline {subsection}{\numberline {C.0.22}C3.18 Limite de Pr\IeC {\'e}stamo Interbibliotecario por documento}{49}{subsection.Alph3.0.22}
-\contentsline {subsection}{\numberline {C.0.23}C3.19 Registro Devoluci\IeC {\'o}n de Material}{49}{subsection.Alph3.0.23}
-\contentsline {subsection}{\numberline {C.0.24}C3.20 Estado Fisico del Material}{49}{subsection.Alph3.0.24}
-\contentsline {subsection}{\numberline {C.0.25}C3.21 P\IeC {\'e}rdida de Material}{49}{subsection.Alph3.0.25}
-\contentsline {subsection}{\numberline {C.0.26}C3.22 Devoluci\IeC {\'o}n a destiempo de libros y M. Audiovisual}{49}{subsection.Alph3.0.26}
-\contentsline {subsection}{\numberline {C.0.27}C3.23 Devoluci\IeC {\'o}n a destiempo de Material de TT's}{49}{subsection.Alph3.0.27}
-\contentsline {subsection}{\numberline {C.0.28}C3.24 ID Multas}{50}{subsection.Alph3.0.28}
-\contentsline {subsection}{\numberline {C.0.29}C3.25 Multa Pagada}{50}{subsection.Alph3.0.29}
-\contentsline {subsection}{\numberline {C.0.30}C3.26 Cancelar Multa}{50}{subsection.Alph3.0.30}
-\contentsline {subsection}{\numberline {C.0.31}C3.27 Consulta de Pr\IeC {\'e}stamo Internos e Interbibliotecarios}{50}{subsection.Alph3.0.31}
-\contentsline {subsection}{\numberline {C.0.32}C3.28 Datos de la Consulta}{50}{subsection.Alph3.0.32}
+\contentsline {section}{\numberline {1.15}P4.3 Actualizar datos de Lector}{35}{section.1.15}
+\contentsline {subsection}{\numberline {1.15.1}Resumen}{35}{subsection.1.15.1}
+\contentsline {subsection}{\numberline {1.15.2}Elementos del proceso}{35}{subsection.1.15.2}
+\contentsline {subsection}{\numberline {1.15.3}Descripci\IeC {\'o}n de Tareas}{36}{subsection.1.15.3}
+\contentsline {section}{\numberline {1.16}P4.4 Consultar historial de Lector}{37}{section.1.16}
+\contentsline {subsection}{\numberline {1.16.1}Resumen}{37}{subsection.1.16.1}
+\contentsline {subsection}{\numberline {1.16.2}Elementos del proceso}{37}{subsection.1.16.2}
+\contentsline {subsection}{\numberline {1.16.3}Descripci\IeC {\'o}n de Tareas}{38}{subsection.1.16.3}
+\contentsline {section}{\numberline {1.17}P5.1 Gestion de credenciales}{39}{section.1.17}
+\contentsline {subsection}{\numberline {1.17.1}Resumen}{39}{subsection.1.17.1}
+\contentsline {subsection}{\numberline {1.17.2}Elementos del proceso}{39}{subsection.1.17.2}
+\contentsline {subsection}{\numberline {1.17.3}Descripci\IeC {\'o}n de Tareas}{39}{subsection.1.17.3}
+\contentsline {section}{\numberline {1.18}P5.2 Solicitud de renovaci\IeC {\'o}n de credencial}{42}{section.1.18}
+\contentsline {subsection}{\numberline {1.18.1}Resumen}{42}{subsection.1.18.1}
+\contentsline {subsection}{\numberline {1.18.2}Elementos del proceso}{42}{subsection.1.18.2}
+\contentsline {subsection}{\numberline {1.18.3}Descripci\IeC {\'o}n de Tareas}{42}{subsection.1.18.3}
+\contentsline {section}{\numberline {1.19}P5.3 Solicitud de renovaci\IeC {\'o}n de credencial}{45}{section.1.19}
+\contentsline {subsection}{\numberline {1.19.1}Resumen}{45}{subsection.1.19.1}
+\contentsline {subsection}{\numberline {1.19.2}Elementos del proceso}{46}{subsection.1.19.2}
+\contentsline {subsection}{\numberline {1.19.3}Descripci\IeC {\'o}n de Tareas}{46}{subsection.1.19.3}
+\contentsline {chapter}{\numberline {2}Actores del sistema}{49}{chapter.2}
+\contentsline {chapter}{\numberline {A}Mensajes}{51}{appendix.Alph1}
+\contentsline {subsection}{\numberline {A.0.1}MSJ1.1 Operaci\IeC {\'o}n Exitosa }{51}{subsection.Alph1.0.1}
+\contentsline {subsection}{\numberline {A.0.2}MSJ1.2 Hay empleados a modificar }{51}{subsection.Alph1.0.2}
+\contentsline {subsection}{\numberline {A.0.3}MSJ1.3 Informacion incorrecta }{51}{subsection.Alph1.0.3}
+\contentsline {subsection}{\numberline {A.0.4}MSJ1.4 Modificacion Exitosa }{51}{subsection.Alph1.0.4}
+\contentsline {subsection}{\numberline {A.0.5}MSJ1.5 Eliminacion Exitosa }{51}{subsection.Alph1.0.5}
+\contentsline {subsection}{\numberline {A.0.6}MSJ3.1 Error al conectar en la BD }{51}{subsection.Alph1.0.6}
+\contentsline {subsection}{\numberline {A.0.7}MSJ3.2 Lector Inexistente }{52}{subsection.Alph1.0.7}
+\contentsline {subsection}{\numberline {A.0.8}MSJ3.3 Pr\IeC {\'e}stamo Exitoso }{52}{subsection.Alph1.0.8}
+\contentsline {subsection}{\numberline {A.0.9}MSJ3.4 Devoluci\IeC {\'o}n Exitosa }{52}{subsection.Alph1.0.9}
+\contentsline {subsection}{\numberline {A.0.10}MSJ3.5 Usuario con Multas }{52}{subsection.Alph1.0.10}
+\contentsline {subsection}{\numberline {A.0.11}MSJ3.6 Usuario con Devoluciones Atrasadas }{52}{subsection.Alph1.0.11}
+\contentsline {subsection}{\numberline {A.0.12}MSJ3.7 Campos Vac\IeC {\'\i }os }{52}{subsection.Alph1.0.12}
+\contentsline {subsection}{\numberline {A.0.13}MSJ3.8 Biblioteca Inexistente }{52}{subsection.Alph1.0.13}
+\contentsline {subsection}{\numberline {A.0.14}MSJ3.9 B\IeC {\'u}squeda Satisfactoria }{52}{subsection.Alph1.0.14}
+\contentsline {subsection}{\numberline {A.0.15}MSJ3.10 Datos Err\IeC {\'o}neos }{52}{subsection.Alph1.0.15}
+\contentsline {subsection}{\numberline {A.0.16}MSJ3.11 Generaci\IeC {\'o}n de multa exitosa }{53}{subsection.Alph1.0.16}
+\contentsline {subsection}{\numberline {A.0.17}MSJ3.12 Pago de multa }{53}{subsection.Alph1.0.17}
+\contentsline {subsection}{\numberline {A.0.18}MSJ3.13 Impresi\IeC {\'o}n de Formato Interbibliotecario }{53}{subsection.Alph1.0.18}
+\contentsline {subsection}{\numberline {A.0.19}MSJ3.14 Limite de pr\IeC {\'e}stamos alcanzado }{53}{subsection.Alph1.0.19}
+\contentsline {subsection}{\numberline {A.0.20}MSJ3.15 Libro Inexistente }{53}{subsection.Alph1.0.20}
+\contentsline {subsection}{\numberline {A.0.21}MSJ4.1 Lector no registrado }{53}{subsection.Alph1.0.21}
+\contentsline {subsection}{\numberline {A.0.22}MSJ4.2 Alumno dado de baja }{53}{subsection.Alph1.0.22}
+\contentsline {subsection}{\numberline {A.0.23}MSJ4.3 Tiene Adeudos pendientes }{53}{subsection.Alph1.0.23}
+\contentsline {subsection}{\numberline {A.0.24}MSJ4.4 Tiene Multas pendientes }{53}{subsection.Alph1.0.24}
+\contentsline {subsection}{\numberline {A.0.25}MSJ4.5 Operaci\IeC {\'o}n Exitosa }{54}{subsection.Alph1.0.25}
+\contentsline {subsection}{\numberline {A.0.26}MSJ4.6 El lector aun no tiene historial }{54}{subsection.Alph1.0.26}
+\contentsline {subsection}{\numberline {A.0.27}MSJ4.7 Inscribete}{54}{subsection.Alph1.0.27}
+\contentsline {chapter}{\numberline {B}Formularios}{55}{appendix.Alph2}
+\contentsline {subsection}{\numberline {B.0.1}F4.1 Dar de alta Lector }{55}{subsection.Alph2.0.1}
+\contentsline {subsection}{\numberline {B.0.2}F1.1 Registrar Personal }{55}{subsection.Alph2.0.2}
+\contentsline {subsection}{\numberline {B.0.3}F1.2 Modificar Personal }{55}{subsection.Alph2.0.3}
+\contentsline {subsection}{\numberline {B.0.4}F4.2 Actualizar Lector }{56}{subsection.Alph2.0.4}
+\contentsline {chapter}{\numberline {C}Condiciones}{57}{appendix.Alph3}
+\contentsline {subsection}{\numberline {C.0.1}C1.1 Autorizacion de registro}{57}{subsection.Alph3.0.1}
+\contentsline {subsection}{\numberline {C.0.2}C1.2 Duplicidad de personal}{57}{subsection.Alph3.0.2}
+\contentsline {subsection}{\numberline {C.0.3}C1.3 Autorizacion de Modificacion}{57}{subsection.Alph3.0.3}
+\contentsline {subsection}{\numberline {C.0.4}C1.4 Autorizacion de Eliminacion}{57}{subsection.Alph3.0.4}
+\contentsline {subsection}{\numberline {C.0.5}C3.1 Lector acreedor a Prestamo a Domicilio}{58}{subsection.Alph3.0.5}
+\contentsline {subsection}{\numberline {C.0.6}C3.2 Lector con Multas}{58}{subsection.Alph3.0.6}
+\contentsline {subsection}{\numberline {C.0.7}C3.3 Devoluciones Atrasadas}{58}{subsection.Alph3.0.7}
+\contentsline {subsection}{\numberline {C.0.8}C3.4 Credencial Vigente}{58}{subsection.Alph3.0.8}
+\contentsline {subsection}{\numberline {C.0.9}C3.5 Duraci\IeC {\'o}n del Pr\IeC {\'e}stamo}{58}{subsection.Alph3.0.9}
+\contentsline {subsection}{\numberline {C.0.10}C3.6 Numero de Prestamos}{58}{subsection.Alph3.0.10}
+\contentsline {subsection}{\numberline {C.0.11}C3.7 Pr\IeC {\'e}stamo de TT}{59}{subsection.Alph3.0.11}
+\contentsline {subsection}{\numberline {C.0.12}C3.8 Limite de Prestamo Alcanzado}{59}{subsection.Alph3.0.12}
+\contentsline {subsection}{\numberline {C.0.13}C3.9 Disponibilidad de Libro}{59}{subsection.Alph3.0.13}
+\contentsline {subsection}{\numberline {C.0.14}C3.10 N\IeC {\'u}mero de Ejemplares}{59}{subsection.Alph3.0.14}
+\contentsline {subsection}{\numberline {C.0.15}C3.11 Observaciones de Material}{59}{subsection.Alph3.0.15}
+\contentsline {subsection}{\numberline {C.0.16}C3.12 Registro de Pr\IeC {\'e}stamo}{60}{subsection.Alph3.0.16}
+\contentsline {subsection}{\numberline {C.0.17}C3.13 Llenado formulario de Pr\IeC {\'e}stamo Interbibliotecario}{60}{subsection.Alph3.0.17}
+\contentsline {subsection}{\numberline {C.0.18}C3.14 Formato Interbibliotecario}{60}{subsection.Alph3.0.18}
+\contentsline {subsection}{\numberline {C.0.19}C3.15 Convenio interbibliotecario}{60}{subsection.Alph3.0.19}
+\contentsline {subsection}{\numberline {C.0.20}C3.16 Pr\IeC {\'e}stamo a Lector Externo}{60}{subsection.Alph3.0.20}
+\contentsline {subsection}{\numberline {C.0.21}C3.17 Limite de Pr\IeC {\'e}stamos Interbibliotecarios a Lector}{60}{subsection.Alph3.0.21}
+\contentsline {subsection}{\numberline {C.0.22}C3.18 Limite de Pr\IeC {\'e}stamo Interbibliotecario por documento}{61}{subsection.Alph3.0.22}
+\contentsline {subsection}{\numberline {C.0.23}C3.19 Registro Devoluci\IeC {\'o}n de Material}{61}{subsection.Alph3.0.23}
+\contentsline {subsection}{\numberline {C.0.24}C3.20 Estado Fisico del Material}{61}{subsection.Alph3.0.24}
+\contentsline {subsection}{\numberline {C.0.25}C3.21 P\IeC {\'e}rdida de Material}{61}{subsection.Alph3.0.25}
+\contentsline {subsection}{\numberline {C.0.26}C3.22 Devoluci\IeC {\'o}n a destiempo de libros y M. Audiovisual}{61}{subsection.Alph3.0.26}
+\contentsline {subsection}{\numberline {C.0.27}C3.23 Devoluci\IeC {\'o}n a destiempo de Material de TT's}{61}{subsection.Alph3.0.27}
+\contentsline {subsection}{\numberline {C.0.28}C3.24 ID Multas}{62}{subsection.Alph3.0.28}
+\contentsline {subsection}{\numberline {C.0.29}C3.25 Multa Pagada}{62}{subsection.Alph3.0.29}
+\contentsline {subsection}{\numberline {C.0.30}C3.26 Cancelar Multa}{62}{subsection.Alph3.0.30}
+\contentsline {subsection}{\numberline {C.0.31}C3.27 Consulta de Pr\IeC {\'e}stamo Internos e Interbibliotecarios}{62}{subsection.Alph3.0.31}
+\contentsline {subsection}{\numberline {C.0.32}C3.28 Datos de la Consulta}{62}{subsection.Alph3.0.32}
