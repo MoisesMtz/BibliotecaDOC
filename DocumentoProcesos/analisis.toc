@@ -1,0 +1,77 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Procesos}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}P1.1 Registrar Personal}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Resumen}{2}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Elementos del proceso}{2}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Descripci\IeC {\'o}n de Tareas}{3}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}P1.2 Modificar Personal}{4}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Resumen}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Elementos del proceso}{4}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Descripci\IeC {\'o}n de Tareas}{4}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}P1.3 Eliminar Personal}{7}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Resumen}{7}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Elementos del proceso}{7}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Descripci\IeC {\'o}n de Tareas}{8}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.4}P2.1 Adquisici\IeC {\'o}n de Libros}{9}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Resumen}{9}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Elementos del proceso}{11}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Descripci\IeC {\'o}n de Tareas}{11}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}P2.2 Cotejar Existencia de Libros}{12}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Resumen}{12}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Elementos del proceso}{12}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Descripci\IeC {\'o}n de Tareas}{13}{subsection.1.5.3}
+\contentsline {section}{\numberline {1.6}P2.3 Cotejar Existencia de Equipo}{14}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Resumen}{14}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}Elementos del proceso}{14}{subsection.1.6.2}
+\contentsline {subsection}{\numberline {1.6.3}Descripci\IeC {\'o}n de Tareas}{15}{subsection.1.6.3}
+\contentsline {section}{\numberline {1.7}P2.4 Descartar libros }{16}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Resumen}{16}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}Elementos del proceso}{16}{subsection.1.7.2}
+\contentsline {subsection}{\numberline {1.7.3}Descripci\IeC {\'o}n de Tareas}{17}{subsection.1.7.3}
+\contentsline {section}{\numberline {1.8}P4.1 Dar de Alta Lector}{19}{section.1.8}
+\contentsline {subsection}{\numberline {1.8.1}Resumen}{19}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.2}Elementos del proceso}{19}{subsection.1.8.2}
+\contentsline {subsection}{\numberline {1.8.3}Descripci\IeC {\'o}n de Tareas}{20}{subsection.1.8.3}
+\contentsline {section}{\numberline {1.9}P4.2 Dar de Baja Lector}{21}{section.1.9}
+\contentsline {subsection}{\numberline {1.9.1}Resumen}{21}{subsection.1.9.1}
+\contentsline {subsection}{\numberline {1.9.2}Elementos del proceso}{22}{subsection.1.9.2}
+\contentsline {subsection}{\numberline {1.9.3}Descripci\IeC {\'o}n de Tareas}{22}{subsection.1.9.3}
+\contentsline {section}{\numberline {1.10}P4.3 Actualizar datos de Lector}{24}{section.1.10}
+\contentsline {subsection}{\numberline {1.10.1}Resumen}{24}{subsection.1.10.1}
+\contentsline {subsection}{\numberline {1.10.2}Elementos del proceso}{24}{subsection.1.10.2}
+\contentsline {subsection}{\numberline {1.10.3}Descripci\IeC {\'o}n de Tareas}{25}{subsection.1.10.3}
+\contentsline {section}{\numberline {1.11}P4.4 Consultar historial de Lector}{26}{section.1.11}
+\contentsline {subsection}{\numberline {1.11.1}Resumen}{26}{subsection.1.11.1}
+\contentsline {subsection}{\numberline {1.11.2}Elementos del proceso}{26}{subsection.1.11.2}
+\contentsline {subsection}{\numberline {1.11.3}Descripci\IeC {\'o}n de Tareas}{27}{subsection.1.11.3}
+\contentsline {section}{\numberline {1.12}P5.1 Gestion de credenciales}{28}{section.1.12}
+\contentsline {subsection}{\numberline {1.12.1}Resumen}{28}{subsection.1.12.1}
+\contentsline {subsection}{\numberline {1.12.2}Elementos del proceso}{28}{subsection.1.12.2}
+\contentsline {subsection}{\numberline {1.12.3}Descripci\IeC {\'o}n de Tareas}{28}{subsection.1.12.3}
+\contentsline {section}{\numberline {1.13}P5.2 Solicitud de renovaci\IeC {\'o}n de credencial}{31}{section.1.13}
+\contentsline {subsection}{\numberline {1.13.1}Resumen}{31}{subsection.1.13.1}
+\contentsline {subsection}{\numberline {1.13.2}Elementos del proceso}{31}{subsection.1.13.2}
+\contentsline {subsection}{\numberline {1.13.3}Descripci\IeC {\'o}n de Tareas}{31}{subsection.1.13.3}
+\contentsline {section}{\numberline {1.14}P5.3 Solicitud de renovaci\IeC {\'o}n de credencial}{34}{section.1.14}
+\contentsline {subsection}{\numberline {1.14.1}Resumen}{34}{subsection.1.14.1}
+\contentsline {subsection}{\numberline {1.14.2}Elementos del proceso}{35}{subsection.1.14.2}
+\contentsline {subsection}{\numberline {1.14.3}Descripci\IeC {\'o}n de Tareas}{35}{subsection.1.14.3}
+\contentsline {chapter}{\numberline {2}Actores del sistema}{37}{chapter.2}
+\contentsline {chapter}{\numberline {A}Mensajes}{39}{appendix.Alph1}
+\contentsline {subsection}{\numberline {A.0.1}MSJ1.1 Operaci\IeC {\'o}n Exitosa }{39}{subsection.Alph1.0.1}
+\contentsline {subsection}{\numberline {A.0.2}MSJ1.2 Hay empleados a modificar }{39}{subsection.Alph1.0.2}
+\contentsline {subsection}{\numberline {A.0.3}MSJ1.3 Informacion incorrecta }{39}{subsection.Alph1.0.3}
+\contentsline {subsection}{\numberline {A.0.4}MSJ1.4 Modificacion Exitosa }{39}{subsection.Alph1.0.4}
+\contentsline {subsection}{\numberline {A.0.5}MSJ1.5 Eliminacion Exitosa }{39}{subsection.Alph1.0.5}
+\contentsline {subsection}{\numberline {A.0.6}MSJ4.1 Lector no registrado }{39}{subsection.Alph1.0.6}
+\contentsline {subsection}{\numberline {A.0.7}MSJ4.2 Alumno dado de baja }{40}{subsection.Alph1.0.7}
+\contentsline {subsection}{\numberline {A.0.8}MSJ4.3 Tiene Adeudos pendientes }{40}{subsection.Alph1.0.8}
+\contentsline {subsection}{\numberline {A.0.9}MSJ4.4 Tiene Multas pendientes }{40}{subsection.Alph1.0.9}
+\contentsline {subsection}{\numberline {A.0.10}MSJ4.5 Operaci\IeC {\'o}n Exitosa }{40}{subsection.Alph1.0.10}
+\contentsline {subsection}{\numberline {A.0.11}MSJ4.6 El lector aun no tiene historial }{40}{subsection.Alph1.0.11}
+\contentsline {subsection}{\numberline {A.0.12}MSJ4.7 Inscribete}{40}{subsection.Alph1.0.12}
+\contentsline {chapter}{\numberline {B}Formularios}{41}{appendix.Alph2}
+\contentsline {subsection}{\numberline {B.0.1}F4.1 Dar de alta Lector }{41}{subsection.Alph2.0.1}
+\contentsline {subsection}{\numberline {B.0.2}F1.1 Registrar Personal }{41}{subsection.Alph2.0.2}
+\contentsline {subsection}{\numberline {B.0.3}F1.2 Modificar Personal }{41}{subsection.Alph2.0.3}
+\contentsline {subsection}{\numberline {B.0.4}F4.2 Actualizar Lector }{42}{subsection.Alph2.0.4}

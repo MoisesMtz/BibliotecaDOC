@@ -1,0 +1,65 @@
+%=============================================
+% Descripción de actores
+
+\chapter{Actores del sistema}
+\label{chapter:ActoresDelSistema}
+
+En el presente capítulo se definen los actores que participan en el sistema.
+
+
+%==============Alumno=========================================
+\cdtLabel{Actor:Lector}{}
+\begin{Actor}{Lector}{Persona que puede ser un alumno o docente que hace uso de los servicios que la Biblioteca ofrece.}
+	\item[Área:] No aplica
+	\item[Responsabilidades:] \hspace{1pt}
+	\begin{itemize}
+		\item Proporcionar datos de identificación
+		\item Consultar perfil
+		\item Pagar Multas
+		\item Devolver Material
+	\end{itemize}
+	\item[Perfil:] \hspace{1pt}
+	\begin{itemize}
+		\item Debe ser una persona perteneciente al instituto. 		
+		\item Debe ser responsable.
+		\item Debe ser cumplido.
+	\end{itemize}
+\end{Actor}
+
+%==============  Bibliotecario ========================
+\cdtLabel{Actor:Bibliotecario}{}
+\begin{Actor}{Bibliotecario}{Persona encargada de gestionar el proceso interno de la gestión de usuarios. }
+	\item[Área:] ---
+	\item[Responsabilidades:] \hspace{1pt}
+	\begin{itemize}
+		\item Dar de Alta lector
+		\item Dar de baja Lector
+		\item Modificar datos del Lector
+			\end{itemize}
+\item[Perfil:] \hspace{1pt}
+	\begin{itemize}
+	\item Debe ser una persona perteneciente al instituto.
+		\item Debe contar facilidad de palabras
+		\item Capaz de trabajar trabajar bajo presión 
+		\item Debe ser egresado o estar cursando ultimo año de nivel superior 		
+		\item Debe ser responsable.
+	\end{itemize}
+\end{Actor}
+
+
+
+
+%==============  PGU ========================
+\cdtLabel{Actor:PGU}{}
+\begin{Actor}{PGU}{Sistema de administración bibliotecario encargado de automatizar todo lo relacionado con la gestion de usuarios.}
+	\item[Área:] ---
+	\item[Responsabilidades:] \hspace{1pt}
+	\begin{itemize}
+		\item Verificar existencia de Lectores
+		\item Verificar existencia de historiales de los lectores
+		\item Generar tablas con la información asociada a los lectores
+			\end{itemize}
+\end{Actor}
+
+
+

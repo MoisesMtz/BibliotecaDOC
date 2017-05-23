@@ -1,0 +1,108 @@
+%========================================================
+%Proceso
+%========================================================
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P5.1}{Gestion de credenciales} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  Proceso que se encarga de la gestión de credenciales, en donde se genera las credenciales para lectores \cdtRef{Actor:Estudiante}{Estudiante} y \cdtRef{Actor:Profesor}{Profesor}. Además de renovar la fecha de vigencia de las credenciales para poder seguir haciendo uso de esta.
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P5.1}{Gestion de Credenciales} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C5_Credenciales/Images/PA5_1-GestionDeCredenciales.png}{P5.1}{Gestion de Credenciales}
+
+} {P5.1:Gestion}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Lector}{Lector}, \cdtRef{Actor:Gestion de Usuarios}{Gestion de Usuarios} y \cdtRef{Actor:Gestion de Credenciales}{Gestion de Credenciales}.
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Gestión de credenciales
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+      ID de Lector
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    Gestión de usuarios y usuario.
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    Formado de Credencial
+  }
+
+  \UCitem{Cliente} { %Cliente
+    Gestión de usuarios
+  }
+
+  \UCitem{Mecanismo de medición} { %Mecanismo de medición
+    No se identificaron mecanismos de medición
+  }
+  \UCitem{Interrelación con otros procesos} { %Interrelación con otros procesos
+    Gestión de usuarios
+  }
+  \UCitem{Tipo de solicitud al que aplica el proceso} { %Tipo de solicitud al que aplica el proceso
+    Usuarios que necesiten la interacción de credenciales.
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Lector
+  \Ppaso Lector
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P5.1:Lector.}{Solicita registro.} El usuario solicita al bibliotecario registrarse en el sistema bibliotecario de la Escuela Superior de Cómputo y proporciona a \cdtRef{Actor:Gestion de Usuarios}{Gestion de Usuarios} sus datos personales.
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.1:Lector.}{Solicita reposición.} El usuario solicita la reposición de su credencial a \cdtRef{Actor:Gestion de Usuarios}{Gestion de Usuarios}.
+
+    \end{enumerate}
+    
+    %Actor: Gestión de usuarios
+  \Ppaso Gestion De Usuarios
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P5.1:GestionDeUsuarios.}{Registrar usuario.} Gestión de usuarios se encarga de registrar un nuevo usuario.
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.1:GestionDeUsuarios.}{Enviar ID.} Espera ser invocado por la petición del usuario para renovar credencial o la petición de registrar usuario para que así pueda enviar el Identificador del usuario que invoco a la tarea predecesora de esta.
+
+    \end{enumerate}
+    
+    %Actor: Gestión de Credenciales
+  \Ppaso Gestion de Credenciales
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P5.1:GestionDeCredenciales.}{Generar credencial.} \cdtRef{Actor:Gestion de Credenciales}{Gestion de Credenciales} obtiene todos los datos del lector al cual se le generara una credencial por medio del identificador de lector que recibe y posteriormente genera la credencial que se le asignara al lector.
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.1:GestionDeCredenciales.}{Renovación de credencial.} Se renovara la vigencia de la credencial para que pueda seguir operando.
+
+    \end{enumerate}
+
+\end{PDescripcion}
