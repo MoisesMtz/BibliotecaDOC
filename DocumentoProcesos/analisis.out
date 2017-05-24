@@ -31,19 +31,19 @@
 \BOOKMARK [2][-]{subsection.1.8.1}{Resumen}{section.1.8}% 31
 \BOOKMARK [2][-]{subsection.1.8.2}{Elementos del proceso}{section.1.8}% 32
 \BOOKMARK [2][-]{subsection.1.8.3}{Descripci\363n de Tareas}{section.1.8}% 33
-\BOOKMARK [1][-]{section.1.9}{P3.1 Pr\351stamo de material}{chapter.1}% 34
+\BOOKMARK [1][-]{section.1.9}{P0.1 Pr\351stamo de material}{chapter.1}% 34
 \BOOKMARK [2][-]{subsection.1.9.1}{Resumen}{section.1.9}% 35
 \BOOKMARK [2][-]{subsection.1.9.2}{Elementos del proceso}{section.1.9}% 36
 \BOOKMARK [2][-]{subsection.1.9.3}{Descripci\363n de Tareas}{section.1.9}% 37
-\BOOKMARK [1][-]{section.1.10}{P3.2 Pr\351stamo interbibliotecario}{chapter.1}% 38
+\BOOKMARK [1][-]{section.1.10}{P0.1 Pr\351stamo interbibliotecario}{chapter.1}% 38
 \BOOKMARK [2][-]{subsection.1.10.1}{Resumen}{section.1.10}% 39
 \BOOKMARK [2][-]{subsection.1.10.2}{Elementos del proceso}{section.1.10}% 40
 \BOOKMARK [2][-]{subsection.1.10.3}{Descripci\363n de Tareas}{section.1.10}% 41
-\BOOKMARK [1][-]{section.1.11}{P3.3 Devoluci\363n}{chapter.1}% 42
+\BOOKMARK [1][-]{section.1.11}{P0.1 Devoluci\363n}{chapter.1}% 42
 \BOOKMARK [2][-]{subsection.1.11.1}{Resumen}{section.1.11}% 43
 \BOOKMARK [2][-]{subsection.1.11.2}{Elementos del proceso}{section.1.11}% 44
 \BOOKMARK [2][-]{subsection.1.11.3}{Descripci\363n de Tareas}{section.1.11}% 45
-\BOOKMARK [1][-]{section.1.12}{P3.4 Generar Multas}{chapter.1}% 46
+\BOOKMARK [1][-]{section.1.12}{P0.1 Solicitud de cuenta}{chapter.1}% 46
 \BOOKMARK [2][-]{subsection.1.12.1}{Resumen}{section.1.12}% 47
 \BOOKMARK [2][-]{subsection.1.12.2}{Elementos del proceso}{section.1.12}% 48
 \BOOKMARK [2][-]{subsection.1.12.3}{Descripci\363n de Tareas}{section.1.12}% 49
@@ -104,41 +104,62 @@
 \BOOKMARK [2][-]{subsection.Alph1.0.25}{MSJ4.5 Operaci\363n Exitosa }{subsection.Alph1.0.1}% 104
 \BOOKMARK [2][-]{subsection.Alph1.0.26}{MSJ4.6 El lector aun no tiene historial }{subsection.Alph1.0.1}% 105
 \BOOKMARK [2][-]{subsection.Alph1.0.27}{MSJ4.7 Inscribete}{subsection.Alph1.0.1}% 106
-\BOOKMARK [0][-]{appendix.Alph2}{Formularios}{}% 107
-\BOOKMARK [1][-]{subsection.Alph2.0.1}{F4.1 Dar de alta Lector }{appendix.Alph2}% 108
-\BOOKMARK [2][-]{subsection.Alph2.0.2}{F1.1 Registrar Personal }{subsection.Alph2.0.1}% 109
-\BOOKMARK [2][-]{subsection.Alph2.0.3}{F1.2 Modificar Personal }{subsection.Alph2.0.1}% 110
-\BOOKMARK [2][-]{subsection.Alph2.0.4}{F4.2 Actualizar Lector }{subsection.Alph2.0.1}% 111
-\BOOKMARK [0][-]{appendix.Alph3}{Condiciones}{}% 112
-\BOOKMARK [1][-]{subsection.Alph3.0.1}{C1.1 Autorizacion de registro}{appendix.Alph3}% 113
-\BOOKMARK [2][-]{subsection.Alph3.0.2}{C1.2 Duplicidad de personal}{subsection.Alph3.0.1}% 114
-\BOOKMARK [2][-]{subsection.Alph3.0.3}{C1.3 Autorizacion de Modificacion}{subsection.Alph3.0.1}% 115
-\BOOKMARK [2][-]{subsection.Alph3.0.4}{C1.4 Autorizacion de Eliminacion}{subsection.Alph3.0.1}% 116
-\BOOKMARK [2][-]{subsection.Alph3.0.5}{C3.1 Lector acreedor a Prestamo a Domicilio}{subsection.Alph3.0.1}% 117
-\BOOKMARK [2][-]{subsection.Alph3.0.6}{C3.2 Lector con Multas}{subsection.Alph3.0.1}% 118
-\BOOKMARK [2][-]{subsection.Alph3.0.7}{C3.3 Devoluciones Atrasadas}{subsection.Alph3.0.1}% 119
-\BOOKMARK [2][-]{subsection.Alph3.0.8}{C3.4 Credencial Vigente}{subsection.Alph3.0.1}% 120
-\BOOKMARK [2][-]{subsection.Alph3.0.9}{C3.5 Duraci\363n del Pr\351stamo}{subsection.Alph3.0.1}% 121
-\BOOKMARK [2][-]{subsection.Alph3.0.10}{C3.6 Numero de Prestamos}{subsection.Alph3.0.1}% 122
-\BOOKMARK [2][-]{subsection.Alph3.0.11}{C3.7 Pr\351stamo de TT}{subsection.Alph3.0.1}% 123
-\BOOKMARK [2][-]{subsection.Alph3.0.12}{C3.8 Limite de Prestamo Alcanzado}{subsection.Alph3.0.1}% 124
-\BOOKMARK [2][-]{subsection.Alph3.0.13}{C3.9 Disponibilidad de Libro}{subsection.Alph3.0.1}% 125
-\BOOKMARK [2][-]{subsection.Alph3.0.14}{C3.10 N\372mero de Ejemplares}{subsection.Alph3.0.1}% 126
-\BOOKMARK [2][-]{subsection.Alph3.0.15}{C3.11 Observaciones de Material}{subsection.Alph3.0.1}% 127
-\BOOKMARK [2][-]{subsection.Alph3.0.16}{C3.12 Registro de Pr\351stamo}{subsection.Alph3.0.1}% 128
-\BOOKMARK [2][-]{subsection.Alph3.0.17}{C3.13 Llenado formulario de Pr\351stamo Interbibliotecario}{subsection.Alph3.0.1}% 129
-\BOOKMARK [2][-]{subsection.Alph3.0.18}{C3.14 Formato Interbibliotecario}{subsection.Alph3.0.1}% 130
-\BOOKMARK [2][-]{subsection.Alph3.0.19}{C3.15 Convenio interbibliotecario}{subsection.Alph3.0.1}% 131
-\BOOKMARK [2][-]{subsection.Alph3.0.20}{C3.16 Pr\351stamo a Lector Externo}{subsection.Alph3.0.1}% 132
-\BOOKMARK [2][-]{subsection.Alph3.0.21}{C3.17 Limite de Pr\351stamos Interbibliotecarios a Lector}{subsection.Alph3.0.1}% 133
-\BOOKMARK [2][-]{subsection.Alph3.0.22}{C3.18 Limite de Pr\351stamo Interbibliotecario por documento}{subsection.Alph3.0.1}% 134
-\BOOKMARK [2][-]{subsection.Alph3.0.23}{C3.19 Registro Devoluci\363n de Material}{subsection.Alph3.0.1}% 135
-\BOOKMARK [2][-]{subsection.Alph3.0.24}{C3.20 Estado Fisico del Material}{subsection.Alph3.0.1}% 136
-\BOOKMARK [2][-]{subsection.Alph3.0.25}{C3.21 P\351rdida de Material}{subsection.Alph3.0.1}% 137
-\BOOKMARK [2][-]{subsection.Alph3.0.26}{C3.22 Devoluci\363n a destiempo de libros y M. Audiovisual}{subsection.Alph3.0.1}% 138
-\BOOKMARK [2][-]{subsection.Alph3.0.27}{C3.23 Devoluci\363n a destiempo de Material de TT's}{subsection.Alph3.0.1}% 139
-\BOOKMARK [2][-]{subsection.Alph3.0.28}{C3.24 ID Multas}{subsection.Alph3.0.1}% 140
-\BOOKMARK [2][-]{subsection.Alph3.0.29}{C3.25 Multa Pagada}{subsection.Alph3.0.1}% 141
-\BOOKMARK [2][-]{subsection.Alph3.0.30}{C3.26 Cancelar Multa}{subsection.Alph3.0.1}% 142
-\BOOKMARK [2][-]{subsection.Alph3.0.31}{C3.27 Consulta de Pr\351stamo Internos e Interbibliotecarios}{subsection.Alph3.0.1}% 143
-\BOOKMARK [2][-]{subsection.Alph3.0.32}{C3.28 Datos de la Consulta}{subsection.Alph3.0.1}% 144
+\BOOKMARK [2][-]{subsection.Alph1.0.28}{MSJ5.1 Env\355a formato de datos FN1 }{subsection.Alph1.0.1}% 107
+\BOOKMARK [2][-]{subsection.Alph1.0.29}{MSJ5.2 Notifica error en el formato de datos FN1 }{subsection.Alph1.0.1}% 108
+\BOOKMARK [2][-]{subsection.Alph1.0.30}{MSJ5.3 Env\355a formato de datos corregido FN1 }{subsection.Alph1.0.1}% 109
+\BOOKMARK [2][-]{subsection.Alph1.0.31}{MSJ5.4 Env\355a solicitud de reposicion con el formato de datos FN1 }{subsection.Alph1.0.1}% 110
+\BOOKMARK [2][-]{subsection.Alph1.0.32}{MSJ5.5 Pide al usuario los datos a modificar }{subsection.Alph1.0.1}% 111
+\BOOKMARK [2][-]{subsection.Alph1.0.33}{MSJ5.6 Env\355a los datos a actualizar }{subsection.Alph1.0.1}% 112
+\BOOKMARK [2][-]{subsection.Alph1.0.34}{MSJ5.7 Env\355a formato de datos correspondiente }{subsection.Alph1.0.1}% 113
+\BOOKMARK [2][-]{subsection.Alph1.0.35}{MSJ5.8 Env\355a factura con el pago de los formatos correspondientes }{subsection.Alph1.0.1}% 114
+\BOOKMARK [2][-]{subsection.Alph1.0.36}{MSJ5.9 Solicita renovaci\363n de credencial con formato FN1 }{subsection.Alph1.0.1}% 115
+\BOOKMARK [2][-]{subsection.Alph1.0.37}{MSJ5.10 Notificaci\363n de \351xito en la renovaci\363n }{subsection.Alph1.0.1}% 116
+\BOOKMARK [2][-]{subsection.Alph1.0.38}{MSJ5.11 Solicita dar de baja a usuario de la biblioteca }{subsection.Alph1.0.1}% 117
+\BOOKMARK [2][-]{subsection.Alph1.0.39}{MSJ5.12 Alerta sobre la suspensi\363n de la credencial }{subsection.Alph1.0.1}% 118
+\BOOKMARK [2][-]{subsection.Alph1.0.40}{MSJ5.13 Solicita baja de credencial }{subsection.Alph1.0.1}% 119
+\BOOKMARK [2][-]{subsection.Alph1.0.41}{MSJ5.14 Solicita dar de baja una credencial de un usuario }{subsection.Alph1.0.1}% 120
+\BOOKMARK [2][-]{subsection.Alph1.0.42}{MSJ5.15 Reporta credencial con una identificaci\363n oficial }{subsection.Alph1.0.1}% 121
+\BOOKMARK [2][-]{subsection.Alph1.0.43}{MSJ5.16 Solicita dar de alta una credencial de un usuario }{subsection.Alph1.0.1}% 122
+\BOOKMARK [0][-]{appendix.Alph2}{Formularios}{}% 123
+\BOOKMARK [1][-]{subsection.Alph2.0.1}{F4.1 Dar de alta Lector }{appendix.Alph2}% 124
+\BOOKMARK [2][-]{subsection.Alph2.0.2}{F1.1 Registrar Personal }{subsection.Alph2.0.1}% 125
+\BOOKMARK [2][-]{subsection.Alph2.0.3}{F1.2 Modificar Personal }{subsection.Alph2.0.1}% 126
+\BOOKMARK [2][-]{subsection.Alph2.0.4}{F4.2 Actualizar Lector }{subsection.Alph2.0.1}% 127
+\BOOKMARK [0][-]{appendix.Alph3}{Condiciones}{}% 128
+\BOOKMARK [1][-]{subsection.Alph3.0.1}{C1.1 Autorizacion de registro}{appendix.Alph3}% 129
+\BOOKMARK [2][-]{subsection.Alph3.0.2}{C1.2 Duplicidad de personal}{subsection.Alph3.0.1}% 130
+\BOOKMARK [2][-]{subsection.Alph3.0.3}{C1.3 Autorizacion de Modificacion}{subsection.Alph3.0.1}% 131
+\BOOKMARK [2][-]{subsection.Alph3.0.4}{C1.4 Autorizacion de Eliminacion}{subsection.Alph3.0.1}% 132
+\BOOKMARK [2][-]{subsection.Alph3.0.5}{C3.1 Lector acreedor a Prestamo a Domicilio}{subsection.Alph3.0.1}% 133
+\BOOKMARK [2][-]{subsection.Alph3.0.6}{C3.2 Lector con Multas}{subsection.Alph3.0.1}% 134
+\BOOKMARK [2][-]{subsection.Alph3.0.7}{C3.3 Devoluciones Atrasadas}{subsection.Alph3.0.1}% 135
+\BOOKMARK [2][-]{subsection.Alph3.0.8}{C3.4 Credencial Vigente}{subsection.Alph3.0.1}% 136
+\BOOKMARK [2][-]{subsection.Alph3.0.9}{C3.5 Duraci\363n del Pr\351stamo}{subsection.Alph3.0.1}% 137
+\BOOKMARK [2][-]{subsection.Alph3.0.10}{C3.6 Numero de Prestamos}{subsection.Alph3.0.1}% 138
+\BOOKMARK [2][-]{subsection.Alph3.0.11}{C3.7 Pr\351stamo de TT}{subsection.Alph3.0.1}% 139
+\BOOKMARK [2][-]{subsection.Alph3.0.12}{C3.8 Limite de Prestamo Alcanzado}{subsection.Alph3.0.1}% 140
+\BOOKMARK [2][-]{subsection.Alph3.0.13}{C3.9 Disponibilidad de Libro}{subsection.Alph3.0.1}% 141
+\BOOKMARK [2][-]{subsection.Alph3.0.14}{C3.10 N\372mero de Ejemplares}{subsection.Alph3.0.1}% 142
+\BOOKMARK [2][-]{subsection.Alph3.0.15}{C3.11 Observaciones de Material}{subsection.Alph3.0.1}% 143
+\BOOKMARK [2][-]{subsection.Alph3.0.16}{C3.12 Registro de Pr\351stamo}{subsection.Alph3.0.1}% 144
+\BOOKMARK [2][-]{subsection.Alph3.0.17}{C3.13 Llenado formulario de Pr\351stamo Interbibliotecario}{subsection.Alph3.0.1}% 145
+\BOOKMARK [2][-]{subsection.Alph3.0.18}{C3.14 Formato Interbibliotecario}{subsection.Alph3.0.1}% 146
+\BOOKMARK [2][-]{subsection.Alph3.0.19}{C3.15 Convenio interbibliotecario}{subsection.Alph3.0.1}% 147
+\BOOKMARK [2][-]{subsection.Alph3.0.20}{C3.16 Pr\351stamo a Lector Externo}{subsection.Alph3.0.1}% 148
+\BOOKMARK [2][-]{subsection.Alph3.0.21}{C3.17 Limite de Pr\351stamos Interbibliotecarios a Lector}{subsection.Alph3.0.1}% 149
+\BOOKMARK [2][-]{subsection.Alph3.0.22}{C3.18 Limite de Pr\351stamo Interbibliotecario por documento}{subsection.Alph3.0.1}% 150
+\BOOKMARK [2][-]{subsection.Alph3.0.23}{C3.19 Registro Devoluci\363n de Material}{subsection.Alph3.0.1}% 151
+\BOOKMARK [2][-]{subsection.Alph3.0.24}{C3.20 Estado Fisico del Material}{subsection.Alph3.0.1}% 152
+\BOOKMARK [2][-]{subsection.Alph3.0.25}{C3.21 P\351rdida de Material}{subsection.Alph3.0.1}% 153
+\BOOKMARK [2][-]{subsection.Alph3.0.26}{C3.22 Devoluci\363n a destiempo de libros y M. Audiovisual}{subsection.Alph3.0.1}% 154
+\BOOKMARK [2][-]{subsection.Alph3.0.27}{C3.23 Devoluci\363n a destiempo de Material de TT's}{subsection.Alph3.0.1}% 155
+\BOOKMARK [2][-]{subsection.Alph3.0.28}{C3.24 ID Multas}{subsection.Alph3.0.1}% 156
+\BOOKMARK [2][-]{subsection.Alph3.0.29}{C3.25 Multa Pagada}{subsection.Alph3.0.1}% 157
+\BOOKMARK [2][-]{subsection.Alph3.0.30}{C3.26 Cancelar Multa}{subsection.Alph3.0.1}% 158
+\BOOKMARK [2][-]{subsection.Alph3.0.31}{C3.27 Consulta de Pr\351stamo Internos e Interbibliotecarios}{subsection.Alph3.0.1}% 159
+\BOOKMARK [2][-]{subsection.Alph3.0.32}{C3.28 Datos de la Consulta}{subsection.Alph3.0.1}% 160
+\BOOKMARK [2][-]{subsection.Alph3.0.33}{C5.1 Cobro por reposici\363n de credencial}{subsection.Alph3.0.1}% 161
+\BOOKMARK [2][-]{subsection.Alph3.0.34}{C5.2 Verificar identidad}{subsection.Alph3.0.1}% 162
+\BOOKMARK [2][-]{subsection.Alph3.0.35}{C5.3 D\355as de tr\341mite}{subsection.Alph3.0.1}% 163
+\BOOKMARK [2][-]{subsection.Alph3.0.36}{C5.4 Horario de atenci\363n del tr\341mite}{subsection.Alph3.0.1}% 164
+\BOOKMARK [2][-]{subsection.Alph3.0.37}{C5.5 Meses de tramite}{subsection.Alph3.0.1}% 165
