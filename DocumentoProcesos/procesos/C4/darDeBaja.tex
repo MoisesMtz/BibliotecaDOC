@@ -102,7 +102,7 @@ El sistema termina el proceso de dar de baja.
     \begin{enumerate}
 
       %Tarea a
-      \Ppaso[\itarea] \cdtLabelTask{T1-P4.2:Bibliotecario}{Validar al Lector.} Para que el sistema pueda validar al lector debe verificar la Regla de negocio RN4.4 Identificación del lector. Si la regla de negocio se cumple pasa a la tarea \cdtRefTask{T3-P4.2:Bibliotecario}{Dar de baja Lector}, si no se cumple la regla de negocio el sistema pasa a la tarea \cdtRefTask{T2-P4.2:Bibliotecario}{Autenticar Lector}.
+      \Ppaso[\itarea] \cdtLabelTask{T1-P4.2:Bibliotecario}{Validar al Lector.} Para que el sistema pueda validar al lector debe verificar la Regla de negocio \cdtIdRef{C4.4}{Identificación del lector}. Si la regla de negocio se cumple pasa a la tarea \cdtRefTask{T3-P4.2:Bibliotecario}{Dar de baja Lector}, si no se cumple la regla de negocio el sistema pasa a la tarea \cdtRefTask{T2-P4.2:Bibliotecario}{Autenticar Lector}.
 
 %referenciar tareas \cdtRefTask{T2-P0.1:SAEV2.0}{Notifica solicitud fuera de periodo de registro.}
 
@@ -110,13 +110,13 @@ El sistema termina el proceso de dar de baja.
       %Tarea b
       \Ppaso[\itarea] \cdtLabelTask{T2-P4.2:Bibliotecario}{Autenticar Lector.} El sistema autenticará al lector a partir del ID del mismo para comprobar si el lector está registrado de no estar registrado muestra la Notificación \cdtIdRef{MSJ4.1}{Lector No registrado}.
       %Tarea c
-      \Ppaso[\itarea] \cdtLabelTask{T3-P4.2:Bibliotecario}{Dar de baja Lector.}Para que el sistema proceda con la baja del Lector deberá verificar las reglas de negocio RN4.5 El lector tiene multas y RN4.6 El lector tiene adeudos. Si las reglas de negocio se cumplen se pasa a la tarea \cdtRefTask{T6-P4.2:Bibliotecario}{Dar de baja Lector}, si no se cumple la RN4.5 se pasa a la tarea \cdtRefTask{T4-P4.2:Bibliotecario}{Generar reporte de multa}, si no se cumple la RN4.5 se pasa a la tarea \cdtRefTask{T5-P4.2:Bibliotecario}{Generar reporte de adeudo(s)}.
+      \Ppaso[\itarea] \cdtLabelTask{T3-P4.2:Bibliotecario}{Dar de baja Lector.}Para que el sistema proceda con la baja del Lector deberá verificar las reglas de negocio \cdtIdRef{C4.5}{El lector tiene multas} y \cdtIdRef{C4.6}{El lector tiene adeudos}. Si las reglas de negocio se cumplen se pasa a la tarea \cdtRefTask{T6-P4.2:Bibliotecario}{Dar de baja Lector}, si no se cumple la \cdtIdRef{C4.5}{El lector tiene multas} se pasa a la tarea \cdtRefTask{T4-P4.2:Bibliotecario}{Generar reporte de multa}, si no se cumple la \cdtIdRef{C4.6}{El lector tiene adeudos} se pasa a la tarea \cdtRefTask{T5-P4.2:Bibliotecario}{Generar reporte de adeudo(s)}.
 
       %Tarea d
-      \Ppaso[\itarea] \cdtLabelTask{T4-P4.2:Bibliotecario}{Generar reporte de multa.} El sistema genera la notificación NS3 al igual que la tabla indicando las multas que tiene pendientes a pagar para que sean mostrados al lector pasando a la tarea \cdtRefTask{T1-P4.2:Lector}{Pagar multa(s)}. 
+      \Ppaso[\itarea] \cdtLabelTask{T4-P4.2:Bibliotecario}{Generar reporte de multa.} El sistema genera la notificación \cdtIdRef{MSJ4.4}{Tienes Multas pendientes} al igual que la tabla indicando las multas que tiene pendientes a pagar para que sean mostrados al lector pasando a la tarea \cdtRefTask{T1-P4.2:Lector}{Pagar multa(s)}. 
 
       %Tarea e
-      \Ppaso[\itarea] \cdtLabelTask{T5-P4.2:Bibliotecario}{Genera reporte de adeudo(s).} El sistema genera la notificación NS4 al igual que la tabla indicando los adeudos que tiene pendientes a devolver para que sean mostrados al lector pasando a la tarea \cdtRefTask{T2-P4.2:Lector}{Devueve el material}.
+      \Ppaso[\itarea] \cdtLabelTask{T5-P4.2:Bibliotecario}{Genera reporte de adeudo(s).} El sistema genera la notificación \cdtIdRef{MSJ4.3}{Tienes Adeudos pendientes} al igual que la tabla indicando los adeudos que tiene pendientes a devolver para que sean mostrados al lector pasando a la tarea \cdtRefTask{T2-P4.2:Lector}{Devueve el material}.
 
       %Tarea f
       \Ppaso[\itarea] \cdtLabelTask{T6-P4.2:Bibliotecario}{Dar de baja Lector.} El sistema dará de baja al lector y mostrará la notificación \cdtIdRef{MSJ4.5}{Operación Exitosa}.

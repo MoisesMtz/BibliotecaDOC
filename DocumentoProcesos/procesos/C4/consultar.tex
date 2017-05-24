@@ -13,7 +13,7 @@
   Proceso que realiza el \cdtRef{Actor:Lector}{Lector} desde su perfil con el fin de consultar y visualizar los datos de su historial en el cual se visualizarán los adeudos y/o multas que tenga el \cdtRef{Actor:Lector}{Lector}.
   
 Si el \cdtRef{Actor:Lector}{Lector} está registrado en el sistema podrá iniciar Sesióon y tenerun perfil propio desde el cual el \cdtRef{Actor:Lector}{Lector} podrá consultar su historial.
-Cuando procede la consulta el sistema generara una tabla presentando los siguientes datos: Adeudos, multas y el estado del usuario (activo o inactivo)
+Cuando procede la consulta el sistema generará diferentes tablas presentando los Adeudos, en otra tabla las multas y el estado del \cdtRef{Actor:Lector}{Lector}(activo o inactivo)
 El sistema termina el proceso de la consulta 
 
 
@@ -49,7 +49,8 @@ El sistema termina el proceso de la consulta
 
   \UCitem{Productos de salida} { %Productos de salida
     \begin{UClist}
-      \UCli Tabla generada mostrando los adeudos y multas del \cdtRef{Actor:Lector}{Lector}
+      \UCli Tabla generada mostrando las multas del \cdtRef{Actor:Lector}{Lector}
+      \UCli Tabla generada mostrando los adeudos del \cdtRef{Actor:Lector}{Lector}
       \UCli Notificación \cdtIdRef{MSJ4.6}{El lector aun no tiene historial}.
     \end{UClist}
   }
@@ -98,7 +99,7 @@ El sistema termina el proceso de la consulta
       \Ppaso[\itarea] \cdtLabelTask{T1-P4.4:PGU}{Verificar Existencia} Para que el sistema pueda consultar y visualizar la información de el \cdtRef{Actor:Lector}{Lector} este debe verificar si el     \cdtRef{Actor:Lector}{Lector} tiene un historial de adeudos o multas de ser asi se pasa a la tarea \cdtRefTask{T2-P4.4:PGU}{Genera tabla con la información del Lector.}, de lo contrario pasa a la tarea \cdtRefTask{T3-P4.4:PGU}{Genera mensaje de inexistencia de historial.}
 
       %Tarea b
-      \Ppaso[\itarea] \cdtLabelTask{T2-P4.4:PGU}{Genera tabla con la información del usuario.} El sistema genera una tabla con la información de los adeudos y multas asociadas al \cdtRef{Actor:Lector}{Lector} para que sea mostrada pasando a la tarea \cdtRefTask{T3-P4.5:Lector}{Información del Lector.}
+      \Ppaso[\itarea] \cdtLabelTask{T2-P4.4:PGU}{Genera tabla con la información del usuario.} El sistema genera una tabla con la información de los adeudos o multas asociadas al \cdtRef{Actor:Lector}{Lector} para que sea mostrada pasando a la tarea \cdtRefTask{T3-P4.5:Lector}{Información del Lector.}
 
       %Tarea c
       \Ppaso[\itarea] \cdtLabelTask{T3-P4.4:PGU}{Genera mensaje de inexistencia de historial.} El sistema genera el mensaje de Notificación \cdtIdRef{MSJ4.6}{El lector aun no tiene historial} para que sea mostrado al \cdtRef{Actor:Lector}{Lector} pasando a la tarea \cdtRefTask{T2-P4.5:Lector}{No tiene historial.}
