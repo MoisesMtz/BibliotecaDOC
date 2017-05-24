@@ -1,0 +1,45 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU1.4}{Eliminar personal}{
+		En este caso de uso tiene como objetivo eliminar del sistema al personal de la biblioteca cuando el administrador así lo requiera.
+	}
+		\UCitem{Versión}{1.5}
+		\UCitem{Actor}{Jefe de Biblioteca}
+		\UCitem{Propósito}{Actualizar el resgistro de personal en el sistema. }
+		\UCitem{Entradas}{Contraseña del actor.}
+		\UCitem{Salidas}{\MSGref{MSG1.4.1}{ADVERTENCIA ¿Desea eliminar el personal?}  
+						\MSGref{MSG1.4.2}{ERROR Usuario o contraseña incorrectos, por favor ingrese nuevamente sus datos.}  }
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item El administrador debe haber ingresado al sistema. 
+				\item Tiene que existir datos de el personal en la BD.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Se actualiza la base de datos.}
+		\UCitem{Autor}{López Rojas Guillermo.}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor]Selecciona la opción \IUbutton{Lista de personal} en el menú lateral izquierdo de la pantalla.
+		\UCpaso[\UCsist] Muestra la interfaz \IUref{IU1.2}{Listado de Empleados}.
+		\UCpaso[\UCsist] Selecciona el personal a eliminar seleccionando  \IUbutton{Eliminar} de la columna acciones en la tabla. 
+		\UCpaso[\UCsist] Muestra el  \MSGref{MSG1.4.1}{ADVERTENCIA ¿Desea eliminar el personal?} \Trayref{A}.
+		\UCpaso[\UCactor] Ingresa la contraseña de jefe de biblioteca y selecciona \IUbutton{Si, Eliminar} \Trayref{A}.
+		\UCpaso[\UCsist] Actualiza el registro en la BD.
+		\UCpaso[\UCsist] Termina el caso de uso.
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\newpage
+		\begin{UCtrayectoriaA}{A}{Contraseña o usuario incorrecto}
+			\UCpaso[\UCsist] Muestra el  \MSGref{MSG1.4.2}{ERROR Usuario o contraseña incorrectos, por favor ingrese nuevamente sus datos.}
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}		
+		
+		
+		\begin{UCtrayectoriaA}{B}{Selecciona \IUbutton{No, Cancelar }}
+			\UCpaso[\UCsist] Remueve la ventana emergente \MSGref{MSG1.4.1}{ADVERTENCIA ¿Desea eliminar el personal?}
+			\UCpaso[\UCsist] Termina el caso de uso.
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

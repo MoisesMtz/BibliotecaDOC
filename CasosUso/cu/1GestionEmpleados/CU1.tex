@@ -1,0 +1,30 @@
+\begin{UseCase}{CU1.1}{Registro de personal}{
+	El presente caso de uso tiene como proposito general describir el comportamiento y funcionamiento del sistema para el registro de personal, en el cual el jefe de biblioteca será capaz de registrar los datos del personal como su nombre y apellidos , su cedula profesional,teléfono,Email,contraseña y el rol que desempeñará en la biblioteca.
+}
+		\UCitem{Versión}{0.2}
+		\UCitem{Actor}{Jefe de biblioteca.}
+		\UCitem{Propósito}{El jefe de biblioteca será capaz de registrar en la base los datos básicos del nuevo personal.}
+		\UCitem{Entradas}{Se registra la información del personal. Nombre completo, apellido paterno, apellido materno, teléfono, cedula profesional, contraseña y rol a desempeñar}
+		\UCitem{Salidas}{\MSGref{MSG1.1}{Se registró exitosamente}, \MSGref{MSG1.2}{ERROR. Registro ya existente}}
+		\UCitem{Precondiciones}{ 
+			N/A
+		}
+		\UCitem{Postcondiciones}{El nuevo personal podrá integrarse a las actividades de la biblioteca.}
+		\UCitem{Autor}{Guarneros Santana Víctor Hugo.}
+	\end{UseCase}
+	%-------------------------------------- COMIENZA descripción Trayectoria Crear
+	\begin{UCtrayectoria}{Registrar personal}
+		\UCpaso[\UCactor] Proporciona la información requerida en la pantalla principal \IUref{IU1.1}{Pantalla principal}
+		\UCpaso[\UCactor] Selecciona el botón \IUbutton{Guardar} de la pantalla principal \IUref{IU1.1}{Pantalla principal}
+		\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN1.1}{Duplicidad del personal} \Trayref{A}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG1.1}{Se registró exitosamente}
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.1}{Pantalla principal}
+	\end{UCtrayectoria}
+	%-------------------------------------Trayectoras alternativas
+	\begin{UCtrayectoriaA}{A}{Datos duplicados}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG1.2}{ERROR. Registro ya existente}
+			\UCpaso[\UCactor] Ingresa nuevamente los datos.
+			\UCpaso[\UCsist] Verifica regla de negocio \BRref{RN1.1}{Duplicidad de personal} y registra el nuevo personal, \Trayref{A}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG1.1}{Se registró exitosamente}
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.1}{Pantalla principal}
+	\end{UCtrayectoriaA}
