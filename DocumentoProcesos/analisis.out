@@ -63,103 +63,113 @@
 \BOOKMARK [2][-]{subsection.1.16.1}{Resumen}{section.1.16}% 63
 \BOOKMARK [2][-]{subsection.1.16.2}{Elementos del proceso}{section.1.16}% 64
 \BOOKMARK [2][-]{subsection.1.16.3}{Descripci\363n de Tareas}{section.1.16}% 65
-\BOOKMARK [1][-]{section.1.17}{P5.1 Gestion de credenciales}{chapter.1}% 66
+\BOOKMARK [1][-]{section.1.17}{P4.5 Macro Proceso PGU}{chapter.1}% 66
 \BOOKMARK [2][-]{subsection.1.17.1}{Resumen}{section.1.17}% 67
 \BOOKMARK [2][-]{subsection.1.17.2}{Elementos del proceso}{section.1.17}% 68
 \BOOKMARK [2][-]{subsection.1.17.3}{Descripci\363n de Tareas}{section.1.17}% 69
-\BOOKMARK [1][-]{section.1.18}{P5.2 Solicitud de renovaci\363n de credencial}{chapter.1}% 70
+\BOOKMARK [1][-]{section.1.18}{P5.1 Gestion de credenciales}{chapter.1}% 70
 \BOOKMARK [2][-]{subsection.1.18.1}{Resumen}{section.1.18}% 71
 \BOOKMARK [2][-]{subsection.1.18.2}{Elementos del proceso}{section.1.18}% 72
 \BOOKMARK [2][-]{subsection.1.18.3}{Descripci\363n de Tareas}{section.1.18}% 73
-\BOOKMARK [1][-]{section.1.19}{P5.3 Solicitud de renovaci\363n de credencial}{chapter.1}% 74
+\BOOKMARK [1][-]{section.1.19}{P5.2 Solicitud de renovaci\363n de credencial}{chapter.1}% 74
 \BOOKMARK [2][-]{subsection.1.19.1}{Resumen}{section.1.19}% 75
 \BOOKMARK [2][-]{subsection.1.19.2}{Elementos del proceso}{section.1.19}% 76
 \BOOKMARK [2][-]{subsection.1.19.3}{Descripci\363n de Tareas}{section.1.19}% 77
-\BOOKMARK [0][-]{chapter.2}{Actores del sistema}{}% 78
-\BOOKMARK [0][-]{appendix.Alph1}{Mensajes}{}% 79
-\BOOKMARK [1][-]{subsection.Alph1.0.1}{MSJ1.1 Operaci\363n Exitosa }{appendix.Alph1}% 80
-\BOOKMARK [2][-]{subsection.Alph1.0.2}{MSJ1.2 Hay empleados a modificar }{subsection.Alph1.0.1}% 81
-\BOOKMARK [2][-]{subsection.Alph1.0.3}{MSJ1.3 Informacion incorrecta }{subsection.Alph1.0.1}% 82
-\BOOKMARK [2][-]{subsection.Alph1.0.4}{MSJ1.4 Modificacion Exitosa }{subsection.Alph1.0.1}% 83
-\BOOKMARK [2][-]{subsection.Alph1.0.5}{MSJ1.5 Eliminacion Exitosa }{subsection.Alph1.0.1}% 84
-\BOOKMARK [2][-]{subsection.Alph1.0.6}{MSJ3.1 Error al conectar en la BD }{subsection.Alph1.0.1}% 85
-\BOOKMARK [2][-]{subsection.Alph1.0.7}{MSJ3.2 Lector Inexistente }{subsection.Alph1.0.1}% 86
-\BOOKMARK [2][-]{subsection.Alph1.0.8}{MSJ3.3 Pr\351stamo Exitoso }{subsection.Alph1.0.1}% 87
-\BOOKMARK [2][-]{subsection.Alph1.0.9}{MSJ3.4 Devoluci\363n Exitosa }{subsection.Alph1.0.1}% 88
-\BOOKMARK [2][-]{subsection.Alph1.0.10}{MSJ3.5 Usuario con Multas }{subsection.Alph1.0.1}% 89
-\BOOKMARK [2][-]{subsection.Alph1.0.11}{MSJ3.6 Usuario con Devoluciones Atrasadas }{subsection.Alph1.0.1}% 90
-\BOOKMARK [2][-]{subsection.Alph1.0.12}{MSJ3.7 Campos Vac\355os }{subsection.Alph1.0.1}% 91
-\BOOKMARK [2][-]{subsection.Alph1.0.13}{MSJ3.8 Biblioteca Inexistente }{subsection.Alph1.0.1}% 92
-\BOOKMARK [2][-]{subsection.Alph1.0.14}{MSJ3.9 B\372squeda Satisfactoria }{subsection.Alph1.0.1}% 93
-\BOOKMARK [2][-]{subsection.Alph1.0.15}{MSJ3.10 Datos Err\363neos }{subsection.Alph1.0.1}% 94
-\BOOKMARK [2][-]{subsection.Alph1.0.16}{MSJ3.11 Generaci\363n de multa exitosa }{subsection.Alph1.0.1}% 95
-\BOOKMARK [2][-]{subsection.Alph1.0.17}{MSJ3.12 Pago de multa }{subsection.Alph1.0.1}% 96
-\BOOKMARK [2][-]{subsection.Alph1.0.18}{MSJ3.13 Impresi\363n de Formato Interbibliotecario }{subsection.Alph1.0.1}% 97
-\BOOKMARK [2][-]{subsection.Alph1.0.19}{MSJ3.14 Limite de pr\351stamos alcanzado }{subsection.Alph1.0.1}% 98
-\BOOKMARK [2][-]{subsection.Alph1.0.20}{MSJ3.15 Libro Inexistente }{subsection.Alph1.0.1}% 99
-\BOOKMARK [2][-]{subsection.Alph1.0.21}{MSJ4.1 Lector no registrado }{subsection.Alph1.0.1}% 100
-\BOOKMARK [2][-]{subsection.Alph1.0.22}{MSJ4.2 Alumno dado de baja }{subsection.Alph1.0.1}% 101
-\BOOKMARK [2][-]{subsection.Alph1.0.23}{MSJ4.3 Tiene Adeudos pendientes }{subsection.Alph1.0.1}% 102
-\BOOKMARK [2][-]{subsection.Alph1.0.24}{MSJ4.4 Tiene Multas pendientes }{subsection.Alph1.0.1}% 103
-\BOOKMARK [2][-]{subsection.Alph1.0.25}{MSJ4.5 Operaci\363n Exitosa }{subsection.Alph1.0.1}% 104
-\BOOKMARK [2][-]{subsection.Alph1.0.26}{MSJ4.6 El lector aun no tiene historial }{subsection.Alph1.0.1}% 105
-\BOOKMARK [2][-]{subsection.Alph1.0.27}{MSJ4.7 Inscribete}{subsection.Alph1.0.1}% 106
-\BOOKMARK [2][-]{subsection.Alph1.0.28}{MSJ5.1 Env\355a formato de datos FN1 }{subsection.Alph1.0.1}% 107
-\BOOKMARK [2][-]{subsection.Alph1.0.29}{MSJ5.2 Notifica error en el formato de datos FN1 }{subsection.Alph1.0.1}% 108
-\BOOKMARK [2][-]{subsection.Alph1.0.30}{MSJ5.3 Env\355a formato de datos corregido FN1 }{subsection.Alph1.0.1}% 109
-\BOOKMARK [2][-]{subsection.Alph1.0.31}{MSJ5.4 Env\355a solicitud de reposicion con el formato de datos FN1 }{subsection.Alph1.0.1}% 110
-\BOOKMARK [2][-]{subsection.Alph1.0.32}{MSJ5.5 Pide al usuario los datos a modificar }{subsection.Alph1.0.1}% 111
-\BOOKMARK [2][-]{subsection.Alph1.0.33}{MSJ5.6 Env\355a los datos a actualizar }{subsection.Alph1.0.1}% 112
-\BOOKMARK [2][-]{subsection.Alph1.0.34}{MSJ5.7 Env\355a formato de datos correspondiente }{subsection.Alph1.0.1}% 113
-\BOOKMARK [2][-]{subsection.Alph1.0.35}{MSJ5.8 Env\355a factura con el pago de los formatos correspondientes }{subsection.Alph1.0.1}% 114
-\BOOKMARK [2][-]{subsection.Alph1.0.36}{MSJ5.9 Solicita renovaci\363n de credencial con formato FN1 }{subsection.Alph1.0.1}% 115
-\BOOKMARK [2][-]{subsection.Alph1.0.37}{MSJ5.10 Notificaci\363n de \351xito en la renovaci\363n }{subsection.Alph1.0.1}% 116
-\BOOKMARK [2][-]{subsection.Alph1.0.38}{MSJ5.11 Solicita dar de baja a usuario de la biblioteca }{subsection.Alph1.0.1}% 117
-\BOOKMARK [2][-]{subsection.Alph1.0.39}{MSJ5.12 Alerta sobre la suspensi\363n de la credencial }{subsection.Alph1.0.1}% 118
-\BOOKMARK [2][-]{subsection.Alph1.0.40}{MSJ5.13 Solicita baja de credencial }{subsection.Alph1.0.1}% 119
-\BOOKMARK [2][-]{subsection.Alph1.0.41}{MSJ5.14 Solicita dar de baja una credencial de un usuario }{subsection.Alph1.0.1}% 120
-\BOOKMARK [2][-]{subsection.Alph1.0.42}{MSJ5.15 Reporta credencial con una identificaci\363n oficial }{subsection.Alph1.0.1}% 121
-\BOOKMARK [2][-]{subsection.Alph1.0.43}{MSJ5.16 Solicita dar de alta una credencial de un usuario }{subsection.Alph1.0.1}% 122
-\BOOKMARK [0][-]{appendix.Alph2}{Formularios}{}% 123
-\BOOKMARK [1][-]{subsection.Alph2.0.1}{F4.1 Dar de alta Lector }{appendix.Alph2}% 124
-\BOOKMARK [2][-]{subsection.Alph2.0.2}{F1.1 Registrar Personal }{subsection.Alph2.0.1}% 125
-\BOOKMARK [2][-]{subsection.Alph2.0.3}{F1.2 Modificar Personal }{subsection.Alph2.0.1}% 126
-\BOOKMARK [2][-]{subsection.Alph2.0.4}{F4.2 Actualizar Lector }{subsection.Alph2.0.1}% 127
-\BOOKMARK [0][-]{appendix.Alph3}{Condiciones}{}% 128
-\BOOKMARK [1][-]{subsection.Alph3.0.1}{C1.1 Autorizacion de registro}{appendix.Alph3}% 129
-\BOOKMARK [2][-]{subsection.Alph3.0.2}{C1.2 Duplicidad de personal}{subsection.Alph3.0.1}% 130
-\BOOKMARK [2][-]{subsection.Alph3.0.3}{C1.3 Autorizacion de Modificacion}{subsection.Alph3.0.1}% 131
-\BOOKMARK [2][-]{subsection.Alph3.0.4}{C1.4 Autorizacion de Eliminacion}{subsection.Alph3.0.1}% 132
-\BOOKMARK [2][-]{subsection.Alph3.0.5}{C3.1 Lector acreedor a Prestamo a Domicilio}{subsection.Alph3.0.1}% 133
-\BOOKMARK [2][-]{subsection.Alph3.0.6}{C3.2 Lector con Multas}{subsection.Alph3.0.1}% 134
-\BOOKMARK [2][-]{subsection.Alph3.0.7}{C3.3 Devoluciones Atrasadas}{subsection.Alph3.0.1}% 135
-\BOOKMARK [2][-]{subsection.Alph3.0.8}{C3.4 Credencial Vigente}{subsection.Alph3.0.1}% 136
-\BOOKMARK [2][-]{subsection.Alph3.0.9}{C3.5 Duraci\363n del Pr\351stamo}{subsection.Alph3.0.1}% 137
-\BOOKMARK [2][-]{subsection.Alph3.0.10}{C3.6 Numero de Prestamos}{subsection.Alph3.0.1}% 138
-\BOOKMARK [2][-]{subsection.Alph3.0.11}{C3.7 Pr\351stamo de TT}{subsection.Alph3.0.1}% 139
-\BOOKMARK [2][-]{subsection.Alph3.0.12}{C3.8 Limite de Prestamo Alcanzado}{subsection.Alph3.0.1}% 140
-\BOOKMARK [2][-]{subsection.Alph3.0.13}{C3.9 Disponibilidad de Libro}{subsection.Alph3.0.1}% 141
-\BOOKMARK [2][-]{subsection.Alph3.0.14}{C3.10 N\372mero de Ejemplares}{subsection.Alph3.0.1}% 142
-\BOOKMARK [2][-]{subsection.Alph3.0.15}{C3.11 Observaciones de Material}{subsection.Alph3.0.1}% 143
-\BOOKMARK [2][-]{subsection.Alph3.0.16}{C3.12 Registro de Pr\351stamo}{subsection.Alph3.0.1}% 144
-\BOOKMARK [2][-]{subsection.Alph3.0.17}{C3.13 Llenado formulario de Pr\351stamo Interbibliotecario}{subsection.Alph3.0.1}% 145
-\BOOKMARK [2][-]{subsection.Alph3.0.18}{C3.14 Formato Interbibliotecario}{subsection.Alph3.0.1}% 146
-\BOOKMARK [2][-]{subsection.Alph3.0.19}{C3.15 Convenio interbibliotecario}{subsection.Alph3.0.1}% 147
-\BOOKMARK [2][-]{subsection.Alph3.0.20}{C3.16 Pr\351stamo a Lector Externo}{subsection.Alph3.0.1}% 148
-\BOOKMARK [2][-]{subsection.Alph3.0.21}{C3.17 Limite de Pr\351stamos Interbibliotecarios a Lector}{subsection.Alph3.0.1}% 149
-\BOOKMARK [2][-]{subsection.Alph3.0.22}{C3.18 Limite de Pr\351stamo Interbibliotecario por documento}{subsection.Alph3.0.1}% 150
-\BOOKMARK [2][-]{subsection.Alph3.0.23}{C3.19 Registro Devoluci\363n de Material}{subsection.Alph3.0.1}% 151
-\BOOKMARK [2][-]{subsection.Alph3.0.24}{C3.20 Estado Fisico del Material}{subsection.Alph3.0.1}% 152
-\BOOKMARK [2][-]{subsection.Alph3.0.25}{C3.21 P\351rdida de Material}{subsection.Alph3.0.1}% 153
-\BOOKMARK [2][-]{subsection.Alph3.0.26}{C3.22 Devoluci\363n a destiempo de libros y M. Audiovisual}{subsection.Alph3.0.1}% 154
-\BOOKMARK [2][-]{subsection.Alph3.0.27}{C3.23 Devoluci\363n a destiempo de Material de TT's}{subsection.Alph3.0.1}% 155
-\BOOKMARK [2][-]{subsection.Alph3.0.28}{C3.24 ID Multas}{subsection.Alph3.0.1}% 156
-\BOOKMARK [2][-]{subsection.Alph3.0.29}{C3.25 Multa Pagada}{subsection.Alph3.0.1}% 157
-\BOOKMARK [2][-]{subsection.Alph3.0.30}{C3.26 Cancelar Multa}{subsection.Alph3.0.1}% 158
-\BOOKMARK [2][-]{subsection.Alph3.0.31}{C3.27 Consulta de Pr\351stamo Internos e Interbibliotecarios}{subsection.Alph3.0.1}% 159
-\BOOKMARK [2][-]{subsection.Alph3.0.32}{C3.28 Datos de la Consulta}{subsection.Alph3.0.1}% 160
-\BOOKMARK [2][-]{subsection.Alph3.0.33}{C5.1 Cobro por reposici\363n de credencial}{subsection.Alph3.0.1}% 161
-\BOOKMARK [2][-]{subsection.Alph3.0.34}{C5.2 Verificar identidad}{subsection.Alph3.0.1}% 162
-\BOOKMARK [2][-]{subsection.Alph3.0.35}{C5.3 D\355as de tr\341mite}{subsection.Alph3.0.1}% 163
-\BOOKMARK [2][-]{subsection.Alph3.0.36}{C5.4 Horario de atenci\363n del tr\341mite}{subsection.Alph3.0.1}% 164
-\BOOKMARK [2][-]{subsection.Alph3.0.37}{C5.5 Meses de tramite}{subsection.Alph3.0.1}% 165
+\BOOKMARK [1][-]{section.1.20}{P5.3 Solicitud de renovaci\363n de credencial}{chapter.1}% 78
+\BOOKMARK [2][-]{subsection.1.20.1}{Resumen}{section.1.20}% 79
+\BOOKMARK [2][-]{subsection.1.20.2}{Elementos del proceso}{section.1.20}% 80
+\BOOKMARK [2][-]{subsection.1.20.3}{Descripci\363n de Tareas}{section.1.20}% 81
+\BOOKMARK [0][-]{chapter.2}{Actores del sistema}{}% 82
+\BOOKMARK [0][-]{appendix.Alph1}{Mensajes}{}% 83
+\BOOKMARK [1][-]{subsection.Alph1.0.4}{MSJ1.1 Operaci\363n Exitosa }{appendix.Alph1}% 84
+\BOOKMARK [2][-]{subsection.Alph1.0.5}{MSJ1.2 Hay empleados a modificar }{subsection.Alph1.0.4}% 85
+\BOOKMARK [2][-]{subsection.Alph1.0.6}{MSJ1.3 Informacion incorrecta }{subsection.Alph1.0.4}% 86
+\BOOKMARK [2][-]{subsection.Alph1.0.7}{MSJ1.4 Modificacion Exitosa }{subsection.Alph1.0.4}% 87
+\BOOKMARK [2][-]{subsection.Alph1.0.8}{MSJ1.5 Eliminacion Exitosa }{subsection.Alph1.0.4}% 88
+\BOOKMARK [2][-]{subsection.Alph1.0.9}{MSJ3.1 Error al conectar en la BD }{subsection.Alph1.0.4}% 89
+\BOOKMARK [2][-]{subsection.Alph1.0.10}{MSJ3.2 Lector Inexistente }{subsection.Alph1.0.4}% 90
+\BOOKMARK [2][-]{subsection.Alph1.0.11}{MSJ3.3 Pr\351stamo Exitoso }{subsection.Alph1.0.4}% 91
+\BOOKMARK [2][-]{subsection.Alph1.0.12}{MSJ3.4 Devoluci\363n Exitosa }{subsection.Alph1.0.4}% 92
+\BOOKMARK [2][-]{subsection.Alph1.0.13}{MSJ3.5 Usuario con Multas }{subsection.Alph1.0.4}% 93
+\BOOKMARK [2][-]{subsection.Alph1.0.14}{MSJ3.6 Usuario con Devoluciones Atrasadas }{subsection.Alph1.0.4}% 94
+\BOOKMARK [2][-]{subsection.Alph1.0.15}{MSJ3.7 Campos Vac\355os }{subsection.Alph1.0.4}% 95
+\BOOKMARK [2][-]{subsection.Alph1.0.16}{MSJ3.8 Biblioteca Inexistente }{subsection.Alph1.0.4}% 96
+\BOOKMARK [2][-]{subsection.Alph1.0.17}{MSJ3.9 B\372squeda Satisfactoria }{subsection.Alph1.0.4}% 97
+\BOOKMARK [2][-]{subsection.Alph1.0.18}{MSJ3.10 Datos Err\363neos }{subsection.Alph1.0.4}% 98
+\BOOKMARK [2][-]{subsection.Alph1.0.19}{MSJ3.11 Generaci\363n de multa exitosa }{subsection.Alph1.0.4}% 99
+\BOOKMARK [2][-]{subsection.Alph1.0.20}{MSJ3.12 Pago de multa }{subsection.Alph1.0.4}% 100
+\BOOKMARK [2][-]{subsection.Alph1.0.21}{MSJ3.13 Impresi\363n de Formato Interbibliotecario }{subsection.Alph1.0.4}% 101
+\BOOKMARK [2][-]{subsection.Alph1.0.22}{MSJ3.14 Limite de pr\351stamos alcanzado }{subsection.Alph1.0.4}% 102
+\BOOKMARK [2][-]{subsection.Alph1.0.23}{MSJ3.15 Libro Inexistente }{subsection.Alph1.0.4}% 103
+\BOOKMARK [2][-]{subsection.Alph1.0.24}{MSJ4.1 Lector no registrado }{subsection.Alph1.0.4}% 104
+\BOOKMARK [2][-]{subsection.Alph1.0.25}{MSJ4.2 Alumno dado de baja }{subsection.Alph1.0.4}% 105
+\BOOKMARK [2][-]{subsection.Alph1.0.26}{MSJ4.3 Tiene Adeudos pendientes }{subsection.Alph1.0.4}% 106
+\BOOKMARK [2][-]{subsection.Alph1.0.27}{MSJ4.4 Tiene Multas pendientes }{subsection.Alph1.0.4}% 107
+\BOOKMARK [2][-]{subsection.Alph1.0.28}{MSJ4.5 Operaci\363n Exitosa }{subsection.Alph1.0.4}% 108
+\BOOKMARK [2][-]{subsection.Alph1.0.29}{MSJ4.6 El lector aun no tiene historial }{subsection.Alph1.0.4}% 109
+\BOOKMARK [2][-]{subsection.Alph1.0.30}{MSJ4.7 Inscribete}{subsection.Alph1.0.4}% 110
+\BOOKMARK [2][-]{subsection.Alph1.0.31}{MSJ5.1 Env\355a formato de datos FN1 }{subsection.Alph1.0.4}% 111
+\BOOKMARK [2][-]{subsection.Alph1.0.32}{MSJ5.2 Notifica error en el formato de datos FN1 }{subsection.Alph1.0.4}% 112
+\BOOKMARK [2][-]{subsection.Alph1.0.33}{MSJ5.3 Env\355a formato de datos corregido FN1 }{subsection.Alph1.0.4}% 113
+\BOOKMARK [2][-]{subsection.Alph1.0.34}{MSJ5.4 Env\355a solicitud de reposicion con el formato de datos FN1 }{subsection.Alph1.0.4}% 114
+\BOOKMARK [2][-]{subsection.Alph1.0.35}{MSJ5.5 Pide al usuario los datos a modificar }{subsection.Alph1.0.4}% 115
+\BOOKMARK [2][-]{subsection.Alph1.0.36}{MSJ5.6 Env\355a los datos a actualizar }{subsection.Alph1.0.4}% 116
+\BOOKMARK [2][-]{subsection.Alph1.0.37}{MSJ5.7 Env\355a formato de datos correspondiente }{subsection.Alph1.0.4}% 117
+\BOOKMARK [2][-]{subsection.Alph1.0.38}{MSJ5.8 Env\355a factura con el pago de los formatos correspondientes }{subsection.Alph1.0.4}% 118
+\BOOKMARK [2][-]{subsection.Alph1.0.39}{MSJ5.9 Solicita renovaci\363n de credencial con formato FN1 }{subsection.Alph1.0.4}% 119
+\BOOKMARK [2][-]{subsection.Alph1.0.40}{MSJ5.10 Notificaci\363n de \351xito en la renovaci\363n }{subsection.Alph1.0.4}% 120
+\BOOKMARK [2][-]{subsection.Alph1.0.41}{MSJ5.11 Solicita dar de baja a usuario de la biblioteca }{subsection.Alph1.0.4}% 121
+\BOOKMARK [2][-]{subsection.Alph1.0.42}{MSJ5.12 Alerta sobre la suspensi\363n de la credencial }{subsection.Alph1.0.4}% 122
+\BOOKMARK [2][-]{subsection.Alph1.0.43}{MSJ5.13 Solicita baja de credencial }{subsection.Alph1.0.4}% 123
+\BOOKMARK [2][-]{subsection.Alph1.0.44}{MSJ5.14 Solicita dar de baja una credencial de un usuario }{subsection.Alph1.0.4}% 124
+\BOOKMARK [2][-]{subsection.Alph1.0.45}{MSJ5.15 Reporta credencial con una identificaci\363n oficial }{subsection.Alph1.0.4}% 125
+\BOOKMARK [2][-]{subsection.Alph1.0.46}{MSJ5.16 Solicita dar de alta una credencial de un usuario }{subsection.Alph1.0.4}% 126
+\BOOKMARK [0][-]{appendix.Alph2}{Formularios}{}% 127
+\BOOKMARK [1][-]{subsection.Alph2.0.47}{F4.1 Dar de alta Lector }{appendix.Alph2}% 128
+\BOOKMARK [2][-]{subsection.Alph2.0.48}{F1.1 Registrar Personal }{subsection.Alph2.0.47}% 129
+\BOOKMARK [2][-]{subsection.Alph2.0.49}{F1.2 Modificar Personal }{subsection.Alph2.0.47}% 130
+\BOOKMARK [2][-]{subsection.Alph2.0.50}{F4.2 Actualizar Lector }{subsection.Alph2.0.47}% 131
+\BOOKMARK [0][-]{appendix.Alph3}{Condiciones}{}% 132
+\BOOKMARK [1][-]{subsection.Alph3.0.51}{C1.1 Autorizacion de registro}{appendix.Alph3}% 133
+\BOOKMARK [2][-]{subsection.Alph3.0.52}{C1.2 Duplicidad de personal}{subsection.Alph3.0.51}% 134
+\BOOKMARK [2][-]{subsection.Alph3.0.53}{C1.3 Autorizacion de Modificacion}{subsection.Alph3.0.51}% 135
+\BOOKMARK [2][-]{subsection.Alph3.0.54}{C1.4 Autorizacion de Eliminacion}{subsection.Alph3.0.51}% 136
+\BOOKMARK [2][-]{subsection.Alph3.0.55}{C3.1 Lector acreedor a Prestamo a Domicilio}{subsection.Alph3.0.51}% 137
+\BOOKMARK [2][-]{subsection.Alph3.0.56}{C3.2 Lector con Multas}{subsection.Alph3.0.51}% 138
+\BOOKMARK [2][-]{subsection.Alph3.0.57}{C3.3 Devoluciones Atrasadas}{subsection.Alph3.0.51}% 139
+\BOOKMARK [2][-]{subsection.Alph3.0.58}{C3.4 Credencial Vigente}{subsection.Alph3.0.51}% 140
+\BOOKMARK [2][-]{subsection.Alph3.0.59}{C3.5 Duraci\363n del Pr\351stamo}{subsection.Alph3.0.51}% 141
+\BOOKMARK [2][-]{subsection.Alph3.0.60}{C3.6 Numero de Prestamos}{subsection.Alph3.0.51}% 142
+\BOOKMARK [2][-]{subsection.Alph3.0.61}{C3.7 Pr\351stamo de TT}{subsection.Alph3.0.51}% 143
+\BOOKMARK [2][-]{subsection.Alph3.0.62}{C3.8 Limite de Prestamo Alcanzado}{subsection.Alph3.0.51}% 144
+\BOOKMARK [2][-]{subsection.Alph3.0.63}{C3.9 Disponibilidad de Libro}{subsection.Alph3.0.51}% 145
+\BOOKMARK [2][-]{subsection.Alph3.0.64}{C3.10 N\372mero de Ejemplares}{subsection.Alph3.0.51}% 146
+\BOOKMARK [2][-]{subsection.Alph3.0.65}{C3.11 Observaciones de Material}{subsection.Alph3.0.51}% 147
+\BOOKMARK [2][-]{subsection.Alph3.0.66}{C3.12 Registro de Pr\351stamo}{subsection.Alph3.0.51}% 148
+\BOOKMARK [2][-]{subsection.Alph3.0.67}{C3.13 Llenado formulario de Pr\351stamo Interbibliotecario}{subsection.Alph3.0.51}% 149
+\BOOKMARK [2][-]{subsection.Alph3.0.68}{C3.14 Formato Interbibliotecario}{subsection.Alph3.0.51}% 150
+\BOOKMARK [2][-]{subsection.Alph3.0.69}{C3.15 Convenio interbibliotecario}{subsection.Alph3.0.51}% 151
+\BOOKMARK [2][-]{subsection.Alph3.0.70}{C3.16 Pr\351stamo a Lector Externo}{subsection.Alph3.0.51}% 152
+\BOOKMARK [2][-]{subsection.Alph3.0.71}{C3.17 Limite de Pr\351stamos Interbibliotecarios a Lector}{subsection.Alph3.0.51}% 153
+\BOOKMARK [2][-]{subsection.Alph3.0.72}{C3.18 Limite de Pr\351stamo Interbibliotecario por documento}{subsection.Alph3.0.51}% 154
+\BOOKMARK [2][-]{subsection.Alph3.0.73}{C3.19 Registro Devoluci\363n de Material}{subsection.Alph3.0.51}% 155
+\BOOKMARK [2][-]{subsection.Alph3.0.74}{C3.20 Estado Fisico del Material}{subsection.Alph3.0.51}% 156
+\BOOKMARK [2][-]{subsection.Alph3.0.75}{C3.21 P\351rdida de Material}{subsection.Alph3.0.51}% 157
+\BOOKMARK [2][-]{subsection.Alph3.0.76}{C3.22 Devoluci\363n a destiempo de libros y M. Audiovisual}{subsection.Alph3.0.51}% 158
+\BOOKMARK [2][-]{subsection.Alph3.0.77}{C3.23 Devoluci\363n a destiempo de Material de TT's}{subsection.Alph3.0.51}% 159
+\BOOKMARK [2][-]{subsection.Alph3.0.78}{C3.24 ID Multas}{subsection.Alph3.0.51}% 160
+\BOOKMARK [2][-]{subsection.Alph3.0.79}{C3.25 Multa Pagada}{subsection.Alph3.0.51}% 161
+\BOOKMARK [2][-]{subsection.Alph3.0.80}{C3.26 Cancelar Multa}{subsection.Alph3.0.51}% 162
+\BOOKMARK [2][-]{subsection.Alph3.0.81}{C3.27 Consulta de Pr\351stamo Internos e Interbibliotecarios}{subsection.Alph3.0.51}% 163
+\BOOKMARK [2][-]{subsection.Alph3.0.82}{C3.28 Datos de la Consulta}{subsection.Alph3.0.51}% 164
+\BOOKMARK [2][-]{subsection.Alph3.0.83}{C4.1 Lector inscrito en el instituto}{subsection.Alph3.0.51}% 165
+\BOOKMARK [2][-]{subsection.Alph3.0.84}{C4.2 Lector registrado en la Biblioteca}{subsection.Alph3.0.51}% 166
+\BOOKMARK [2][-]{subsection.Alph3.0.85}{C4.3 Formato llenado correctamente}{subsection.Alph3.0.51}% 167
+\BOOKMARK [2][-]{subsection.Alph3.0.86}{C4.4 Identificaci\363n del Lector}{subsection.Alph3.0.51}% 168
+\BOOKMARK [2][-]{subsection.Alph3.0.87}{C4.5 El Lector tiene multas}{subsection.Alph3.0.51}% 169
+\BOOKMARK [2][-]{subsection.Alph3.0.88}{C4.6 El Lector tiene adeudos}{subsection.Alph3.0.51}% 170
+\BOOKMARK [2][-]{subsection.Alph3.0.89}{C5.1 Cobro por reposici\363n de credencial}{subsection.Alph3.0.51}% 171
+\BOOKMARK [2][-]{subsection.Alph3.0.90}{C5.2 Verificar identidad}{subsection.Alph3.0.51}% 172
+\BOOKMARK [2][-]{subsection.Alph3.0.91}{C5.3 D\355as de tr\341mite}{subsection.Alph3.0.51}% 173
+\BOOKMARK [2][-]{subsection.Alph3.0.92}{C5.4 Horario de atenci\363n del tr\341mite}{subsection.Alph3.0.51}% 174
+\BOOKMARK [2][-]{subsection.Alph3.0.93}{C5.5 Meses de tramite}{subsection.Alph3.0.51}% 175
