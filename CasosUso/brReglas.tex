@@ -10,6 +10,8 @@
 \end{BussinesRule}
 
 %---------------------------------------------------------
+%Reglas de Negocio Celula 1
+%---------------------------------------------------------
 
 \begin{BussinesRule}{R1.2}{Formato general para el registro de un empleado.} 
 
@@ -140,6 +142,8 @@
 	\BRitem[Nivel:] Obligatorio.
 \end{BussinesRule}
 
+%---------------------------------------------------------
+%Reglas de Negocio Celula 3
 %---------------------------------------------------------
 
 \begin{BussinesRule}{RN3.1}{Lector acreedor a Prestamo a Domicilio} 
@@ -293,6 +297,9 @@
 	\BRitem[Tipo:] Restricción (validación).
 	\BRitem[Descripción:]Para solicitar un préstamo interbibliotecario el usuario debe estar en 5 semestre o superior.
 \end{BussinesRule}
+
+%---------------------------------------------------------
+%Reglas de Negocio Celula 4
 %---------------------------------------------------------
 
 \begin{BussinesRule}{RN4.1}{Campos no nulos.} 
@@ -504,16 +511,16 @@ Ejemplo:\\
 
 \begin{BussinesRule}{RN4.14}{Lector no registrado en el sistema} 
 	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
-	\BRitem[Descripción:] Verificar que el lector no este dado de alta el sistema. Prop+osito evitar duplicidad de lectores en el sistema.
+	\BRitem[Descripción:] Verificar que el lector no este dado de alta el sistema. Propósito evitar duplicidad de lectores en el sistema.
 	\BRitem[Tipo:] Restricción (validación).
 	\BRitem[Nivel:] Obligatorio.
 \end{BussinesRule}
 
 %---------------------------------------------------------
 
-\begin{BussinesRule}{RN4.15}{Lector no registrado en el sistema} 
+\begin{BussinesRule}{RN4.15}{Constraseña del bibliotecario} 
 	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
-	\BRitem[Descripción:] Verificar que el lector no este dado de alta el sistema. Propósito evitar duplicidad de lectores en el sistema.
+	\BRitem[Descripción:] Verificar que la contraseña ingresada coincida con la del bibliotecario para poder eliminar al lector del sistema. Propósito evitar un mal manejo a la hora dar de baja a los lectores del sistema. 	
 	\BRitem[Tipo:] Restricción (validación).
 	\BRitem[Nivel:] Obligatorio.
 \end{BussinesRule}
@@ -556,18 +563,18 @@ Ejemplo:\\
 
 %---------------------------------------------------------
 
-\begin{BussinesRule}{RN4.20}{El lector tiene multas} 
+\begin{BussinesRule}{RN4.20}{El lector no tiene multas} 
 	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
-	\BRitem[Descripción:] El lector no puede actualizar sus datos hasta que no pague las multas pendientes que tenga.
+	\BRitem[Descripción:] El lector no puede darse de baja del sistema hasta que no pague las multas pendientes que tenga.
 	\BRitem[Tipo:] Restricción (validación).
 	\BRitem[Nivel:] Obligatorio.
 \end{BussinesRule}
 
 %---------------------------------------------------------
 
-\begin{BussinesRule}{RN4.21}{El lector tiene adeudos de material} 
+\begin{BussinesRule}{RN4.21}{El lector no tiene adeudos} 
 	%\BRitem[Autor:] Miguel Ángel Castañeda Sánchez.
-	\BRitem[Descripción:] El lector no puede actualizar sus datos hasta que no entregue el material adeudado que tenga. Con adeudado se refiere a material entregado que no ha sido entregado en su fecha de entrega.
+	\BRitem[Descripción:] El lector no puede darse de baja hasta que no entregue el material adeudado que tenga. Con adeudado se refiere a material que no ha sido entregado en su fecha de entrega.
 	\BRitem[Tipo:] Restricción (validación).
 	\BRitem[Nivel:] Obligatorio.
 \end{BussinesRule}
@@ -590,4 +597,3 @@ Ejemplo:\\
 \end{BussinesRule}
 
 %---------------------------------------------------------
-
