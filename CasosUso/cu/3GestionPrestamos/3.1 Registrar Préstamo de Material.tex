@@ -1,0 +1,53 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU3.1}{Registrar Préstamo de Material}{
+		El Bibliotecario podrá realizar el registro del préstamo en cuestión, con el fin de llevar un control en el inventario de la biblioteca de la ESCOM y corroborar que el usuario es apto para el mismo. Si el estudiante cumple con todos los requisitos, el libro podrá ser entregado para su préstamo.
+	}
+		\UCitem{Versión}{0.3}
+		\UCitem{Actor}{Bibliotecario}
+		\UCitem{Propósito}{Generar el registro del préstamo de material con los datos que se recibieron por parte del usuario}
+		\UCitem{Entradas}{ID Libro}
+		\UCitem{Salidas}{Préstamo del libro con su respectiva fecha de entrega.}
+		\UCitem{Precondiciones}{Acreditar la verificacion del usuario.}
+		\UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Autor}{Vega Camacho Enrique A.}
+		\UCitem{Estatus}{Revisión}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor]1.	Muestra la UIXX
+		\UCpaso[\UCactor]2.	Se ingresa el ID del Material.
+		\UCpaso[\UCactor]3.	Se selecciona de la lista desplegable “Tipo Material” el tipo de material a buscar.
+		\UCpaso[\UCactor]4.	Se presiona el botón “Buscar Material” [Trayectoria A] [Trayectoria B] 
+		\UCpaso[\UCsist]5.	Se muestra el MSJ3.9: Búsqueda Satisfactoria.
+		\UCpaso[\UCactor]6. Se presiona el botón \IUbutton{OK}
+		\UCpaso[\UCactor]7.	Se selecciona el material a registrar. [Trayectoria C]
+		\UCpaso[\UCactor]8.	Pulsar el botón “Registrar”
+		\UCpaso[\UCsist]9.	Se muestra el MSJ3.3: Préstamo Exitoso” confirmando que el préstamo ha sido realizado.
+		\UCpaso[\UCsist]10.	El material registrado aparecerá en la tabla.
+		\UCpaso[\UCactor]11. Se presiona el botón \IUbutton{OK}
+	\end{UCtrayectoria}
+
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+
+
+		\begin{UCtrayectoriaA}{A}{No se realizó una conexión a la base de datos con éxito.}
+			\UCpaso[\UCsist] 1.	Se muestra el MSJ3.1: Error al conectar en la BD. \MSGref{MSJ3.10}{Datos Erróneos.}
+			\UCpaso[\UCactor] 2. Se presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] 3.	Se regresa al punto 2 de la Trayectoria Principal.
+		\end{UCtrayectoriaA}
+%-------------------------------------		
+
+		\begin{UCtrayectoriaA}{B}{No se realizó encontró ningún libro relacionado a los datos de búsqueda ingresados.}
+			\UCpaso[\UCsist] 1.	Se muestra el MSJ3.10: Datos Erróneos. \MSGref{MSJ3.2}{Usuario Inexistente.}
+			\UCpaso[\UCactor] 2. Se presiona el botón \IUbutton{OK}			
+			\UCpaso[\UCsist]3.	Se regresa al punto 1 de la Trayectoria Principal.
+		\end{UCtrayectoriaA}
+%-------------------------------------- 
+		\begin{UCtrayectoriaA}{C}{Se selecciona un libro de forma errónea.}
+			\UCpaso[\UCsist] 1. Seleccionar el libro erróneo dando clic en el botón circular que encuentra en la primera columna de la tabla “Registro de Libros”
+			\UCpaso[\UCactor]2. Pulsar el botón “Remover”.			
+			\UCpaso[\UCsist]6.	Regresa al paso 6 de la Trayectoria Principal.
+		\end{UCtrayectoriaA}
+%-------------------------------------- 
+TERMINA descripción del caso de uso.
