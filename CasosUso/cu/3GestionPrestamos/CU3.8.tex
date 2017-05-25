@@ -1,0 +1,53 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU3.8}{Generar multa}{
+		Generar las multas de las que es acreedor un Usuario por los retardos o el maltrato del material que la Biblioteca puede prestar.
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Bibliotecario}
+		\UCitem{Propósito}{Calcular el monto total de la multa del cual el Lector es acreedor.}
+		\UCitem{Entradas}{Una serie de botones para seleccionar el estado del libro o libros para general la multa
+			\begin{itemize}
+				\item Perdido
+				\item rayado
+				\item mutilado
+				\item manchado
+			\end{itemize}
+		}
+		\UCitem{Salidas}{Una multa.}
+		\UCitem{Precondiciones}{
+			\begin{itemize}
+				\item El Lector es acreedor a una multa
+			\end{itemize}		
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Se guardara la multa asociada al Lector en la BD
+				\item El Lector no podrá pedir prestado más libros hasta que pague las multas pendientes
+			\end{itemize}
+		}
+		\UCitem{Autor}{Rodriguez Cervantes Arturo.}
+		\UCitem{Estatus}{Revisión}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Pulsa el botón \IUbutton{Generar multa} de la pantalla Devolución Interna
+		\UCpaso[\UCsist]Muestra la pantalla \IUref{UI3.8}{General Multa}
+		\UCpaso[\UCactor]Selecciona los botones de acuerdo al estado del libro
+		\UCpaso[\UCactor]Pulsa el botón \IUbutton{Confirmar} [trayectoria A]
+		\UCpaso[\UCsist] Muestra la pantalla \IUref{UI3.8a}{Confirmar Multa} con los datos de la multa
+		\UCpaso[\UCactor] Pulsa el botón \IUbutton{Imprimir}
+		\UCpaso[\UCsist] Imprime el ticket de la multa
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+			
+			
+		\begin{UCtrayectoriaA}{A}{Error al conectar a la base de datos}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ3.1}{Error al conectar a la BD.}
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+TERMINA descripción del caso de uso.
+
+

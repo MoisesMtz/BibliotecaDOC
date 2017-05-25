@@ -1,0 +1,58 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU3.2}{Préstamo Interbibliotecario}{
+		El Bibliotecario podrá genera una solicitud de préstamo interbibliotecario, esto con la finalidad de satisfacer la demanda de libros por parte de los Lectores. Lo hará con los datos del libro que le dio el Lector, imprimirá la solicitud y si todo está bien la sellará y firmará
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Bibliotecario}
+		\UCitem{Propósito}{Generar la solicitud de préstamo interbibliotecario con los datos que recibió el bibliotecario del Lector.}
+		\UCitem{Entradas}{Llenar el formulario que contiene estas opciones:
+			\begin{itemize}
+				\item Titulo del libro
+				\item Autor del libro
+				\item Editorial del libro
+				\item Año del Libro
+				\item Biblioteca a la que solicita	
+			\end{itemize}
+		}
+		\UCitem{Salidas}{Un formato impreso con los datos del préstamo interbibliotecario, firmado y sellado.}
+		\UCitem{Precondiciones}{Ninguna}
+		\UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Autor}{Rodriguez Cervantes Arturo.}
+		\UCitem{Estatus}{Revisión}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Pulsa el botón \IUbutton{Prestamo interbibliotecario} del menú de acción de Gestión de préstamo
+		\UCpaso[\UCsist]Muestra la pantalla \IUref{IU3.2}{Formulario}.
+		\UCpaso[\UCactor]Introduce los datos solicitados en los campos requeridos.
+		\UCpaso[\UCactor]Pulsa el botón \IUbutton{Generar préstamo}.
+		\UCpaso[\UCsist] Verifica la \BRref{RN3.13}{Llenado formulario de préstamo interbibliotecario}.[Trayectoria A]
+		\UCpaso[\UCsist] Verifica la \BRref{RN3.30}{Limite de prestamos interbibliotecarios}.[Trayectoria B]
+		\UCpaso[\UCsist] Verifica la \BRref{RN3.31}{Semestre del Usuario}.[Trayectoria C]
+		\UCpaso[\UCsist] Muestra la pantalla \IUref{IU3.2a}{Formato} con los datos del préstamo
+		\UCpaso[\UCactor]Pulsa el botón \IUbutton{Imprimir}
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Los datos introducidos son erróneos en su formato}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ3.10}{Datos Erróneos.}
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+%-------------------------------------- 
+		\begin{UCtrayectoriaA}{B}{Él Lector tiene registrados 2 préstamos interbibliotecario}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ3.14}{Limite de préstamos alcanzado.}
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+%--------------------------------------
+		\begin{UCtrayectoriaA}{C}{Él Lector no va en 5 semestre o superior}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ3.15}{Lector no va en 5 semestre o superior.}
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+		
+TERMINA descripción del caso de uso.
+
+
