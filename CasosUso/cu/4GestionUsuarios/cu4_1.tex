@@ -1,0 +1,158 @@
+% \IUref{IUAdmSucur}{Bibliotecario}
+% \IUref{IUConsDA}{Registrar Lector}
+% Version 1
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU4.1}{Registrar Lector}{
+		El bibliotecario puede dar de alta a un nuevo lector(alumno,docente) en el sistema, con la finalidad de tener almacenada la información de los lectores que hacen uso de la biblioteca para consulta y control de la misma. El registro se hace introduciendo los datos del nuevo alumno: id(boleta o número de empleado), nombre, CURP, dirección, telefono, correo, contraseña, semestre o departamento.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Estado}{En revisión}
+		\UCitem{Actor}{Bibliotecario.}
+		\UCitem{Propósito}{Almacenar en la base de datos los datos de todos los lectoes de la biblioteca.}
+		\UCitem{Entradas}{id(boleta o número de empleado), Nombre, Primer apellido, Segundo apellido, CURP, dirección, teléfono, email, contraseña, semestre o departamento}
+		\UCitem{Salidas}{
+			
+			\begin{itemize}
+				\item Registro en la base de datos
+				\item Mensaje \MSGref{MSJ4.1}{Se registro exitosamente.},
+				\item Mensaje \MSGref{MSJ4.2}{Error. datos incompletos. Favor de completar todos los campos de entrada.},
+				\item Mensaje \MSGref{MSJ4.3}{Advertencia. Confirma que los datos ingresados sean correctos.},
+				\item Mensaje \MSGref{MSJ4.4}{Error. Registro de lector ya existente en el catálogo.},
+				\item Mensaje \MSGref{MSJ4.5}{Error. Falló al conectarse a la BD.}
+			\end{itemize}
+		}
+		\UCitem{Precondiciones}{
+			\begin{itemize}
+				\item El lector no debe de estar registrado.
+				\item El lector debe de contar con su boleta o número de empleado.
+				\item El lector debe de estar vigente en el instituto.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Nuevo lector registrado en el sistema.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Autor}{Miguel Ángel Castañeda Sánchez.}
+		\UCitem{Revisor}{---}
+	\end{UseCase}
+	
+	
+%%------------Trayectoria Principal-----------------%%		
+	
+	\begin{UCtrayectoria}{Principal}
+	
+		\UCpaso Despliega la \IUref{IU4.2}{Perfil del bibliotecario}.
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Gestión de usuarios}.
+
+		\UCpaso Despliplega el menú de gestión de usuarios. \IUref{IU4.4}{Menú de gestión de usuarios}
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Registrar Docente} ó \IUbutton{Registrar alumno}.
+
+		\UCpaso Despliega la \IUref{IU4.5}{Registrar Alumno} ó \IUref{IU4.7}{Registrar Docente}.
+
+		\UCpaso[\UCactor] Llena todos los campos que son: 
+			\begin{itemize}
+				\item Boleta o No. empleado
+				\item Nombre.
+				\item Primer apellido.
+				\item Segundo apellido.
+				\item CURP.
+				\item Fecha de nacimiento.
+				\item Dirección
+				\item Semestre o Departamento.
+				\item Email.
+				\item Contraseña
+			\end{itemize} 
+		\label{CU4.1FormularioLector}
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Guardar}.\label{CU4.2ConectarBaseDatos}
+
+		\UCpaso Verifica los campos de los datos con base a la \BRref{RN4.1}{Campos no nulos.} \Trayref{A}.
+
+		\UCpaso Válida que los datos ingresados cumplan los formatos con base a las Reglas de Negocio: 
+				
+			\begin{itemize}
+				\item	\BRref{RN4.2}{Formato del número de boleta} 
+				\item	\BRref{RN4.3}{Formato del nombre} 
+				\item	\BRref{RN4.4}{Formato del CURP} 
+				\item	\BRref{RN4.5}{Formato de la fecha} 
+				\item	\BRref{RN4.6}{Formato de la dirección} 
+				\item	\BRref{RN4.7}{Formato del teléfono} 
+				\item	\BRref{RN4.8}{Formato del semestre} 
+				\item	\BRref{RN4.9}{Formato del email}
+				\item	\BRref{RN4.10}{Formato de la contrasseña}
+				\item	\BRref{RN4.12}{Formato del número del empleado}
+				\item	\BRref{RN4.13}{Formato del departamento}
+			\end{itemize} 
+		\Trayref{B}.
+		
+		\UCpaso Se conecta a la base de datos. \Trayref{C}.
+
+		\UCpaso Válida que el lector no halla sido registrado previamente con base a \BRref{RN4.14}{Lector no resgistrado en el sistema} \Trayref{D}.
+
+		\UCpaso El sistema guardará un registro en la bitácora en donde guardará al nuevo empleado.
+
+		\UCpaso Muestra el Mensaje \MSGref{MSJ4.1}{Se registro exitósamente.}
+
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+
+		\UCpaso Redirige a la pantalla \IUref{UI4.6}{Listado de alumnos} ó pantalla \IUref{UI4.6}{Listado de docentes}.
+		
+
+	\end{UCtrayectoria}
+
+
+
+%%------------Trayectorias Alternativas-----------------%%	
+
+%%------------Trayectoria A-----------------%%
+		
+		
+		\begin{UCtrayectoriaA}{A.}{El bibliotecario no ha llenado todos los campos}
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.2}{Error. datos incompletos. Favor de completar todos los campos de entrada.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.1FormularioLector} del \UCref{CU4.1}.
+			
+		\end{UCtrayectoriaA}
+
+
+%%------------Trayectoria B-----------------%%
+		\begin{UCtrayectoriaA}{B.}{El Administrador ha ingresado los datos de manera incorrecta}
+
+			\UCpaso Muestra el Mensaje \item Mensaje \MSGref{MSJ4.3}{Advertencia. Confirma que los datos ingresados sean correctos.},
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.1FormularioLector} del \UCref{CU4.1}.
+
+		\end{UCtrayectoriaA}
+
+%%------------Trayectoria C-----------------%%
+		\begin{UCtrayectoriaA}{C.}{El empleado ya esta registrado}
+
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.4}{Error. Registro de lector ya existente en el catálogo.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.1FormularioLector} del \UCref{CU4.1}.
+
+		\end{UCtrayectoriaA}
+
+%%------------Trayectoria D-----------------%%
+		\begin{UCtrayectoriaA}{D.}{Error al conectar a la base de datos}
+
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.5}{Error. Falló al conectarse a la BD.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.2ConectarBaseDatos} del \UCref{CU4.1}.
+
+		\end{UCtrayectoriaA}		
+
+%-------------------------------------- TERMINA descripción del caso de uso.
+
+
+
+%entder el negocio
+%analisis
+%programar
+
+%entiendes el caso de uso
+%la maquete te hizo logica

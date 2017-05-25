@@ -1,0 +1,130 @@
+% \IUref{IUAdmSucur}{Bibliotecario}
+% \IUref{IUConsDA}{Eliminar Lector}
+% Version 1
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU4.3}{Eliminar Lector}{
+		El bibliotecario puede elimnar al lector(alumno,docente) que no hagan uso del sistema.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Estado}{En revisión}
+		\UCitem{Actor}{Bibliotecario.}
+		\UCitem{Propósito}{Los lectores que ya no usen el sistema pueden darse de baja del sistema bibliotecario.}
+		\UCitem{Entradas}{Contraseña del bibliotecario}
+		\UCitem{Salidas}{
+			
+			\begin{itemize}
+				\item El registro del lector  se elimina de la base de datos,
+				\item Mensaje \MSGref{MSJ4.5}{Error. Falló al conectarse a la BD.},
+				\item Mensaje \MSGref{MSJ4.7}{Se elimino exitosamente.}
+				\item Mensaje \MSGref{MSJ4.8}{Advertencia. El lector se eliminara del sistema.},
+				\item Mensaje \MSGref{MSJ4.9}{Error. El lector tiene multas pendientes.},
+				\item Mensaje \MSGref{MSJ4.10}{Error. El lector tiene material adeudado.},
+				\item Mensaje \MSGref{MSJ4.11}{Advertencia. Constraseña incorrecta.},
+			\end{itemize}
+		}
+		\UCitem{Precondiciones}{
+			\begin{itemize}
+				\item El lector debe de estar registrado en el sistema.
+				\item El lector no debe tener multas.
+				\item El lector no debe tener devoluciones pendientes.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Lector eliminado en el sistema.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Autor}{Miguel Ángel Castañeda Sánchez.}
+		\UCitem{Revisor}{---}
+	\end{UseCase}
+	
+	
+%%------------Trayectoria Principal-----------------%%		
+	
+	\begin{UCtrayectoria}{Principal}
+	
+		\UCpaso Despliega la \IUref{IU4.2}{Perfil del bibliotecario}.
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Gestión de usuarios}.
+
+		\UCpaso Despliega el menú de gestión de usuarios. \IUref{IU4.4}{Menú de gestión de usuarios}
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Lista de Docentes} ó \IUbutton{Lista de estudiante}.\label{CU4.2ConectarBaseDatos}
+
+		\UCpaso Se conecta a la base de datos. \Trayref{A}.
+
+		\UCpaso Despliega la \IUref{IU4.6}{Listado de estudiantes} ó \IUref{IU4.8}{Lista de docentes}.
+
+		\UCpaso[\UCactor] Elige el lector a eliminar y da click en el \IUbutton{Eliminar}\label{CU4.1EliminarLector}
+
+		\UCpaso Válida que el lector a eliminar cumpla las reglas de negocio: 
+				
+			\begin{itemize}
+				\item	\BRref{RN4.20}{El lector no tiene multas} 
+				\item	\BRref{RN4.21}{El lector no tiene adeudos} 
+
+			\end{itemize} 
+		\Trayref{B}.\Trayref{C}.
+
+
+		\UCpaso Muestra el Mensaje \MSGref{MSJ4.8}{Advertencia. El lector se eliminara del sistema.}\label{CU4.3Contrasena}
+
+		\UCpaso Solicita contraseña del bibliotecario.
+
+		\UCpaso[\UCactor] Ingresa la contraseña y oprime el botón \IUbutton{Aceptar}.
+
+		\UCpaso El sistema valida contraseña con base a la Regla de negocio \BRref{RN4.15}{Contraseña del bibliotecario} \Trayref{D}.
+
+		\UCpaso El sistema modifica el registro del lector.
+
+		\UCpaso Muestra el Mensaje \MSGref{MSJ4.6}{Se elimino exitósamente.}
+
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+
+		\UCpaso Redirige a la pantalla \IUref{UI4.6}{Listado de alumnos} ó pantalla \IUref{UI4.8}{Listado de docentes}.		
+	\end{UCtrayectoria}
+
+
+
+%%------------Trayectorias Alternativas-----------------%%	
+
+
+%%------------Trayectoria A-----------------%%
+		\begin{UCtrayectoriaA}{A.}{Error al conectar a la base de datos}
+
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.5}{Error. Falló al conectarse a la BD.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.2ConectarBaseDatos} del \UCref{CU4.1}.
+
+		\end{UCtrayectoriaA}	
+
+%%------------Trayectoria B-----------------%%
+				
+		\begin{UCtrayectoriaA}{B.}{El lector tiene multas pendientes}
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.9}{Error. El lector tiene multas. Favor de pagar su multa.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.1EliminarLector} del \UCref{CU4.1}.
+			
+		\end{UCtrayectoriaA}
+
+%%------------Trayectoria C-----------------%%
+				
+		\begin{UCtrayectoriaA}{C.}{El lector tiene multas pendientes}
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.10}{Error. El lector tiene material adeudado. Favor de entregar el material.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.1EliminarLector} del \UCref{CU4.1}.
+			
+		\end{UCtrayectoriaA}
+
+%%------------Trayectoria D-----------------%%
+		\begin{UCtrayectoriaA}{D.}{El bibliotecario ingreso su contraseña incorrectamente}
+
+			\UCpaso Muestra el Mensaje \item Mensaje \MSGref{MSJ4.11}{Advertencia. Constraseña incorrecta.},
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.3Contrasena} del \UCref{CU4.1}.
+
+		\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.
+

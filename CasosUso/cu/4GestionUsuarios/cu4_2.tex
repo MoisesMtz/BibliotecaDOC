@@ -1,0 +1,142 @@
+% \IUref{IUAdmSucur}{Bibliotecario}
+% \IUref{IUConsDA}{Actualizar Lector}
+% Version 1
+
+
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+%\begin{UseCase}[archivo de imágen]{UCX}{Nombre del Caso de uso}{
+	\begin{UseCase}{CU4.2}{Actualizar Lector}{
+		El bibliotecario puede actualizar a un lector(alumno,docente) ya existente en el sistema, con la finalidad de tener almacenada la información más reciente del lector que hace uso de la biblioteca para consulta y control de la misma. Los datos a actualizar del lector son: nombre, CURP, dirección, telefono, correo, contraseña, semestre o departamento.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Estado}{En revisión}
+		\UCitem{Actor}{Bibliotecario.}
+		\UCitem{Propósito}{Almacenar en la base de datos la información más reciente de los lectores que hacen uso de la biblioteca.}
+		\UCitem{Entradas}{Nombre, Primer apellido, Segundo apellido, CURP, dirección, teléfono, email, contraseña, semestre o departamento}
+		\UCitem{Salidas}{
+			
+			\begin{itemize}
+				\item Actualización del registro en la base de datos,
+				\item Mensaje \MSGref{MSJ4.2}{Error. Datos incompletos. Favor de completar todos los campos de entrada.},
+				\item Mensaje \MSGref{MSJ4.3}{Advertencia. Confirma que los datos ingresados sean correctos.},
+				\item Mensaje \MSGref{MSJ4.5}{Error. Falló al conectarse a la BD.},
+				\item Mensaje \MSGref{MSJ4.6}{Se actualizo exitosamente.}
+			\end{itemize}
+		}
+		\UCitem{Precondiciones}{
+			\begin{itemize}
+				\item El lector debe de estar registrado en el sistema.
+				\item El lector no debe tener multas.
+				\item El lector no debe tener devoluciones pendientes.
+				\item El lector debe de estar vigente en el instituto.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Lector actualizado en el sistema.}
+		\UCitem{Tipo}{Caso de uso primario.}
+		\UCitem{Autor}{Miguel Ángel Castañeda Sánchez.}
+		\UCitem{Revisor}{---}
+	\end{UseCase}
+	
+	
+%%------------Trayectoria Principal-----------------%%		
+	
+	\begin{UCtrayectoria}{Principal}
+	
+		\UCpaso Despliega la \IUref{IU4.2}{Perfil del bibliotecario}.
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Gestión de usuarios}.
+
+		\UCpaso Despliega el menú de gestión de usuarios. \IUref{IU4.4}{Menú de gestión de usuarios}
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Lista de Docentes} ó \IUbutton{Lista de estudiante}.\label{CU4.2ConectarBaseDatos}
+
+		\UCpaso Se conecta a la base de datos. \Trayref{A}.
+
+		\UCpaso Despliega la \IUref{IU4.6}{Listado de estudiantes} ó \IUref{IU4.8}{Lista de docentes}.
+
+		\UCpaso[\UCactor] Elige el lector a modificar y da click en el \IUbutton{Actualizar}
+
+		\UCpaso Despliega la \IUref{IU4.16}{Actualizar informacion del estudiante} ó \IUref{IU4.17}{Actualizar información del docente}.
+
+
+		\UCpaso[\UCactor] Actualiza los datos que son: 
+			\begin{itemize}
+				\item Nombre.
+				\item Primer apellido.
+				\item Segundo apellido.
+				\item CURP.
+				\item Fecha de nacimiento.
+				\item Dirección
+				\item Teléfono
+				\item Semestre o Departamento.
+				\item Email.
+				\item Contraseña
+			\end{itemize} 
+		\label{CU4.1FormularioLector}
+
+		\UCpaso[\UCactor] Da clik en el botón \IUbutton{Actualizar}.
+
+		\UCpaso Verifica los campos de los datos con base a la \BRref{RN4.1}{Campos no nulos.} \Trayref{B}.
+
+		\UCpaso Válida que los datos ingresados cumplan los formatos con base a las Reglas de Negocio: 
+				
+			\begin{itemize}
+				\item	\BRref{RN4.3}{Formato del nombre} 
+				\item	\BRref{RN4.4}{Formato del CURP} 
+				\item	\BRref{RN4.5}{Formato de la fecha} 
+				\item	\BRref{RN4.6}{Formato de la dirección} 
+				\item	\BRref{RN4.7}{Formato del teléfono} 
+				\item	\BRref{RN4.8}{Formato del semestre} 
+				\item	\BRref{RN4.9}{Formato del email}
+				\item	\BRref{RN4.10}{Formato de la contrasseña}
+				\item	\BRref{RN4.13}{Formato del departamento}
+			\end{itemize} 
+		\Trayref{C}.
+		
+	
+		\UCpaso El sistema modifica el registro del lector.
+
+		\UCpaso Muestra el Mensaje \MSGref{MSJ4.6}{Se actualizo exitósamente.}
+
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+
+		\UCpaso Redirige a la pantalla \IUref{UI4.6}{Listado de alumnos} ó pantalla \IUref{UI4.6}{Listado de docentes}.
+		
+
+	\end{UCtrayectoria}
+
+
+
+%%------------Trayectorias Alternativas-----------------%%	
+
+
+%%------------Trayectoria A-----------------%%
+		\begin{UCtrayectoriaA}{A.}{Error al conectar a la base de datos}
+
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.5}{Error. Falló al conectarse a la BD.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.2ConectarBaseDatos} del \UCref{CU4.1}.
+
+		\end{UCtrayectoriaA}	
+
+%%------------Trayectoria B-----------------%%
+				
+		\begin{UCtrayectoriaA}{B.}{El bibliotecario no ha llenado todos los campos}
+			\UCpaso Muestra el Mensaje \MSGref{MSJ4.2}{Error. datos incompletos. Favor de completar todos los campos de entrada.}
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.1FormularioLector} del \UCref{CU4.1}.
+			
+		\end{UCtrayectoriaA}
+
+%%------------Trayectoria C-----------------%%
+		\begin{UCtrayectoriaA}{C.}{El Administrador ha ingresado los datos de manera incorrecta}
+
+			\UCpaso Muestra el Mensaje \item Mensaje \MSGref{MSJ4.3}{Advertencia. Confirma que los datos ingresados sean correctos.},
+			\UCpaso[\UCactor] Oprime el botón \IUbutton{Aceptar}.
+			\UCpaso Continua en el paso \ref{CU4.1FormularioLector} del \UCref{CU4.1}.
+
+		\end{UCtrayectoriaA}
+
+%-------------------------------------- TERMINA descripción del caso de uso.
+
