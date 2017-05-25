@@ -1,0 +1,65 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU1.3}{Modificar Personal}{
+		Se describe el comportamiento y funcionamiento del sistema para la actualizacion del personal, en el cual el Jefe de Biblioteca sera capaz de realizar cambios en la información de su personal, actualizando así datos como : Nombre, Teléfono, Rol a Desempeñar, E-mail con el fin de tener la informacion actualizada del personal y la recuperacion de la contraseña creando una nueva.  
+	}
+		\UCitem{Versión}{1.5}
+		\UCitem{Actor}{Jefe de Biblioteca}
+		\UCitem{Propósito}{Tener los datos correctos y actualizados de cada empleado. }
+		\UCitem{Entradas}{Datos del personal:
+			\begin{itemize}	
+				\item Nombre.
+				\item Primer apellido.
+				\item Segundo apellido.
+				\item Telefono.
+				\item Seleccion de rol a desempeñar.
+				\item Email
+				\item Contraseña  y repetir contraseña.
+			\end{itemize}  }
+		\UCitem{Salidas}{\MSGref{MSG1.2}{ERROR. Completa todos los campos de entrada}, \MSGref{MSG1.3}{ERROR. Valor no valido}, \MSGref{MSG1.4}{ERROR. Solo se aceptan letras}, \MSGref{MSG1.5}{ERROR. Solo se aceptan numeros}, \MSGref{MSG1.7}{ERROR. Selecciona un rol}, \MSGref{MSG1.8}{ERROR. La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres}, \MSGref{MSG1.9}{ADVERTENCIA. No coincide la contraseña}, \MSGref{MSG1.11}{ERROR. Contraseña usada recientemente} \MSGref{MSG1.12}{Se actualizo exitosamente}.}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item Se tiene una lista con el personal a editar.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Se actualiza la base de datos.}
+		\UCitem{Autor}{\begin{itemize}
+		\item Cerón Rodríguez Monserrat.
+		\item Salas Hernandez Abiran Natanael.
+		\end{itemize}}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor]Selecciona la opción \IUbutton{Lista de personal} en el menu lateral izquierdo de la pantalla \IUref{IU1.0}{Pantalla inicial}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU1.2}{Listado de Empleados}.	
+		\UCpaso[\UCactor] Selecciona el personal a editar seleccionando  \IUbutton{Editar} de la columna acciones en la tabla. 
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{UI2.1.5}{Formulario}.
+		\UCpaso[\UCactor] Selecciona los campos a modificar en la pantalla \IUref{IU1.3}{Pantalla Modificar}.
+		\UCpaso[\UCactor] Selecciona el botón \IUbutton{Guardar} de la pantalla principal \IUref{IU1.3}{Pantalla Modificar}.
+		\UCpaso[\UCsist] Verifica la regla de negocio \BRref{R1.1}{Campos no nulos.} \Trayref{A} 
+		\UCpaso[\UCsist] Verifica la regla de negocio \BRref{R1.4}{Formato de modificacion de datos.} \Trayref{B}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG1.12}{Se actualizo exitosamente}.
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.3}{Pantalla Modificar}.
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Campos nulos.}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG1.2}{ERROR. Completa todos los campos de entrada}.
+		\UCpaso[\UCactor] Ingresa nuevamente los datos.
+		\UCpaso[\UCsist] Verifica regla de negocio \BRref{R1.1}{Campos no nulos.} y actualiza los datos del personal. \Trayref{A}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG1.12}{Se actualizo exitosamente}.
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.3}{Pantalla Modificar}.
+		\end{UCtrayectoriaA}
+		%-------------------------------------Trayectoras alternativas
+
+		\begin{UCtrayectoriaA}{B}{Error al modificar con datos validos.}
+		\UCpaso[\UCsist] Muestra mensaje segun sea el campo con el error.\MSGref{MSG1.3}{ERROR. Valor no valido}, \MSGref{MSG1.4}{ERROR. Solo se aceptan letras}, \MSGref{MSG1.5}{ERROR. Solo se aceptan numeros}, \MSGref{MSG1.7}{ERROR. Selecciona un rol}, \MSGref{MSG1.8}{ERROR. La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres}, \MSGref{MSG1.9}{ADVERTENCIA. No coincide la contraseña}, \MSGref{MSG1.11}{ERROR. Contraseña usada recientemente}.
+		\UCpaso[\UCactor] Ingresa nuevamente los datos.
+		\UCpaso[\UCsist] Verifica regla de negocio \BRref{R1.4}{Formato de modificacion de datos.} y actualiza los datos del personal.\Trayref{B}
+		\UCpaso[\UCsist] Muestra mensaje \MSGref{MSG1.12}{Se actualizo exitosamente}
+		\UCpaso[\UCsist] Regresa a la pantalla {IU1.3}{Pantalla Modificar}.
+	\end{UCtrayectoriaA}
+		
+		
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

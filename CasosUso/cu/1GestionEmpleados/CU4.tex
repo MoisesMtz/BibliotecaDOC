@@ -2,18 +2,16 @@
 %-------------------------------------- COMIENZA descripción del caso de uso.
 
 	\begin{UseCase}{CU1.4}{Eliminar personal}{
-		En este caso de uso tiene como objetivo eliminar del sistema al personal de la biblioteca cuando el administrador así lo requiera.
+		Se describe el comportamiento y funcionamiento del sistema para dar de baja al personal, en el cual el Jefe de Biblioteca será capaz de eliminar al personal elejido de una lista de empleados.
 	}
-		\UCitem{Versión}{1.5}
+		\UCitem{Versión}{1.7}
 		\UCitem{Actor}{Jefe de Biblioteca}
-		\UCitem{Propósito}{Actualizar el resgistro de personal en el sistema. }
-		\UCitem{Entradas}{Contraseña del actor.}
-		\UCitem{Salidas}{\MSGref{MSG1.4.1}{ADVERTENCIA ¿Desea eliminar el personal?}  
-						\MSGref{MSG1.4.2}{ERROR Usuario o contraseña incorrectos, por favor ingrese nuevamente sus datos.}  }
+		\UCitem{Propósito}{Actualizar el registro de personal  de acceso al sistema.}
+		\UCitem{Entradas}{Contraseña del Jefe de Biblioteca.}
+		\UCitem{Salidas}{\MSGref{MSG1.13}{ADVERTENCIA. ¿Estas seguro? Al eliminarlo ya no podra acceder al sistema}, \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}, \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}. }
 		\UCitem{Precondiciones}{ 
 			\begin{itemize}
-				\item El administrador debe haber ingresado al sistema. 
-				\item Tiene que existir datos de el personal en la BD.
+				\item Se tiene una lista con el personal a eliminar.
 			\end{itemize}
 		}
 		\UCitem{Postcondiciones}{Se actualiza la base de datos.}
@@ -24,22 +22,21 @@
 		\UCpaso[\UCactor]Selecciona la opción \IUbutton{Lista de personal} en el menú lateral izquierdo de la pantalla.
 		\UCpaso[\UCsist] Muestra la interfaz \IUref{IU1.2}{Listado de Empleados}.
 		\UCpaso[\UCsist] Selecciona el personal a eliminar seleccionando  \IUbutton{Eliminar} de la columna acciones en la tabla. 
-		\UCpaso[\UCsist] Muestra el  \MSGref{MSG1.4.1}{ADVERTENCIA ¿Desea eliminar el personal?} \Trayref{A}.
-		\UCpaso[\UCactor] Ingresa la contraseña de jefe de biblioteca y selecciona \IUbutton{Si, Eliminar} \Trayref{A}.
-		\UCpaso[\UCsist] Actualiza el registro en la BD.
-		\UCpaso[\UCsist] Termina el caso de uso.
+		\UCpaso[\UCsist] Muestra el \MSGref{MSG1.13}{ADVERTENCIA. ¿Estas seguro? Al eliminarlo ya no podra acceder al sistema}.
+		\UCpaso[\UCactor] Ingresa la contraseña de Jefe de Biblioteca y selecciona \IUbutton{Si, Eliminar} 
+		\UCpaso[\UCsist] Verifica la regla de negocio \BRref{R1.5}{Contraseña incorrecta.} \Trayref{A}.
+		\UCpaso[\UCsist] Muestra el \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}.
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.2}{Listado de Empleados}.
 	\end{UCtrayectoria}
 			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
 		\newpage
-		\begin{UCtrayectoriaA}{A}{Contraseña o usuario incorrecto}
-			\UCpaso[\UCsist] Muestra el  \MSGref{MSG1.4.2}{ERROR Usuario o contraseña incorrectos, por favor ingrese nuevamente sus datos.}
-			\UCpaso[\UCsist] Termina el caso de uso.
+		\begin{UCtrayectoriaA}{A}{Contraseña incorrecta}
+			\UCpaso[\UCsist] Muestra el \MSGref{MSG1.15}{!Contraseña incorrecta!, ingresa de nuevo tu contraseña}
+			\UCpaso[\UCactor] Ingresa la contraseña de Jefe de Biblioteca y selecciona \IUbutton{Si, Eliminar} 
+			\UCpaso[\UCsist] Verifica la regla de negocio \BRref{R1.5}{Contraseña incorrecta.} \Trayref{A}.
+			\UCpaso[\UCsist] Muestra el \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}.
+			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.2}{Listado de Empleados}.
 		\end{UCtrayectoriaA}		
 		
-		
-		\begin{UCtrayectoriaA}{B}{Selecciona \IUbutton{No, Cancelar }}
-			\UCpaso[\UCsist] Remueve la ventana emergente \MSGref{MSG1.4.1}{ADVERTENCIA ¿Desea eliminar el personal?}
-			\UCpaso[\UCsist] Termina el caso de uso.
-		\end{UCtrayectoriaA}
 		
 %-------------------------------------- TERMINA descripción del caso de uso.
