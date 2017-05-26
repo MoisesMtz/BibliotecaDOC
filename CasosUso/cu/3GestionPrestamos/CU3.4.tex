@@ -1,0 +1,50 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU3.4}{Consultar Préstamo Interbibliotecario}{
+		El jefe de Biblioteca podrá realizar una búsqueda de prestamos interbibliotecarios, para obtener información del préstamo y lo hará con un filtro: por Lector, folio o titulo del libro
+	}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Jefe de biblioteca}
+		\UCitem{Propósito}{Obtener la información de los prestamos interbibliotecarios que fueron realizados dentro de la biblioteca de ESCOM.}
+		\UCitem{Entradas}{Seleccionar una de las siguientes opciones:
+			\begin{itemize}
+				\item Usuario
+				\item Folio
+				\item Titulo del libro
+			\end{itemize}
+		}
+		\UCitem{Salidas}{Una tabla con los datos del préstamo.}
+		\UCitem{Precondiciones}{Ninguna}
+		\UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Autor}{Rodriguez Cervantes Arturo.}
+		\UCitem{Estatus}{Revisión}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Pulsa el botón \IUbutton{Consulta prestamo interbibliotecar} del menú de acción de Gestión de préstamo
+		\UCpaso[\UCsist]Muestra la pantalla \IUref{IU3.4}{ConsultaPresInt}.
+		\UCpaso[\UCactor]Selecciona uno de los métodos de búsqueda.
+		\UCpaso[\UCactor]Ingresa el texto en la búsqueda.
+		\UCpaso[\UCactor]Pulsa el botón \IUbutton{Buscar}
+		\UCpaso[\UCactor]Verifica la \BRref{RN3.13}{Llenado formulario de préstamo interbibliotecario} [trayectoria A] [trayectoria B]
+		\UCpaso[\UCsist] Muestra la pantalla \IUref{IU3.4a}{ResultadoPresInt} con los datos del préstamo
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\begin{UCtrayectoriaA}{A}{Los datos introducidos son erróneos en su formato}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ3.10}{Datos Erróneos.}
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+
+
+%--------------------------------------
+		\begin{UCtrayectoriaA}{B}{Erro al conectar a la base de datos}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ3.1}{Error al conectar en la BD.}
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+		\end{UCtrayectoriaA}
+		
+TERMINA descripción del caso de uso.
+
+

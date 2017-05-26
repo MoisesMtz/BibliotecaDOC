@@ -1,0 +1,133 @@
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%========================================================
+%Proceso Modificar Personal
+%========================================================
+
+%========================================================
+% DescripciÃ³n general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P1.2}{Modificar Personal} {
+  
+  %-------------------------------------------
+  %Resumen
+Proceso que realiza el \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} como primer paso para modificar informacion del personal y para llevarse a cabo se solicita al sistema de biblioteca general, la lista de empleados que necesiten ser modificados o actualizados.
+Si existen empleados en la lista para ser modificados, el sistema primero notificara al \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} para que este reciba la lista con los empleados a modificar, de lo contrario la labor será salir del sistema. En caso de que exista dicha lista, se deberá seleccionar la opción correspondiente al tipo de informacion que desea actualizar, se le mostraran las opciones de modificar datos personales, modificar contraseña y modificar área de biblioteca.
+Una vez seleccionando la opción se enviara una notificación de modificación al sistema, para que
+este realice la operación y al concluirla en caso de que los datos sean correctos se notificara que la
+operación ha sido exitosa, o de lo contrario se enviara un mensaje, avisando que los datos son
+incorrectos.
+En el supuesto caso de ser incorrectos, una vez recibiendo la notificación, el \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} deberá decidir si quiere corregirlos en ese momento o posteriormente, cuando decida corregir, enviara de nuevo la informacion con los datos correctos y este una vez culminado ese proceso, podrá regresar al menú principal para modificar la informacion del siguiente personal y si ha terminado, podrá salir del sistema.
+
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P1.2}{Modificar Personal} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C1/Images/GU1_2-ModificarPersonal.png}{P1.2}{Modificar Personal}
+
+} {P1.2:Modificar Personal}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca}.
+    \cdtRef{Actor:Sistema}{Sistema}.
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Tener los datos actualizados y correctos de cada empleado.
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+  	\begin{UClist}
+  		\UCli Datos del Formulario \cdtIdRef{F1.2}{Modificar Personal}.
+    \end {UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    Sistema
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+    	\UCli   Notificación \cdtIdRef{MSJ1.2}{Hay empleados a modificar}.
+ 		\UCli   Notificación \cdtIdRef{MSJ1.3}{Informacion incorrecta}.
+    	\UCli   Notificación \cdtIdRef{MSJ1.4}{Modificacion Exitosa}.
+    \end{UClist}
+  }
+
+  \UCitem{Cliente} { %Cliente
+  	\cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca}
+  }
+
+  \UCitem{Mecanismo de medición} { %Mecanismo de mediciÃ³n
+    \begin{UClist}
+      \UCli Respuesta inmediata
+      
+    \end{UClist}
+  }
+  \UCitem{Interrelación con otros procesos} { %InterrelaciÃ³n con otros procesos
+    \cdtIdRef{P1.1}{Registrar Personal}
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%DescripciÃ³n de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Jefe de Biblioteca
+  \Ppaso Jefe de Biblioteca
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P1.2:Jefe de Biblioteca}{Solicita modificar a un empleado.}Para obtener la lista de los empleados que requieren cambios en su informacion es necesario pedirla al Sistema de la Biblioteca General, y una vez que llega la lista se espera el siguiente evento:
+      \begin{itemize}
+      	\item \cdtIdRef{C1.3}{Autorizacion de Modificacion} el sistema pasa a la tarea \cdtRefTask{T2-P1.2:Jefe de Biblioteca}{Registro de personal.}
+		\item Si no hay más que modificar sencillamente saldrá del proceso.
+      \end{itemize}
+
+	\Ppaso[\itarea] \cdtLabelTask{T2-P1.2:Jefe de Biblioteca}{Selecciona una opcion.} Una vez obtenida la lista, este debe seleccionar una de las 3 opciones que se le presentan las cuales son:
+Modificar Datos Personales, Modificar Contraseña y Modificar área
+biblioteca. 
+Cuando se seleccione la opción :
+\begin{itemize}
+\item Se manda notificación NS4 ha sido modificado datos personales.
+\item Se manda notificación NS5 ha sido modificada la contraseña.
+\item Se manda notificación NS6 ha sido modificada el área de biblioteca.
+\end{itemize}
+
+Depende de la opción seleccionada.
+\begin{itemize}
+\item Se recibe notificación de operación exitosa y se vuelve al menú
+principal.
+\item Se recibe notificación de datos incorrectos, de ser así se le
+preguntara si desea corregir, en caso de seleccionar no se acabara
+el proceso y saldrá del sistema. Si acepta corregir se pasara a la
+siguiente tarea.
+\end{itemize}
+
+\Ppaso[\itarea] \cdtLabelTask{T3-P1.2:Jefe de Biblioteca}{Corrige informacion.} En esta sencillamente se corregirán los datos erróneos, para después enviarlos y así repetir el proceso nuevamente.
+	\end{enumerate}
+    
+    \Ppaso Sistema
+    \begin{enumerate}
+    	\Ppaso[\itarea] \cdtLabelTask{T1-P1.2:Sistema}{Busca lista de empleados para actualizar informacion.} El sistema deberá recaudar a todo el personal que necesiten un cambio en su informacion, una vez reunida la lista se pasara a la siguiente tarea. Si no hay empleados se notificara al administrador para que este solo salga y aquí se romperá el proceso.
+    	\Ppaso[\itarea] \cdtLabelTask{T2-P1.2:Sistema}{Muestra lista de empleados.} Se envía la lista del personal \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} para que este pueda trabajar. Cuando el\cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} haya modificado se recibirá una
+notificación para actualizar los datos. Y entonces el sistema podrá pasar a la siguiente tarea de lo contrario este se mantendrá en espera de respuesta.
+	\Ppaso[\itarea] \cdtLabelTask{T3-P1.2:Sistema}{Realiza operacion.} Se actualizan los datos. Se notifica de operación exitosa cuando la informacion sea la correcta y aquí abra terminado el proceso. Se notifica de informacion incorrecta y espera de nuevo una solicitud de modificación.
+    	
+    \end{enumerate}
+\end{PDescripcion}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------

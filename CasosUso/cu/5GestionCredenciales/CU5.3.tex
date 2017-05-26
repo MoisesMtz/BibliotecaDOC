@@ -1,0 +1,54 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	%%caso de uso 01 gestión de roles
+\begin{UseCase}{CU5.3}{Reponer credencial}{
+	El lector podrá reponer su credencial para hacer uso de los servicios de la biblioteca.
+}
+	\UCitem{Versión}{1.1}
+	\UCitem{Actor}{Lector.}
+	\UCitem{Propósito}{Reposición de la credencial del lector.}
+	\UCitem{Entradas}{ID de lector.}
+	\UCitem{Salidas}{Registro en la Base de datos además del mensaje MSG5.06 Credencial Lista, MSG5.07 Desea renovar credencial o E1 Error al conectar a la BD.  }
+	\UCitem{Precondiciones}{	
+	\begin{itemize}
+	\item El lector debe ser estudiante o docente.
+
+  \end{itemize}
+}
+
+	\UCitem{Postcondiciones}{
+	\begin{itemize}
+		   \item Se genera la credencial en formato PDF con la información correspondiente.
+		  \end{itemize}
+		}
+
+	
+\end{UseCase}
+
+
+%%trayectoria principal
+
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] Selecciona el botón  de \IUbutton{Reponer credencial}en la pantalla\IUref{IU5.02}{ReposicionCredencial}.
+	\UCpaso[\UCsist] Despliega el MSG5.07 Desea renovar credencial?.
+	\UCpaso[\UCactor] Da clic en el botón  \IUbutton{Renovar}.
+	\UCpaso[\UCsist] Despliega el MSG5.06 Credencial Lista.
+	\UCpaso[\UCactor]Da clic en el botón \IUbutton{Continuar}.
+	\UCpaso[\UCsist] Busca la información en la base de datos de acuerdo a la regla de negocio RN5.03 Error en conexión. \Trayref{A}
+	\UCpaso[\UCsist] Despliega la pantalla \IUref{IU5.01} creacionCredencial.
+	\UCpaso[\UCsist] Muestra el PDF generado de la credencial.
+	
+\end{UCtrayectoria}
+
+\begin{UCtrayectoriaA}{A}{Fallo de conexión en la base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{E1}{Error al conectar a la BD.}.
+			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU5.00}{RegStudent}	
+\end{UCtrayectoriaA}
+		
+		
+		
+		
+		
+		
+%-------------------------------------- TERMINA descripción del caso de uso.

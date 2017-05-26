@@ -1,0 +1,42 @@
+\newpage
+\subsection{IU5.02 ReposiciónCredencial}
+
+\subsubsection{Objetivo}
+	Pantalla principal, dará la opción al lector de reponer su credencial.
+\subsubsection{Diseño}
+El actor dará clic en Reponer Credencial y posteriormente en el botón Renovar para pasar a la siguiente interfaz y poder generar el PDF de la credencial.  \\\\
+
+\IUfig[.6]{5GestionCredenciales/CU5.3/IUReposicionCredencial}{UI5.02}{Reposición Credencial}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Enviara a la pantalla \IUref{IU5.01}{creacionCredencial}. 
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item Clic en el botón \IUbutton{Reponer Credencial}
+  \item Clic en el botón \IUbutton{Renovar}
+	\end{Citemize}
+
+
+\newpage
+\subsection{IU5.01 creacionCredencial}
+
+\subsubsection{Objetivo}
+	En esta pantalla se muestra la credencial del alumno en formato PDF.
+\subsubsection{Diseño}
+	En esta pantalla se muestra la previa de la credencial y da la opción de imprimir la credencial.
+
+\IUfig[.7]{5GestionCredenciales/CU5.3/IUcreacionCredencial}{IU5.01}{Crea Credencial}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item Genera el formato PDF de la credencial.
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	\begin{Citemize}
+		\item El bibliotecario dará clic en imprimir credencial.
+	\end{Citemize}
+

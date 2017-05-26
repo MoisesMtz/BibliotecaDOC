@@ -1,0 +1,141 @@
+%========================================================
+%Proceso
+%========================================================
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P0.1}{Préstamo de material} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  Proceso que realiza el \cdtRef{Actor:Lector}{lector} para poder llevarse a su casa uno o más libros, material audiovisual y consultar dentro de la biblioteca  trabajos terminales.\\
+  
+Los préstamos sólo procederán si el \cdtRef{Actor:Lector}{lector} no tiene multas o reposiciones pendientes. También se considerarán algunas restricciones respecto a la cantidad de libros y audiovisuales que puede sacar dependiendo su tipo de usuario. Todo esto se verificará al consultar el código de barras de la credencial del \cdtRef{Actor:Lector}{lector} o el id que se encuentre en la misma.\\
+  Una vez que el usuario cumple con los requisitos para el préstamo, el \cdtRef{Actor:Bibliotecario}{bibliotecario} 
+  registrará la salida de los libros y se los dará al cdtRef{Actor:Lector}{lector}. En caso de que el material a prestar sea trabajos terminales se le retendrá la credencial y se le devolverá al momento que regrese dicho material. 
+  
+   %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P0.1}{Prestamo de material} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C3/Images/prestamo1.png}{P0.1}{Prestamo de material}
+
+} {P0.1:Cuenta}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Bibliotecario}{bibliotecario}  y \cdtRef{Actor:Lector}{lector} 
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    %Llevarse material por a lo más una semana en el caso de libros y audiovisuales así como consultar trabajos terminales
+	Registrar Préstamo de material bibliográfico ( Libros y Audiovisuales) a un usuario para su uso fuera de las instalaciones.  
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+  	\begin{UClist}
+     	\UCli  \cdtIdRef{D0.1}{Credencial de Estudiante}.
+     	%%%%%
+     	\UCli  \cdtIdRef{D0.2}{Identificadores de los libros que se solicitan}
+    \end {UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    \cdtRef{Actor:Aspirante}{Aspirante}
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+      \UCli Notificación \cdtIdRef{MSJ3.2}{No existe el registro del usuario}.
+      \UCli Notificación \cdtIdRef{MSJ3.14}{Limite de préstamos alcanzado }.
+      \UCli Notificación \cdtIdRef{MSJ3.5}{Usuario con Multas }.
+      \UCli Notificación \cdtIdRef{MSJ3.6}{ Usuario con Devoluciones Pendientes  }.
+      \UCli Notificación \cdtIdRef{MSJ3.3}{Préstamo Exitoso.}.
+    \end{UClist}
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Aspirante
+  \Ppaso Lector
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Lector}{Solicita préstamo} Para que el lector se pueda llevar libros o audiovisuales a su casa debe de dar la identificación al bibliotecario para que su status sea revisado.
+	%Eventos
+	\begin{itemize}
+	  %Evento 1
+	  \item Si el usuario no cuenta con credencial el proceso termina.
+	  %Evento 2
+	  \item Si el usuario tiene multas o devoluciones pendientes debe resolver su situación para continuar.
+	\end{itemize}
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P0.1:Lector}{Proporciona material} Proporciona el material a llevarse al Bibliotecario. Dependiendo del tipo de usuario, el lector sólo podrá tener en préstamo cierta cantidad de libros y audiovisuales, si excede esta cantidad se le dará la opción de regresar algún otro libro para llevarse el actual.
+
+    \end{enumerate}
+
+  %Actor: SAEV2.0
+  \Ppaso Bibliotecario
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Bibliotecario}{Revisar identificación} Para que el sistema autorice una solicitud de préstamo, primero debe de contarse con la credencial del lector, en caso de que éste no la tenga, se le muestra la notificación  \cdtIdRef{NS1}{Credencial obligatoria para préstamo} y se terminará el proceso. 
+Si el lector cuenta con la credencial, el bibliotecario debe verificar la condición \cdtIdRef{C1}{Usuario apto para préstamo}. Si la condición es falsa, es decir, el usuario tiene devoluciones atrasadas o multas pendientes se pasará a la tarea  \cdtRefTask{T2-P0.1:Bibliotecario}{Multas} . Cuando la condición es verdadera, es decir el usuario puede sacar libros se procederá a \cdtRefTask{T3-P0.1:Bibliotecario}{Registra préstamo}. 
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P0.1:Bibliotecario}{Genera Reporte de Multas} Muestra la notificación \cdtIdRef{NS2}{Multas pendientes} y se inicia el proceso de MULTAS.
+
+      %Tarea c
+      \Ppaso[\itarea] \cdtLabelTask{T3-P0.1:Bibliotecario}{Registra Préstamo} Una vez que se cumplen las condiciones, se procederá a registrar el préstamo de los libros, considerando la condición \cdtIdRef{C2}{Máximo de préstamos}. Una vez se agotan los préstamos o se prestan todos los materiales solicitados termina el proceso.
+
+	%Condiciones
+	\begin{itemize}
+		%Condición
+		\item  \cdtIdRef{C1}{Usuario acreedor a Préstamo a Domicilio}El préstamo a domicilio solo será para usuarios internos (alumnos, docentes,
+egresados) registrados en el sistema bibliotecario.
+	  %Condición
+	  \item  \cdtIdRef{C2}{Usuario con Multas} el sistema pasa a la tarea \\cdtRefTask{T3-P0.1:Bibliotecario}{Multas}
+	  %Condición
+	  \item \cdtIdRef{C3}{  Devoluciones Pendientes} : Si un usuario quiere pedir algún ejemplar en calidad de préstamo y ya tiene el límite de préstamos en su posesión deberá regresar por lo menos un ejemplar de los que tiene en su poder para realizar dicho préstamo.
+	  %Condición
+	 \item \cdtIdRef{C4}{ Credencial Vigente }  El usuario interno que desee realizar algún proceso de la biblioteca (prestamos, devoluciones, prestamos interbibliotecarios) debe de contar con su credencial vigente y actualizada, de lo contrario no podrá hacerlas.
+	  %Condición
+	 \item \cdtIdRef{C5}{Número de Prestamos}El número de material por préstamo está limitado a 3 libros, 2 CD'S y un CD de TT, el usuario interno puede seguir pidiendo Material si es que no ha llegado al límite antes dicho y si no tiene multas o devoluciones pendientes.
+
+	 %Condición
+	 \item \cdtIdRef{C6}{Entrega de Material } Una vez retirado el material de la Biblioteca en calidad de préstamo a domicilio, éste puede ser entregado a partir del mismo día y hasta la fecha límite estipulada para su entrega.
+	%Condición
+	 \item \cdtIdRef{C7}{Disponibilidad del Libro} Libro(s) que solicita el usuario debe estar disponible para su préstamo y estar en existencia . 
+	 %Condición
+	 \item \cdtIdRef{C8}{Observaciones de Material} Descripción: En cada proceso de préstamo el bibliotecario revisara y anotara en el sistema las observaciones físicas del material que será prestado para que quede registrado.
+	 %Condición
+	 \item \cdtIdRef{C9}{Registro de Préstamo} Descripción: El préstamo generara un ID el cual se le asociara los datos del usuario, la fecha  de realización y el material que se prestó y el estado de estos cambiara a “Prestado”, y se guardara en la BD.
+	  %Condición
+	  \item \cdtIdRef{C10}{Retención de Credencial} Se Retiene la Credencial al Usuasrio si se Trata de un Prestamo de Material Audio-Visual
+	 
+	 
+
+
+
+	  
+	  
+	  
+\end{itemize}
+
+    \end{enumerate}
+
+\end{PDescripcion}

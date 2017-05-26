@@ -1,0 +1,19 @@
+\begin{UseCase}{CU1.2}{Consultar de personal}{
+	Se describira el comportamiento y funcionamiento del sistema para la consulta de personal, en el cual el jefe de biblioteca será capaz de visualizar los datos del personal como su nombre, apellidos, teléfono, el rol que desempeñará en la biblioteca junto con el Estatus.
+}
+		\UCitem{Versión}{1.2}
+		\UCitem{Actor}{Jefe de biblioteca.}
+		\UCitem{Propósito}{El jefe de biblioteca será capaz de consultar por medio de una lista, todos los administradores de la biblioteca.}
+		\UCitem{Entradas}{N/A}
+		\UCitem{Salidas}{Una lista de empleados visualizando 10 resultados}
+		\UCitem{Precondiciones}{N/A}
+		\UCitem{Postcondiciones}{Se podra modificar o eliminar al personal seleccionado.}
+		\UCitem{Autor}{Salas Hernandez Abiran Natanael.}
+	\end{UseCase}
+	%-------------------------------------- COMIENZA descripción Trayectoria Crear
+	\begin{UCtrayectoria}{Consultar Personal}
+		\UCpaso[\UCactor]Selecciona el boton \IUbutton{Lista de personal} en el menu lateral izquierdo de la pantalla \IUref{IU1.0}{Pantalla inicial}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU1.2}{Listado de Empleados}.			
+	\end{UCtrayectoria}
+
+

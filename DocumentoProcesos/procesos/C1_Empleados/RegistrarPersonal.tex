@@ -1,0 +1,115 @@
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%========================================================
+%Proceso Registrar Personal
+%========================================================
+
+%========================================================
+% DescripciÃ³n general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P1.1}{Registrar Personal} {
+  
+  %-------------------------------------------
+  %Resumen
+Proceso que lleva a cabo el \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} para poder hacer la petición y el registro de
+nuevo personal.
+
+De manera más especifica este proceso, realiza una petición a la biblioteca general solicitando más personal como pueden ser un nuevo \cdtRef{Actor:Bibliotecario}{Bibliotecario} o un nuevo \cdtRef{Actor:Personal de Procesos Tecnicos}{Personal de Procesos Tecnicos}.
+La biblioteca general regresa una respuesta que puede ser afirmativa o negativa.
+
+En caso de que la solicitud haya sido aceptada, la Dirección de capital humano envía los datos del
+nuevo personal. Tales datos son el nombre completo, la cedula profesional y el rol a desempeñar
+dentro de la biblioteca.
+  
+
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P1.1}{Registrar Personal} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C1/Images/GU1_1-RegistrarPersonal.png}{P1.1}{Registrar Personal}
+
+} {P1.1:Registrar Personal}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca}.
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Hacer el registro del nuevo personal, para que este tenga privilegios según sea su rol en la biblioteca.
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+  	\begin{UClist}
+  		\UCli Datos del Formulario \cdtIdRef{F1.1}{Registrar Personal}.
+    \end {UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    Direccion de Capital Humano de ESCOM
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+    
+      \UCli Tabla generada con los datos correspondientes del \cdtRef{Actor:Bibliotecario}{Bibliotecario} o \cdtRef{Actor:Personal de Procesos Tecnicos}{Personal de Procesos Tecnicos} y su Estado en el sistema.
+      \UCli   Notificación \cdtIdRef{MSJ1.1}{Operación exitosa}.
+    \end{UClist}
+  }
+
+  \UCitem{Cliente} { %Cliente
+    \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca}
+  }
+
+  \UCitem{Mecanismo de medición} { %Mecanismo de mediciÃ³n
+    \begin{UClist}
+      \UCli Respuesta inmediata
+      
+    \end{UClist}
+  }
+  \UCitem{Interrelación con otros procesos} { %InterrelaciÃ³n con otros procesos
+    \cdtIdRef{P1.2}{Modificar Personal}
+}
+
+
+\end{Proceso}
+
+%========================================================
+%DescripciÃ³n de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Jefe de Bibliotecca
+  \Ppaso Jefe de Biblioteca
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P1.1:Jefe de Biblioteca}{Solicitud de nuevo personal.}Un administrativo genera una solicitud de personal a biblioteca general, esta puede ser aceptada o rechazada. En caso de rechazo finaliza el proceso, por último si la solicitud es aceptada se puede proceder a la siguiente tarea. 
+      %Condiciones
+  \begin{itemize}
+    %Condición
+    \item \cdtIdRef{C1.1}{Autorizacion de registro} el sistema pasa a la tarea \cdtRefTask{T2-P1.1:Jefe de Biblioteca}{Registro de personal.}
+  \end{itemize}
+
+\Ppaso[\itarea] \cdtLabelTask{T2-P1.1:Jefe de Biblioteca}{Registro de personal.} El administrativo recibe un documento donde se especifican los datos del nuevo personal como son nombre completo, cedula profesional y finalmente se asigna el rol que desempeñaran dentro de la biblioteca.
+
+	\begin{itemize}
+    %Condición
+    \item \cdtIdRef{C1.2}{Duplicidad de personal} el sistema pasa a verificar la tarea \cdtRefTask{T2-P1.1:Jefe de Biblioteca}{Registro de personal.}
+  \end{itemize}
+
+    \end{enumerate}
+    
+    
+\end{PDescripcion}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------

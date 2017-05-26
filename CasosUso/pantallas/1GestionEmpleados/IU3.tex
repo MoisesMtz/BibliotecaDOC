@@ -1,0 +1,36 @@
+\newpage
+\subsection{IU1.3 Pantalla Modificar}
+
+\subsubsection{Objetivo}
+	Pantalla de Inicio, en esta Interfaz se podrá actualizar los datos del personal.  
+
+\subsubsection{Diseño}
+	Esta pantalla aparece al seleccionar el \IUbutton{Editar} en la pantalla \IUref{IU1.2}{Listado de Empleados} 
+
+\IUfig[.7]{1GestionEmpleados/UI3}{IU1.3}{Pantalla Modificar}
+
+\subsubsection{Salidas}
+	\begin{Citemize}
+		\item \MSGref{MSG1.2}{ERROR. Completa todos los campos de entrada}.
+		\item \MSGref{MSG1.3}{ERROR. Valor no valido}. 
+		\item \MSGref{MSG1.4}{ERROR. Solo se aceptan letras}. 
+		\item \MSGref{MSG1.5}{ERROR. Solo se aceptan numeros}.
+		\item \MSGref{MSG1.6}{ERROR. Deben ser 10 digitos}.
+		\item \MSGref{MSG1.7}{ERROR. Selecciona un rol}.
+		\item \MSGref{MSG1.8}{ERROR. La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres}.
+		\item \MSGref{MSG1.9}{ADVERTENCIA. No coinciden la contraseña}.
+		\item \MSGref{MSG1.11}{ERROR. Contraseña usada recientemente} 
+		\item \MSGref{MSG1.12}{Se actualizo exitosamente}
+	\end{Citemize}
+	
+\subsubsection{Entradas}
+	Los datos del personal a modificar:
+	\begin{Citemize} 
+		\item Nombre.
+		\item Primer apellido.
+		\item Segundo apellido.
+		\item Telefono.
+		\item Seleccion de rol a desempeñar.
+		\item Email
+		\item Contraseña  y repetir contraseña.
+	\end{Citemize}

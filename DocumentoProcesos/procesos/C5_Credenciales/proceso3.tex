@@ -1,0 +1,126 @@
+%========================================================
+%Proceso
+%========================================================
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P5.3}{Solicitud de renovación de credencial} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  Proceso que realiza el \cdtRef{Actor:Lector}{Lector} para generarle una credencial, y así poder hacer uso de los servicios bibliotecarios.
+  Si el periodo de renovación se encuentra vigente, el sistema permite al \cdtRef{Actor:Aspirante}{Aspirante} ingresar su ID de lector [la boleta del alumno], de lo contrario le notifica que se encuentra fuera de dicho periodo y por lo tanto no se pueden solicitarla al sistema. Cuando se ingresa el ID de lector, el sistema proporciona los datos de Usuario.
+  Una vez que la información es enviada, el Sistema debe asegurarse de que el \cdtRef{Actor:Estudiante}{Estudiante} realice el pago, en caso de no hacerlo el proceso termina; por otro lado, si procede con el pago de la credencial el interesado deberá esperar a que el sistema le notifique “Credencial lista” momento en que el Lector puede ir a recoger la credencial.
+  La Figura 1 Generación de credencial muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P5.3}{Generacion de Credencial} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C5_Credenciales/Images/PA5_3-GeneracionDeCredencial.png}{P5.3}{Generacion de Credencial}
+
+} {P5.3:Cuenta}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Usuario}{Usuario} y \cdtRef{Actor:Bibliotecario}{Bibliotecario}
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Generar la credencial del usuario
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+    ID de lector
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    \cdtRef{Actor:Lector}{Lector}
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    Notificación MSG5.06 Credencial lista
+  }
+
+  \UCitem{Cliente} { %Cliente
+    \cdtRef{Actor:Lector}{Lector}
+  }
+
+  \UCitem{Mecanismo de medición} { %Mecanismo de medición
+    No se identificaron mecanismos de medición
+  }
+  \UCitem{Interrelación con otros procesos} { %Interrelación con otros procesos
+    Gestión de usuarios
+  }
+  \UCitem{Tipo de solicitud al que aplica el proceso} { %Tipo de solicitud al que aplica el proceso
+    Usuarios que deseen obtener una credencial de la Biblioteca
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Lector
+  \Ppaso Lector
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P5.3:Lector.}{Proporcionar ID.}  El \cdtRef{Actor:Lector}{Lector} proporciona su ID de lector [la boleta del alumno se tomará como su ID
+      de lector].
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.3:Lector.}{Realiza pago credencial.} Una vez que el usuario haya recibido el precio de la
+      credencial, decidirá pagarla o no, si decide hacerlo, realizará el pago de la misma y posteriormente solicitará al bibliotecario la creación de credencial; si decide no hacerlo, el proceso termina.
+
+      %Tarea c
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.3:Lector.}{Recoge Credencial.} Una vez que el usuario recibe la notificación MSG5.06 “Credencial lista”, éste recoge su credencial y el proceso termina exitosamente.
+
+    \end{enumerate}
+
+  %Actor: Bibliotecario
+  \Ppaso Bibliotecario
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P5.3:Bibliotecario.}{Creación de credencial.} Una vez que haya recibido el ID de lector del \cdtRef{Actor:Alumno}{Alumno}, el \cdtRef{Actor:Bibliotecario}{Bibliotecario} verifica que se cumplan las siguientes condiciones:
+
+      %Eventos
+      \begin{itemize}
+        %Evento 1
+        \item RN5.02 Pago de Credencial. El bibliotecario pasa a la tarea Obtiene Precio Credencial.
+        %Evento 2
+        \item RN5.18 Días de Tramites. El bibliotecario pasa a la tarea Obtiene días de trámite.
+        %Evento 3
+        \item RN5.19 Horario de Atención Trámites. El bibliotecario pasa a la tarea Obtiene horario de atención trámites.
+        %Evento 4
+        \item RN5.19 RN5.20 Meses de Tramites. El bibliotecario pasa a la tarea Obtiene meses trámites.
+      \end{itemize}
+      
+      Si se cumplen las condiciones anteriores, el bibliotecario crea la credencial y envía el mensaje MSG5.06 Credencial lista. El proceso termina exitosamente.
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.3:Bibliotecario.}{Obtiene precio credencial.} El bibliotecario obtiene el precio de la credencial y envía el mensaje MSG5.02 Precio credencial.
+
+       %Tarea c
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.3:Bibliotecario.}{Obtiene días de trámite.} El bibliotecario obtiene los días de trámite y envía el mensaje MSG5.03 Fuera de días trámite.
+
+      %Tarea d
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.3:Bibliotecario.}{Obtiene horario de atención trámites.} El bibliotecario obtiene el horario de trámite y envía el mensaje MSG5.04 Fuera de horario trámite.
+
+      %Tarea e
+      \Ppaso[\itarea] \cdtLabelTask{T2-P5.3:Bibliotecario.}{Obtiene meses trámites.} El bibliotecario obtiene los meses de trámites y envía el mensaje MSG5.05 Fuera de meses trámite.
+      
+    \end{enumerate}
+
+\end{PDescripcion}

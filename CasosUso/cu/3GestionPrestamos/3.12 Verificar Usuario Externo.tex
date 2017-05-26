@@ -1,0 +1,124 @@
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU3.12}{Verificar Usuario Externo}{
+		El Bibliotecario corroborará y determinará si el usuario externo es apto para recibir cualquier tipo de préstamo, con base a las RN’s establecidas anteriormente. Si el estudiante externo cumple con todos los requisitos, se podrá proceder al préstamo de material.
+	}
+		\UCitem{Versión}{0.3}
+		\UCitem{Actor}{Bibliotecario}
+		\UCitem{Propósito}{Comparar el estatus del usuario con las RN’s para saber si se es apto para un préstamo.}
+		\UCitem{Entradas}{Nombre del Alumno}{Boleta del Alumno}{Escuela de Procedencia}
+		\UCitem{Salidas}{Estado de Aprobación o Rechazo para Préstamo de Material.}
+		\UCitem{Precondiciones}{Ninguna}
+		\UCitem{Postcondiciones}{Ninguna}
+		\UCitem{Autor}{Vega Camacho Enrique A.}
+		\UCitem{Estatus}{Revisión}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor]1.	Clic en botón “Externo” de Gestión de Préstamos.
+		\UCpaso[\UCsist]2.	Muestra la UIXXX. \IUref{UI3.2}.
+		\UCpaso[\UCactor]3.	Ingresa el ID del Usuario que desee realizar alguna operación dentro de la biblioteca.
+		\UCpaso[\UCactor]4.	Pulsar el botón “Verificar”. 
+		\UCpaso[\UCsist]5.	Verifica la conexión a la base de datos. [Trayectoria A] 
+		\UCpaso[\UCactor]6.	Se muestra el MSJ3.9: “Búsqueda Satisfactoria”.
+		\UCpaso[\UCactor]7. Se presiona el botón \IUbutton{OK}
+		\UCpaso[\UCsist]8.	Verifica al usuario con base a la RN Usuario Registrado. [Trayectoria B]
+		\UCpaso[\UCsist]9.	Verifica al usuario con base a la RN Sin Devoluciones Pendientes. [Trayectoria C]
+		\UCpaso[\UCsist]10.	Verifica al usuario con base a la RN Sin Multas. [Trayectoria D]
+		\UCpaso[\UCsist]11.	Verifica al usuario con base a la RN Sin Límite de Préstamos. [Trayectoria E]
+		\UCpaso[\UCsist]12.	Muestra la UIXXX.
+		\UCpaso[\UCsist]13.	Se muestra el MSJ “Usuario Apto para Préstamos”.
+		\UCpaso[\UCactor]14. Se pulsa el botón “OK”. 
+		\UCpaso[\UCactor]15. Se habilita el menú de acción.
+		\UCpaso[\UCsist]16. Pulsa alguna de las tres opciones del menú. [Trayectoria F] [Trayectoria H] [Trayectoria I]
+		\UCpaso[\UCactor]17. Se redirige al usuario hacia el CU correspondiente de cada botón.
+ 
+	\end{UCtrayectoria}
+
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+
+
+		\begin{UCtrayectoriaA}{A}{No se realizó una conexión a la base de datos con éxito.}
+			\UCpaso[\UCsist] 1.	Se muestra el MSJ3.1: Error al conectar en la BD. \MSGref{MSJ3.10}{Datos Erróneos.}
+			\UCpaso[\UCactor] 2. Se presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] 3.	Se regresa al punto 2 de la Trayectoria Principal.
+		\end{UCtrayectoriaA}
+
+%-------------------------------------		
+
+	
+		\begin{UCtrayectoriaA}{B}{No se encontró un usuario relacionado al ID de Usuario ingresado.}
+			\UCpaso[\UCsist] 1.	Se muestra el MSJ3.2: Usuario Inexistente. \MSGref{MSJ3.2}{Usuario Inexistente.}
+			\UCpaso[\UCactor] 2. Se presiona el botón \IUbutton{OK}			
+			\UCpaso[\UCsist]3.	Se regresa al punto 2 de la Trayectoria Principal.
+		\end{UCtrayectoriaA}
+		
+%-------------------------------------- 
+		\begin{UCtrayectoriaA}{C}{El usuario tiene devoluciones pendientes.}
+			\UCpaso[\UCsist] 1.	Busca en la BD las devoluciones pendientes del usuario. \MSGref{MSJ3.5}{Usuario con multas.}
+			\UCpaso[\UCsist] 2.	Se muestra el MSJ3.6: Usuario con Devoluciones Pendientes.
+			\UCpaso[\UCactor] 3. Se presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] 4.	Verifica la Fecha de Devolución de cada Material Prestado.
+			\UCpaso[\UCsist]5.	Los préstamos que tengan Fecha de devolución expirada se hará una comparación entre la fecha de entrega y la fecha de devolución por cada material, si el material es de tipo TT se verificara la hora y fecha, si expiraron se hará la comparación de la fecha y hora de devolución con la fecha y hora actuales, sacando como resultado las horas de retraso.
+			\UCpaso[\UCsist]6.	Los días que salgan se multiplicarán por 6 y se hará la suma por todos los materiales que generaron días extra.
+			\UCpaso[\UCsist]7.	En el caso de los TT, las horas resultantes se multiplicarán por 6 y se guardará el total parcial de la multa.
+			\UCpaso[\UCsist]8.	Muestra la UIXXX donde se muestra el total parcial de la multa correspondiente a devolución tardía.
+			\UCpaso[\UCactor]9.	Selecciona los materiales que se regresarán.
+			\UCpaso[\UCactor]10.	Pulsa el botón “generar multa” o “devolver”.
+			\UCpaso[\UCsist]11.	Registra la devolución de los Materiales
+			\UCpaso[\UCsist]12.	Redirige al C.U. Generar Multa.
+		\end{UCtrayectoriaA}	
+%-------------------------------------- 
+		\begin{UCtrayectoriaA}{D}{El usuario tiene multas pendientes.}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ3.14}{Limite de préstamos alcanzado.}
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist] Regresa al paso 2 de la trayectoria principal.
+			\UCpaso[\UCsist]1.	Busca en la BD las multas asociadas al usuario.
+			\UCpaso[\UCsist]2.	Se muestra el MSJ3.5: Usuario con Multas.
+			\UCpaso[\UCactor] 3. Se presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist]4.	Se regresa al punto 2 de la Trayectoria Principal.
+		\end{UCtrayectoriaA}
+%--------------------------------------
+		\begin{UCtrayectoriaA}{E}{El usuario alcanzó el límite de préstamos.}
+			\UCpaso[\UCsist]1.	Busca en la BD los préstamos asociados al usuario.
+			\UCpaso[\UCsist]2.	Se muestra el MSJ3.14: Límite de préstamos alcanzado.
+			\UCpaso[\UCactor] 3. Se presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist]4.	Se regresa al punto 2 de la Trayectoria Principal.
+		\end{UCtrayectoriaA}
+%--------------------------------------
+		\begin{UCtrayectoriaA}{F}{El usuario tiene multas de tipo “Pérdida de Libro” y ya fueron pagadas.}
+			\UCpaso[\UCsist]1.	Se muestra la sección “Multas Pendientes”
+			\UCpaso[\UCactor]2.	Seleccionar la multa que se desea cancelar con clic en el botón circular que encuentra en la última columna de la tabla “Multas Pendientes”.  
+			\UCpaso[\UCactor]3.	Pulsar el botón “Cancelar Multa” de la sección “Multas Pendientes”.
+			\UCpaso[\UCsist]4.	Con base a la RN 3.27 “Cancelar Multa” se valida si la multa es apta para su cancelación. [Trayectoria G]
+			\UCpaso[\UCsist]5.	Se confirmará la cancelación de la multa.
+			\UCpaso[\UCactor] 3. Se presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist]7.	Se redireccionará a la sección “Multas Pendientes” 
+		\end{UCtrayectoriaA}
+		%--------------------------------------
+		\begin{UCtrayectoriaA}{G}{Se selecciona una multa con “Tipo de Multa” diferente.}
+			\UCpaso[\UCsist]1.	Se notifica que el tipo de multa no es “Pérdida de Libro” por lo tanto la multa no se puede cancelar.
+			\UCpaso[\UCsist]2.	Se regresa al paso 1 de la trayectoria alternativa F.
+		\end{UCtrayectoriaA}
+		%--------------------------------------
+		\begin{UCtrayectoriaA}{H}{Se desea pagar multa.}
+			\UCpaso[\UCsist]1.	Se muestra la sección “Multas Pendientes”
+			\UCpaso[\UCactor]2.	Seleccionar la multa que se desea pagar con clic en el botón circular que encuentra en la última columna de la tabla “Multas Pendientes”.  
+			\UCpaso[\UCactor]3.	Pulsar el botón “Pagar Multa” de la sección “Multas Pendientes”. 
+			\UCpaso[\UCsist]4.	Cambia el estado de la multa o multas a “Pagadas”.
+			\UCpaso[\UCsist]5.	Quita la multa pagada de la sección “Multas Pendientes”.
+			\UCpaso[\UCsist]6.	Se muestra el MSJ3.12: Pago de Multa confirmando el pago de multa de forma exitosa.
+			\UCpaso[\UCactor] 3. Se presiona el botón \IUbutton{OK}
+			\UCpaso[\UCsist]8.	Se envía al paso 12 de la trayectoria principal, para comprobar si existen o no adeudos todavía. 
+		\end{UCtrayectoriaA}
+		%--------------------------------------
+		\begin{UCtrayectoriaA}{I}{Se desea imprimir multa.}
+			\UCpaso[\UCsist]1.	Se muestra la sección “Multas Pendientes”
+			\UCpaso[\UCactor]2.	Seleccionar la multa que se desea imprimir haciendo clic en el botón circular que encuentra en la última columna de la tabla “Multas Pendientes”. 
+			\UCpaso[\UCactor]3.	Pulsar el botón “Imprimir Multa” de la sección “Multas Pendientes”
+			\UCpaso[\UCsist]4.	Se envía el formato para pago de multa a la cola de impresión actual.
+			\UCpaso[\UCsist]5.	Se muestra el MSJ3.13: Impresión de Formato Interbibliotecario confirmando que el formato fue impreso.
+			\UCpaso[\UCactor] 3. Se presiona el botón \IUbutton{OK}
+		\end{UCtrayectoriaA}
+		
+TERMINA descripción del caso de uso.

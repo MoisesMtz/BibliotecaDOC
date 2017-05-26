@@ -1,0 +1,98 @@
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%========================================================
+%Macroproceso Gestion de Personal
+%========================================================
+
+%========================================================
+% DescripciÃ³n general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P1.0}{Gestion de Personal} {
+  
+  %-------------------------------------------
+  %Resumen
+Macroproceso que lleva a cabo el \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} para poder hacer la peticiónes para el registro,modificaciones y eliminaciones en el sistema de personal de la biblioteca. Para cada actividad hay un subproceso.
+ 
+
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P1.0}{Gestion de Personal} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C1_Empleados/Images/GU1_0-GestionPersonal.png}{P1.0}{Gestion de Personal}
+
+} {P1.0:Gestion de Personal}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca}.
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Hacer el registro, la consulta, la actualizacion de datos y eliminacion del personal de la biblioteca.
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+	 Seleccion de la actividad a realizar.
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+  \begin{UClist}
+  		\UCli Direccion de Capital Humano de ESCOM
+    	\UCli Biblioteca General del IPN
+    \end {UClist}
+    
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+    
+      \UCli Depende del subproceso a realizar.
+    \end{UClist}
+  }
+
+  \UCitem{Cliente} { %Cliente
+    \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca}
+  }
+
+  \UCitem{Mecanismo de medición} { %Mecanismo de mediciÃ³n
+    \begin{UClist}
+      \UCli Respuesta inmediata
+      
+    \end{UClist}
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%DescripciÃ³n de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Jefe de Bibliotecca
+  \Ppaso Jefe de Biblioteca
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P1.0:Jefe de Biblioteca}{Registrar Usuario.} Subproceso en el cual el \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} podra realizar el registro de nuevo personal a la biblioteca. 
+
+\Ppaso[\itarea] \cdtLabelTask{T2-P1.0:Jefe de Biblioteca}{Modificar Usuario.} Subproceso en el cual el \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} podra actualizar los datos del personal.
+
+\Ppaso[\itarea] \cdtLabelTask{T3-P1.0:Jefe de Biblioteca}{Eliminar Usuario.} Subproceso en el cual el \cdtRef{Actor:Jefe de Biblioteca}{Jefe de Biblioteca} podra dar de baja de las funciones de la biblioteca al personal indicado.
+	
+
+    \end{enumerate}
+    
+    
+\end{PDescripcion}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------

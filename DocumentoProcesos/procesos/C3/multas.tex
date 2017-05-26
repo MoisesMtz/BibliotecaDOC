@@ -1,0 +1,100 @@
+%========================================================
+%Proceso
+%========================================================
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P0.1}{Solicitud de cuenta} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  Proceso que realiza el \cdtRef{Actor:Aspirante}{Aspirante} como primer paso para obtener una cuenta activa de usuario en el \cdtRef{Actor:SAEV2.0}{SAEV2.0}, y así poder iniciar el proceso de admisión a alguna de las opciones de posgrado que la escuela ofrece.
+  
+  Si el periodo de registro se encuentra vigente, el sistema permite al \cdtRef{Actor:Aspirante}{Aspirante} ingresar la información necesaria para obtener el correo de activación de su cuenta, de lo contrario le notifica que se encuentra fuera de dicho periodo y por lo tanto no se puede generar su cuenta en el sistema. Cuando procede la solicitud de cuenta, el sistema verifica ahora si la información proporocionada es correcta, de no ser el caso, se notifica que existen errores en la información para que se realicen las correcciones pertinentes antes de su envío.
+
+  Una vez que la información es enviada correctamente, el \cdtRef{Actor:SAEV2.0}{SAEV2.0} debe asegurarse de que el \cdtRef{Actor:Aspirante}{Aspirante} no se encuentra previamente registrado como \cdtRef{Actor:Aspirante}{Aspirante} con cuanta activa o como \cdtRef{Actor:Alumno}{Alumno} activo o en baja (ya sea académica, voluntario o definitiva), pues de darse alguno de estos casos, el sistema notifica que la solicitud de cuenta no procede, explicando los motivos. Si no se da alguno de los casos anteriores, el sistema termina el proceso de solicitud de cuenta realizando el envío de un correco electrónico que permitirá la activación de la cuenta de usuario generada.
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P0.1}{Solicitud de cuenta} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/Ejemplo/Images/PA2_1-SolicitudDeCuenta.png}{P0.1}{Solicitud de cuenta}
+
+} {P0.1:Solicitud de cuenta}
+
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Bibliotecario}{bibliotecario}  y \cdtRef{Actor:Lector}{lector} 
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Generar las multas ocasionadas por maltrato y devolución tardía de material, así como cambiar el estado del  \cdtRef{Actor:Lector}{lector} al momento de pagar las multas. 
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+  	\begin{UClist}
+     	\UCli  \cdtIdRef{D0.1}{Comprobante de pago}.
+        \UCli  \cdtIdRef{D0.1}{Crendencial del lector}.
+        \UCli  \cdtIdRef{D0.1}{Formato de multas}.
+    \end{UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    \cdtRef{Actor:Lector}{Lector}
+    \cdtRef{Actor:Bibliotecario}{bibliotecario}
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+      \UCli Notificación \cdtIdRef{MSJ0.1}{Notificación de pago exitoso }.
+       \UCli Notificación \cdtIdRef{MSJ0.2}{Notificación de monto a pagar }.
+    \end{UClist}
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Aspirante
+  \Ppaso Lector
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Lector}{Recibe reporte de multas} Una vez devueltos los libros, el bibliotecario procederá con una multa si existe una devolución tardía o maltrato de material y se le notificará al lector por medio de un reporte que el lector entregará  en caja al momento del pago. Si el lector decide pagar, el proceso continúa en la tarea \cdtRefTask{T2-P0.1:Lector}{Pagar multa}, en caso contrario el proceso se suspende hasta que decida pagar. 
+	%Eventos
+	\begin{itemize}
+	  %Evento 1
+	  \item Si el usuario encuentra un error en su reporte como número de boleta incorrecto, multas que no debería tener o monto a pagar incorrecto le notificará al  \cdtRef{Actor:Bibliotecario}{bibliotecario} para que este analice la multa y solucionarla.
+	\end{itemize}
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P0.1:Lector}{Pagar multa} Una vez pagada la multa se le dará un comprobante de pago al \cdtRef{Actor:Lector}{lector}, el cuál deberá de dar al \cdtRef{Actor:Bibliotecario}{bibliotecario} para que se registre el pago, se le devuelva la credencial y su estado sea cambiado. 
+
+    \end{enumerate}
+
+  %Actor: SAEV2.0
+  \Ppaso Bibliotecario
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P0.1:Bibliotecario}{Llena formato de multas} En caso de existir multas por maltrato, deberá especificarse qué tipo de maltrato fue y hacia qué material. 
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P0.1:Bibliotecario}{Genera Reporte de Multas} Una vez especificadas las razones de la multa se cambiará el estado del lector, se le retendrá la credencial y se dará un reporte de las multas generadas. Una vez entregado el reporte se esperará a que el lector pague, de ser así se continúa en la tarea \cdtRefTask{T3-P0.1:Bibliotecario}{Registrar pago}, en caso contrario el proceso se suspende. 
+      %Tarea c
+       \Ppaso[\itarea] \cdtLabelTask{T3-P0.1:Bibliotecario}{Registrar Pago} Una vez el lector haya pagado se le dará un comprobante que entregará al bibliotecario y una vez hecho esto el bibliotecario registrará el pago de la multa, cambiará el estado del estudiante y le regresará su credencial. 
+    \end{enumerate}
+
+\end{PDescripcion}

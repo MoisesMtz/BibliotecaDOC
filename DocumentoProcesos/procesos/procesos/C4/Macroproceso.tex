@@ -1,0 +1,125 @@
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+%========================================================
+%Proceso Cambiar estado de Alumno
+%========================================================
+
+%========================================================
+% DescripciÃ³n general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P4.5}{Macro Proceso PGU} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  En este apartado se mostrará el macroproceso de la gestión de usuarios y como funcionan los subprocesos en conjunto.
+  
+  
+En el macroproceso se indica que el Lector podrá escoger cual de las 4 subprocesos quiere realizar ya sea \cdtIdRef{P4.1}{Dar de Alta Lector}, \cdtIdRef{P4.2}{Dar de Baja Lector}, \cdtIdRef{P4.3}{Actulizar datos de Lector} ó \cdtIdRef{P4.5}{Consultar historial de Lector} y dependiendo de su selección se seguirán los pasos correspondientes da cada subproceso.  
+
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P4.5}{Macro Proceso PGU} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C4/Images/GU4_5-Macro.png}{P4.5}{Macro Proceso PGU}
+
+} {P4.5:Macro Proceso PGU}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Bibliotecario}{Bibliotecario} y \cdtRef{Actor:Lector}{Lector}.
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Validar Datos y generar el registro del \cdtRef{Actor:Lector}, para que este tenga privilegios según el perfil en la biblioteca.
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+  	\begin{UClist}
+  		\UCli Datos del Formulario \cdtIdRef{F4.1}{Dar de alta Lector}.
+    \end {UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    \cdtRef{Actor:Lector}{Lector}
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    \begin{UClist}
+    
+      \UCli Tabla generada con los datos correspondientes del  \cdtRef{Actor:Lector}{Lector} y su Estado en el sistema.
+      \UCli   Notificación \cdtIdRef{MSJ4.5}{Operación exitosa}.
+    \end{UClist}
+  }
+
+  \UCitem{Cliente} { %Cliente
+    \cdtRef{Actor:Lector}{Lector}
+  }
+
+  \UCitem{Mecanismo de medición} { %Mecanismo de mediciÃ³n
+    \begin{UClist}
+      \UCli Respuesta inmediata
+      
+    \end{UClist}
+  }
+  \UCitem{Interrelación con otros procesos} { %InterrelaciÃ³n con otros procesos
+  \begin{UClist}
+	      \UCli	\cdtIdRef{P4.1}{Dar de Alta Lector}    
+	      \UCli	\cdtIdRef{P4.2}{Dar de Baja Lector}
+	      \UCli	\cdtIdRef{P4.3}{Actualizar Datos de Lector}
+         \UCli \cdtIdRef{P4.4}{Consultar historial de Lector}
+        \end{UClist}
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%DescripciÃ³n de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Aspirante
+  \Ppaso Lector
+
+    \begin{enumerate}
+
+      %Tarea a
+\Ppaso[\itarea] \cdtLabelTask{T1-P4.5:Lector}{Consultar Historial.} El \cdtRef{Actor:Lector}{Lector} al haber iniciar sesión, seguirá el proceso especificado en el subproceso \cdtIdRef{P4.4}{Consultar historial de Lector}
+
+	
+
+    \end{enumerate}
+    
+    
+      %Actor: SAEV2.0
+  \Ppaso Bibliotecario 
+
+    \begin{enumerate}
+
+      %Tarea a
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P4.5:Bibliotecario}{Dar de Alta Lector.} Aqui se seguirán los pasos correspondientes del subproceso \cdtIdRef{P4.1}{Dar de Alta Lector} si es que el lector eligió dicha opción.
+
+%referenciar tareas \cdtRefTask{T2-P0.1:SAEV2.0}{Notifica solicitud fuera de periodo de registro.}
+
+
+      %Tarea b
+      \Ppaso[\itarea] \cdtLabelTask{T2-P4.5:Bibliotecario}{Dar de Baja Lector.} Aqui se seguirán los pasos correspondientes del subproceso \cdtIdRef{P4.2}{Dar de Baja Lector} si es que el lector eligió dicha opción.
+      
+      %Tarea c
+      \Ppaso[\itarea] \cdtLabelTask{T3-P4.5:Bibliotecario}{Actualizar datos de Lector.} Aqui se seguirán los pasos correspondientes del subproceso \cdtIdRef{P4.3}{Actualizar datos de Lector} si es que el lector eligió dicha opción.     
+
+          \end{enumerate}
+
+\end{PDescripcion}
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------

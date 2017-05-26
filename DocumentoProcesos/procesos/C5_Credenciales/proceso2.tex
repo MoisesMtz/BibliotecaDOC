@@ -1,0 +1,137 @@
+%========================================================
+%Proceso
+%========================================================
+
+%========================================================
+% Descripción general del proceso
+%-----------------------------------------------
+\begin{Proceso}{P5.2}{Solicitud de renovación de credencial} {
+  
+  %-------------------------------------------
+  %Resumen
+
+  Proceso que realiza el \cdtRef{Actor:Estudiante}{Estudiante} para renovar los datos de su credencial, y así poder tener
+  actualizados sus datos, lo que evitará almacenar datos erróneos.
+  Si el periodo de renovación se encuentra vigente, el sistema permite al \cdtRef{Actor:Estudiante}{Estudiante} ingresar la
+  información necesaria para obtener la información actualizada del alumno, de lo contrario le
+  notifica que se encuentra fuera de dicho periodo y por lo tanto no se pueden renovar sus datos en
+  el sistema. Cuando se actualizan los datos, el sistema verifica si la información proporcionada es
+  correcta, de no ser el caso, se notifica que existen errores en la información para que se realicen las
+  correcciones pertinentes antes de su envío.
+  Una vez que la información es enviada correctamente, el Sistema debe asegurarse de que el
+  \cdtRef{Actor:Estudiante}{Estudiante} ya se encuentra previamente registrado como usuario de la biblioteca con cuenta activa,
+  en caso de que no esté activa la cuenta, el sistema notifica que la solicitud no procede.
+
+  %-------------------------------------------
+  %Diagrama del proceso
+
+  \noindent La Figura \cdtRefImg{P5.2}{Renovación de Credencial} muestra las actividades que se realizan para llevar a cabo el proceso descrito anteriormente.
+
+  \Pfig[0.95]{./procesos/C5_Credenciales/Images/PA5_2-RenovaciondeCredencial.png}{P5.2}{Renovación de Credencial}
+
+} {P5.2:Cuenta}
+
+  %-------------------------------------------
+  %Elementos del proceso
+
+  \UCitem{Actores} { %Actores
+    \cdtRef{Actor:Estudiante}{Estudiante} y \cdtRef{Actor:SistemaBibliotecario}{Sistema Bibliotecario}
+  }
+
+  \UCitem{Objetivo} { %Objetivo
+    Actualizar los datos del usuario de la biblioteca
+  }
+
+  \UCitem{Insumos de entrada} { %Insumos de entrada
+    \begin{UClist}
+      \UCli Credencial
+      \UCli Horario de clases
+      \UCli Datos a actualizar
+    \end {UClist}
+  }
+  
+  \UCitem{Proveedores} { %Proveedores
+    \cdtRef{Actor:Estudiante}{Estudiante}
+  }
+
+  \UCitem{Productos de salida} { %Productos de salida
+    Credencial actualizada
+  }
+
+  \UCitem{Cliente} { %Cliente
+    \cdtRef{Actor:Estudiante}{Estudiante}
+  }
+
+  \UCitem{Mecanismo de medición} { %Mecanismo de medición
+    Ninguno
+  }
+  \UCitem{Interrelación con otros procesos} { %Interrelación con otros procesos
+    Gestión de usuarios
+  }
+  \UCitem{Tipo de solicitud al que aplica el proceso} { %Tipo de solicitud al que aplica el proceso
+    Usuarios de la biblioteca
+  }
+
+
+\end{Proceso}
+
+%========================================================
+%Descripción de tareas
+%-----------------------------------------------
+\begin{PDescripcion}
+
+  %Actor: Alumno
+  \Ppaso Alumno
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P5.2:Alumno.}{Solicita renovación de crendencia.}  Para solicitar una renovación de credencial, ésta se deberá hacer presentando la credencial de la biblioteca y el horario de clases, así como la información a renovar quedando a la espera de alguno de los siguientes mensajes:
+
+      %Eventos
+      \begin{itemize}
+        %Evento 1
+        \item Fuera de días de trámite.
+        %Evento 2
+        \item Fuera de horario de trámite.
+        %Evento 3
+        \item Fuera de meses de trámite.
+      \end{itemize}
+
+      Si no se envía ninguno de los mensajes previos, el usuario tendrá renovados los datos de su credencial.
+
+    \end{enumerate}
+
+  %Actor: Sistema
+  \Ppaso Sistema
+
+    \begin{enumerate}
+
+      %Tarea a
+      \Ppaso[\itarea] \cdtLabelTask{T1-P5.2:Sistema.}{Renovación de credencial.} El \cdtRef{Actor:SistemaBibliotecario}{Sistema Bibliotecario} valida que no haya errores en la información. Si la información es correcta, el \cdtRef{Actor:SistemaBibliotecario}{Sistema Bibliotecario} obtendrá la siguiente información:
+
+      %Eventos
+      \begin{itemize}
+        %Evento 1
+        \item Días de trámite.
+        %Evento 2
+        \item Horarios de trámite.
+        %Evento 3
+        \item Meses de trámite.
+      \end{itemize}
+
+      Si el usuario solicita la renovación en los días y horarios permitidos, el \cdtRef{Actor:SistemaBibliotecario}{Sistema Bibliotecario} renovará los datos del usuario y le enviará el mensaje “Credencial lista”, en caso contrario enviará alguno de los siguientes mensajes (dependiendo del caso):
+
+      %Eventos
+      \begin{itemize}
+        %Evento 1
+        \item Fuera de días de trámite.
+        %Evento 2
+        \item Fuera de horario de trámite.
+        %Evento 3
+        \item Fuera de meses de trámite.
+      \end{itemize}
+
+    \end{enumerate}
+
+\end{PDescripcion}

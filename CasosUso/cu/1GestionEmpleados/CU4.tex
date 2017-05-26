@@ -1,0 +1,42 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+	\begin{UseCase}{CU1.4}{Eliminar personal}{
+		Se describe el comportamiento y funcionamiento del sistema para dar de baja al personal, en el cual el Jefe de Biblioteca será capaz de eliminar al personal elejido de una lista de empleados.
+	}
+		\UCitem{Versión}{1.7}
+		\UCitem{Actor}{Jefe de Biblioteca}
+		\UCitem{Propósito}{Actualizar el registro de personal  de acceso al sistema.}
+		\UCitem{Entradas}{Contraseña del Jefe de Biblioteca.}
+		\UCitem{Salidas}{\MSGref{MSG1.13}{ADVERTENCIA. ¿Estas seguro? Al eliminarlo ya no podra acceder al sistema}, \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}, \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}. }
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item Se tiene una lista con el personal a eliminar.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{Se actualiza la base de datos.}
+		\UCitem{Autor}{López Rojas Guillermo.}
+	\end{UseCase}
+		%-------------------------------------- COMIENZA descripción Trayectoria Principal
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor]Selecciona la opción \IUbutton{Lista de personal} en el menú lateral izquierdo de la pantalla.
+		\UCpaso[\UCsist] Muestra la interfaz \IUref{IU1.2}{Listado de Empleados}.
+		\UCpaso[\UCsist] Selecciona el personal a eliminar seleccionando  \IUbutton{Eliminar} de la columna acciones en la tabla. 
+		\UCpaso[\UCsist] Muestra el \MSGref{MSG1.13}{ADVERTENCIA. ¿Estas seguro? Al eliminarlo ya no podra acceder al sistema}.
+		\UCpaso[\UCactor] Ingresa la contraseña de Jefe de Biblioteca y selecciona \IUbutton{Si, Eliminar} 
+		\UCpaso[\UCsist] Verifica la regla de negocio \BRref{R1.5}{Contraseña incorrecta.} \Trayref{A}.
+		\UCpaso[\UCsist] Muestra el \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}.
+		\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.2}{Listado de Empleados}.
+	\end{UCtrayectoria}
+			%-------------------------------------- COMIENZA descripción Trayectoria Alternativa.
+		\newpage
+		\begin{UCtrayectoriaA}{A}{Contraseña incorrecta}
+			\UCpaso[\UCsist] Muestra el \MSGref{MSG1.15}{!Contraseña incorrecta!, ingresa de nuevo tu contraseña}
+			\UCpaso[\UCactor] Ingresa la contraseña de Jefe de Biblioteca y selecciona \IUbutton{Si, Eliminar} 
+			\UCpaso[\UCsist] Verifica la regla de negocio \BRref{R1.5}{Contraseña incorrecta.} \Trayref{A}.
+			\UCpaso[\UCsist] Muestra el \MSGref{MSG1.14}{Correcto! Se ha eliminado exitosamente}.
+			\UCpaso[\UCsist] Regresa a la pantalla \IUref{IU1.2}{Listado de Empleados}.
+		\end{UCtrayectoriaA}		
+		
+		
+%-------------------------------------- TERMINA descripción del caso de uso.
