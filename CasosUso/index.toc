@@ -34,4 +34,32 @@
 \contentsline {subsection}{\numberline {2.4.1}Descripci\IeC {\'o}n completa}{24}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Atributos importantes}{24}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Trayectorias del Caso de Uso}{24}{subsection.2.4.3}
-\contentsline {section}{\numberline {2.5}Catalogo de Mensajes}{26}{section.2.5}
+\contentsline {section}{\numberline {2.5}CU5.1 Generar credencial}{26}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Descripci\IeC {\'o}n completa}{26}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Atributos importantes}{26}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Trayectorias del Caso de Uso}{26}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}CU5.3 Reponer credencial}{27}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Descripci\IeC {\'o}n completa}{27}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Atributos importantes}{27}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Trayectorias del Caso de Uso}{27}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}IU5.00 RegStudent}{28}{subsection.2.6.4}
+\contentsline {subsubsection}{Objetivo}{28}{section*.14}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{28}{section*.15}
+\contentsline {subsubsection}{Salidas}{28}{section*.16}
+\contentsline {subsubsection}{Entradas}{28}{section*.17}
+\contentsline {subsection}{\numberline {2.6.5}IU5.01 creacionCredencial}{28}{subsection.2.6.5}
+\contentsline {subsubsection}{Objetivo}{28}{section*.18}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{28}{section*.19}
+\contentsline {subsubsection}{Salidas}{28}{section*.20}
+\contentsline {subsubsection}{Entradas}{29}{section*.21}
+\contentsline {subsection}{\numberline {2.6.6}IU5.02 Reposici\IeC {\'o}nCredencial}{30}{subsection.2.6.6}
+\contentsline {subsubsection}{Objetivo}{30}{section*.22}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{30}{section*.23}
+\contentsline {subsubsection}{Salidas}{30}{section*.24}
+\contentsline {subsubsection}{Entradas}{30}{section*.25}
+\contentsline {subsection}{\numberline {2.6.7}IU5.01 creacionCredencial}{31}{subsection.2.6.7}
+\contentsline {subsubsection}{Objetivo}{31}{section*.26}
+\contentsline {subsubsection}{Dise\IeC {\~n}o}{31}{section*.27}
+\contentsline {subsubsection}{Salidas}{31}{section*.28}
+\contentsline {subsubsection}{Entradas}{31}{section*.29}
+\contentsline {section}{\numberline {2.7}Catalogo de Mensajes}{32}{section.2.7}

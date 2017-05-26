@@ -21,4 +21,16 @@
 \BOOKMARK [2][-]{subsection.2.4.1}{Descripci\363n completa}{section.2.4}% 21
 \BOOKMARK [2][-]{subsection.2.4.2}{Atributos importantes}{section.2.4}% 22
 \BOOKMARK [2][-]{subsection.2.4.3}{Trayectorias del Caso de Uso}{section.2.4}% 23
-\BOOKMARK [1][-]{section.2.5}{Catalogo de Mensajes}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.5}{CU5.1 Generar credencial}{chapter.2}% 24
+\BOOKMARK [2][-]{subsection.2.5.1}{Descripci\363n completa}{section.2.5}% 25
+\BOOKMARK [2][-]{subsection.2.5.2}{Atributos importantes}{section.2.5}% 26
+\BOOKMARK [2][-]{subsection.2.5.3}{Trayectorias del Caso de Uso}{section.2.5}% 27
+\BOOKMARK [1][-]{section.2.6}{CU5.3 Reponer credencial}{chapter.2}% 28
+\BOOKMARK [2][-]{subsection.2.6.1}{Descripci\363n completa}{section.2.6}% 29
+\BOOKMARK [2][-]{subsection.2.6.2}{Atributos importantes}{section.2.6}% 30
+\BOOKMARK [2][-]{subsection.2.6.3}{Trayectorias del Caso de Uso}{section.2.6}% 31
+\BOOKMARK [2][-]{subsection.2.6.4}{IU5.00 RegStudent}{section.2.6}% 32
+\BOOKMARK [2][-]{subsection.2.6.5}{IU5.01 creacionCredencial}{section.2.6}% 33
+\BOOKMARK [2][-]{subsection.2.6.6}{IU5.02 Reposici\363nCredencial}{section.2.6}% 34
+\BOOKMARK [2][-]{subsection.2.6.7}{IU5.01 creacionCredencial}{section.2.6}% 35
+\BOOKMARK [1][-]{section.2.7}{Catalogo de Mensajes}{chapter.2}% 36
