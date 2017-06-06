@@ -1,0 +1,84 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU2.6}{Modificar material}{
+		En este caso de uso se podrá seleccionar un tipo de material para poder modificarlo del sistema.
+	}
+		\UCitem{Versión}{0.4}
+		\UCitem{Actor}{Procesos Técnicos}
+		\UCitem{Propósito}{Mostrar el menú de los tipos de materiales y permitir al actor seleccionar alguno que se requiera registrar}
+		\UCitem{Entradas}{
+			\begin{itemize}
+				\item Selección de tipo material
+				\begin{itemize}
+					\item Libros
+					\item TT
+					\item Equipo Audiovisual
+					\item Equipo de cómputo
+				\end{itemize}
+			\end{itemize}
+		}
+		\UCitem{Salidas}{
+			\begin{itemize}
+				\item Ninguna
+			\end{itemize}		
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize}
+				\item Exista el material en la BD.
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Ninguna
+			\end{itemize}
+		}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item López Rojas Guillermo
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item 
+			\end{itemize}					
+		}
+		
+\end{UseCase}
+
+%-------------------------------------- COMIENZA descripción Trayectoria Principal
+		
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Solicita modificar material haciendo click sobre el botón \IUbutton{Modificar o eliminar} sobre el menú de la derecha en la Pantalla \IUref{IU2}{Inventario}
+		\UCpaso[\UCsist] Despliega un menú de los materiales para modificar
+		\UCpaso[\UCactor] Selecciona una opción del menú. \Trayref{A} \Trayref{B} \Trayref{C} \Trayref{D}
+\end{UCtrayectoria}
+
+%--------------- COMIENZAN las Trayectorias Alternativas
+%---------- TRAYECTORIA A
+
+\begin{UCtrayectoriaA}{A}{Solicita modificar un Libro presionando el botón \IUbutton{Libros}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1ba}{ConsultarLibros} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.6ba}
+		\end{UCtrayectoriaA}
+%---------- TRAYECTORIA B
+
+\begin{UCtrayectoriaA}{B}{Solicita modificar un TT presionando el botón \IUbutton{TT}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1bb}{ConsultarTT} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.6bb}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA C
+
+\begin{UCtrayectoriaA}{C}{Solicita modificar un  Equipo audiovisual presionando el botón \IUbutton{Equipo audiovisual}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1bc}{ConsultarEqAudio} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.6bc}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA D
+
+\begin{UCtrayectoriaA}{D}{Solicita modificar un Equipo de computo presionando el botón \IUbutton{Equipo de Computo}}	
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1bd}{ConsultarEqComp} 
+		\UCpaso[\UCsist] Continúa con la trayectoria del \UCref{CU2.6bd}
+\end{UCtrayectoriaA}
+

@@ -1,0 +1,104 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU2.4A}{Consultar libro}{
+	Se podrá consultar la información de un libro previamente registrado en la biblioteca.
+}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Procesos Técnicos}
+		\UCitem{Propósito}{Mostrar la información de un libro que ha sido registrado en la biblioteca.}
+		\UCitem{Entradas}{
+			\begin{itemize}
+		   		\item ISBN del libro
+		  	\end{itemize}					
+		}
+
+
+		\UCitem{Salidas}{
+			\begin{itemize}
+			\item ISBN	
+			\item Titulo	
+			\item Autor(es)	
+			\item Editorial	
+			\item Fecha de Publicación	
+			\item Numero de Páginas	
+			\item Existencias	
+			\item Edición	
+			\item Precio	
+			\item Existencias
+			\item Mensajes para el usuario
+				\begin{itemize}
+		   			\item \MSGref{MSJ2.1b1}{Campos incompletos}
+		   			\item \MSGref{MSJ2.1b3}{Error en conexión}
+		   			\item \MSGref{MSJ2.1c1}{El material no está registrado} 
+		   		\end{itemize}
+		  	\end{itemize} 
+		}
+
+
+		\UCitem{Precondiciones}{ 
+			\begin{itemize} 
+				\item Viene como extends del \UCref{CU2.4}
+				\item El sistema debe de estar conectado a la base de datos
+				\item El libro a consultar debe haber sido registrado anteriormente
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Ninguna
+			\end{itemize}			
+		}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item Cortés Frias Diego Antonio
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item Ro
+			\end{itemize}					
+		}
+		\UCitem{Estatus}{
+			\begin{itemize}
+				\item En revisión
+			\end{itemize}					
+		}
+\end{UseCase}
+
+%----------------- COMIENZA la descripción de Trayectoria Principal
+
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Proporciona el ISBN del libro en el campo mostrado en pantalla \IUref{IU2.C1A}{ConsultarLibro}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{consultar}
+		\UCpaso[\UCsist] Verifica que se haya llenado el campo requerido \Trayref{A}
+		\UCpaso[\UCsist] Busca el dato ingresado en la base de datos \Trayref{B} y verifica que exista \Trayref{C}
+		\UCpaso[\UCsist] Muestra una tabla con la información del material que está almacenada en la base de datos.
+\end{UCtrayectoria}
+
+
+%--------------- COMIENZAN las Trayectorias Alternativas
+%---------- TRAYECTORIA A
+
+\begin{UCtrayectoriaA}{A}{Se viola la regla de negocio \BRref{RN2.1b1}{Campos incompletos}}	
+			\UCpaso[\UCsist] Informa al actor mostrando el mensaje de error \MSGref{MSJ2.1b1}{Campos incompletos} en los campos que sean obligatorios de llenar
+			\UCpaso[\UCactor] Proporciona los datos faltantes en los campos marcados 
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{consultar}
+			\UCpaso[\UCsist] Continúa trayectoria con el siguiente paso de la trayectoria principal \Trayref{Principal}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA B
+\begin{UCtrayectoriaA}{C}{Falló la conexion en la base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{MSJ2.1b3}{Error en conexión}
+			\UCpaso[\UCsist] Regresa a un paso atrás de la trayectoria principal \Trayref{Principal}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA C
+\begin{UCtrayectoriaA}{D}{Se viola la \BRref{RN2.C11}{El material no está registrado}}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{MSJ2.1c1}{El material no está registrado}
+			\UCpaso[\UCsist] Regresa a un paso atrás de la trayectoria principal \Trayref{Principal}
+\end{UCtrayectoriaA}
+
+
+
+
+

@@ -1,0 +1,118 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU2.6A}{Modificar libro}{
+	Este caso de uso se podrá modificar un  libro para tener la información necesaria en el catálogo de libros identificados por el ISBN, y a su vez, haciéndolos únicos asignando un ID para cada uno, el cual, será impreso
+}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Procesos Técnicos}
+		\UCitem{Propósito}{La información de un libro se modificara en el sistema}
+		\UCitem{Entradas}{
+			\begin{itemize}
+		   		\item ISBN del libro
+		   		\item Título
+		   		\item Autor
+		   		\item Editorial
+		   		\item Fecha de publicación
+		   		\item Número de páginas
+		   		\item Edición
+		   		\item Precio
+		   		\item Cantidad a registrar
+		  	\end{itemize}					
+		}
+		\UCitem{Salidas}{
+			\begin{itemize}
+				\item Mensajes para el usuario
+				\begin{itemize}
+		   			\item \MSGref{MSJ2.1b1}{Campos incompletos}
+		   			\item \MSGref{MSJ2.1b2}{Formato inválido}
+		   			\item \MSGref{MSJ2.1b3}{Error en conexión}
+		   			\item \MSGref{MSJ2.1b4}{Modificación existosa} 
+		   		\end{itemize}
+		   		\item Formato de los Identificadores generados para imprimir
+		  	\end{itemize} 
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize} 
+				\item Viene como extends del \UCref{CU2.6b}
+				\item El sistema debe de estar conectado a la base de datos
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Se actualiza la base de datos con el libro modificado
+			\end{itemize}			
+		}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item López Rojas Guillermo
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item 
+			\end{itemize}					
+		}
+		\UCitem{Estatus}{
+			\begin{itemize}
+				\item 
+			\end{itemize}					
+		}
+\end{UseCase}
+
+%----------------- COMIENZA la descripción de Trayectoria Principal
+
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Proporciona el ISBN del libro en el campo mostrado en pantalla \IUref{IU2.1ba}{ConsultarLibro}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Continuar} \Trayref{Limpiar}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b1}{Campos incompletos} \Trayref{A}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b2}{Formato inválido} \Trayref{B}
+		\UCpaso[\UCsist] Busca el dato ingresado en la base de datos \Trayref{C} 
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Modificar Catalogo} 
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.1ba1}{Modificar Libro}
+		\UCpaso[\UCactor] Proporciona los datos requeridos en los campos que se muestran en la pantalla. 
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Modificar}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b1}{Campos incompletos} \Trayref{A}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b2}{Formato inválido} \Trayref{B}
+		\UCpaso[\UCsist] Modifica los datos del libro en la base de datos
+		\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ2.1b4}{Modificación existosa}
+		\UCpaso[\UCactor] Confirma operación haciendo click en el botón \IUbutton{Confirmar} en la ventana emergente que muestra.
+\end{UCtrayectoria}
+
+
+%--------------- COMIENZAN las Trayectorias Alternativas
+%---------- TRAYECTORIA A
+
+\begin{UCtrayectoriaA}{A}{Se viola la regla de negocio \BRref{RN2.1b1}{Campos incompletos}}	
+			\UCpaso[\UCsist] Informa al actor mostrando el mensaje de error \MSGref{MSJ2.1b1}{Campos incompletos} en los campos que sean obligatorios de llenar
+			\UCpaso[\UCactor] Proporciona los datos faltantes en los campos marcados 
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar} \Trayref{Limpiar}
+			\UCpaso[\UCactor] Verifica que se cumpla la regla de negocio \BRref{RN2.1b1}{Campos incompletos} \Trayref{A}
+			\UCpaso[\UCsist] Continúa trayectoria con el siguiente paso de la trayectoria que invocó esta trayectoria alternativa
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA B
+
+\begin{UCtrayectoriaA}{B}{Se viola la regla de negocio \BRref{RN2.1b2}{Formato inválido}}	
+			\UCpaso[\UCsist] Informa al actor mostrando el mensaje de error \MSGref{MSJ2.1b2}{Formato inválido} en los campos donde esté incorrecto el formato
+			\UCpaso[\UCactor] Proporciona los datos correctos en los campos marcados 
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar} \Trayref{Limpiar}
+			\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b1}{Campos incompletos} \Trayref{A}
+			\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b2}{Formato inválido} \Trayref{B}
+			\UCpaso[\UCsist] Continúa trayectoria con el siguiente paso de la trayectoria que invocó esta trayectoria alternativa
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA C
+
+\begin{UCtrayectoriaA}{C}{Falló la conexion en la base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{MSJ2.1b3}{Error en conexión}
+			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal \Trayref{Principal} 
+\end{UCtrayectoriaA}
+
+
+%---------- TRAYECTORIA Limpiar
+
+\begin{UCtrayectoriaA}{Limpiar}{El actor presiona el botón \IUbutton{Limpiar}}
+			\UCpaso[\UCsist] Eliminar todos los datos ingresados en los campos mostrados en la pantalla actual y mostrarlos vacíos
+			\UCpaso[\UCsist] Continúa trayectoria con un paso anterior de la trayectoria que invocó esta trayectoria alternativa
+\end{UCtrayectoriaA}

@@ -1,0 +1,90 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU2.5A}{Eliminar libro}{
+	Este caso de uso se podrá eliminar un libro que se requiera dar de baja seleccionándolo desde el catálgo, y asi actualizar el numero de existencias
+}
+		\UCitem{Versión}{0.2}
+		\UCitem{Actor}{Procesos Técnicos}
+		\UCitem{Propósito}{La información del libro será puesta en un estado de borrado del catálogo para tener un control de las salidas de libros del inventario}
+		\UCitem{Entradas}{
+			\begin{itemize}
+		   		\item Selección del libro deseado
+		  	\end{itemize}					
+		}
+		\UCitem{Salidas}{
+			\begin{itemize}
+				\item Mensajes para el usuario
+				\begin{itemize}
+		   			\item \MSGref{MSJ2.3ca1}{Eliminación existosa}
+		   			\item \MSGref{MSJ2.3ca2}{Eliminación de material}
+		   			\item \MSGref{MSJ2.1b3}{Error en conexión}
+		   		\end{itemize}
+		  	\end{itemize} 
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize} 
+				\item Se debió haber efectuado el \UCref{CU2.3aa}
+				\item El sistema debe de estar conectado a la base de datos
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Se actualiza la base de datos sin los datos del libro eliminado
+			\end{itemize}			
+		}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item Martínez Vilchis Juan Moisés
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item Rodrigo Burciaga
+			\end{itemize}					
+		}
+		\UCitem{Estatus}{
+			\begin{itemize}
+				\item En revisión [23 / Mayo / 2017]
+			\end{itemize}					
+		}
+\end{UseCase}
+
+%----------------- COMIENZA la descripción de Trayectoria Principal
+
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Selecciona uno de los libros mostrados en la tabla 'Seleccionar libro' de la pantalla \IUref{IU2.3ca}{ConsultarCatLibro}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Eliminar Libro Seleccionado} \Trayref{A}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.3ca1}{EliminarLibro}
+		\UCpaso[\UCsist] Mostrará los datos del audiovisual seleccionado en la pantalla [ID, Titulo, Autores, Estado, Disponibilidad]
+		\UCpaso[\UCactor] Confirma la operación presionando el botón \IUbutton{Confirmar} \Trayref{Cancelar}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.3ca1}{Eliminación de libro} \Trayref{B}
+		\UCpaso[\UCactor] Actualiza el EstadoBorrado del audiovisual con el valor de 1 \Trayref{A}
+		\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ2.3ca1}{Eliminación existosa}
+		\UCpaso[\UCactor] Confirma operación haciendo click en el botón \IUbutton{Confirmar} en la ventana emergente que muestra
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.3ca}{ConsultarCatLibro}
+\end{UCtrayectoria}
+
+
+%--------------- COMIENZAN las Trayectorias Alternativas
+
+%---------- TRAYECTORIA A
+
+\begin{UCtrayectoriaA}{A}{Falló la conexion en la base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{MSJ2.1b3}{Error en conexión}
+			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal \Trayref{Principal}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA B
+
+\begin{UCtrayectoriaA}{B}{Se viola la regla de negocio \BRref{RN2.3ca1}{Eliminación de material}}	
+			\UCpaso[\UCsist] Informa al actor mostrando el mensaje de error \MSGref{MSJ2.3ca2}{Eliminación de material}
+			\UCpaso[\UCsist] Regresa al paso 4 de la trayectoria principal \Trayref{Principal}
+\end{UCtrayectoriaA}
+
+
+%---------- TRAYECTORIA Cancelar
+
+\begin{UCtrayectoriaA}{Cancelar}{El actor presiona el botón \IUbutton{Cancelar}}
+			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal \Trayref{Principal} 
+\end{UCtrayectoriaA}

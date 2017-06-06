@@ -1,0 +1,121 @@
+
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU2.1C}{Modificar  Equipo Audiovisual}{
+	Este caso de uso se podrá modificar el equipo audiovisual para tener la información necesaria en el catálogo de audiovisuales.
+}
+		\UCitem{Versión}{0.2}
+		\UCitem{Actor}{Procesos Técnicos}
+		\UCitem{Propósito}{La información del equipo audiovisual que se desea actualizar en el inventario}
+		\UCitem{Entradas}{
+			\begin{itemize}
+		   		\item Título
+		   		\item Autor
+		   		\item Fecha de publicación
+		   		\item Duración
+		   		\item Precio
+		   		\item Cantidad a registrar
+		   		\item tipo de material audiovisual
+		   		\begin{itemize}
+		   			\item Libro
+		   			\item Documental
+		  		\end{itemize}
+		  	\end{itemize}					
+		}
+		\UCitem{Salidas}{
+			\begin{itemize}
+				\item Mensajes para el usuario
+				\begin{itemize}
+		   			\item \MSGref{MSJ2.1b1}{Campos incompletos}
+		   			\item \MSGref{MSJ2.1b2}{Formato inválido}
+		   			\item \MSGref{MSJ2.1b3}{Error en conexión}
+		   			\item \MSGref{MSJ2.1b4}{Modificación existosa} 
+		   		\end{itemize}
+		  	\end{itemize} 
+		}
+		\UCitem{Precondiciones}{ 
+			\begin{itemize} 
+				\item Viene como extends del \UCref{CU2.1b}
+				\item El sistema debe de estar conectado a la base de datos
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Se actualiza la base de datos con la modificación del equipo audiovisual 
+			\end{itemize}			
+		}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item López Rojas Guillermo
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item 
+			\end{itemize}					
+		}
+		\UCitem{Estatus}{
+			\begin{itemize}
+				\item 
+			\end{itemize}					
+		}
+\end{UseCase}
+
+%----------------- COMIENZA la descripción de Trayectoria Principal
+
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Proporciona los datos requeridos en los campos que se muestran \IUref{IU2.1bc}{ModificarEqAudio}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Modificar} \Trayref{Limpiar}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b1}{Campos incompletos} \Trayref{A}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b2}{Formato inválido} \Trayref{B}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b3}{Duplicidad de registro} \Trayref{D}
+		\UCpaso[\UCsist] Actualiza la base de datos con el registro de los datos del equipo audiovisual \Trayref{C}
+		\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ2.1b4}{Modificación exitosa} y el formato del ID generado
+		\UCpaso[\UCactor] Confirma operación haciendo click en el botón \IUbutton{Confirmar} en la ventana emergente que muestra
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2}{Inventario}
+\end{UCtrayectoria}
+
+
+%--------------- COMIENZAN las Trayectorias Alternativas
+%---------- TRAYECTORIA A
+
+\begin{UCtrayectoriaA}{A}{Se viola la regla de negocio \BRref{RN2.1b1}{Campos incompletos}}	
+			\UCpaso[\UCsist] Informa al actor mostrando el mensaje de error \MSGref{MSJ2.1b1}{Campos incompletos} en los campos que sean obligatorios de llenar
+			\UCpaso[\UCactor] Proporciona los datos faltantes en los campos marcados 
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar} \Trayref{Limpiar}
+			\UCpaso[\UCactor] Verifica que se cumpla la regla de negocio \BRref{RN2.1b1}{Campos incompletos} \Trayref{A}
+			\UCpaso[\UCsist] Continúa trayectoria con el siguiente paso de la trayectoria que invocó esta trayectoria alternativa
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA B
+
+\begin{UCtrayectoriaA}{B}{Se viola la regla de negocio \BRref{RN2.1b2}{Formato inválido}}	
+			\UCpaso[\UCsist] Informa al actor mostrando el mensaje de error \MSGref{MSJ2.1b2}{Formato inválido} en los campos donde esté incorrecto el formato
+			\UCpaso[\UCactor] Proporciona los datos correctos en los campos marcados 
+			\UCpaso[\UCactor] Presiona el botón \IUbutton{Registrar}  \Trayref{Limpiar}
+			\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b1}{Campos incompletos} \Trayref{A}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.1b2}{Formato inválido} \Trayref{B}
+			\UCpaso[\UCsist] Continúa trayectoria con el siguiente paso de la trayectoria que invocó esta trayectoria alternativa
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA C
+
+\begin{UCtrayectoriaA}{C}{Falló la conexion en la base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{MSJ2.1b3}{Error en conexión}
+			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal \Trayref{Principal} 
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA D
+
+\begin{UCtrayectoriaA}{D}{Se viola la \BRref{RN2.1b3}{Duplicidad de registro}}
+			\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ2.1b5}{Registro con anterioridad} 
+			\UCpaso[\UCactor] Confirma operación haciendo click en el botón \IUbutton{Confirmar} en la ventana emergente que muestra
+			\UCpaso[\UCsist] Continúa con el paso 7 de la trayectoria principal \Trayref{Trayectoria Principal} 
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA Limpiar
+
+\begin{UCtrayectoriaA}{Limpiar}{El actor presiona el botón \IUbutton{Limpiar}}
+			\UCpaso[\UCsist] Eliminar todos los datos ingresados en los campos mostrados en la pantalla actual y mostrarlos vacíos
+			\UCpaso[\UCsist] Continúa trayectoria con un paso anterior de la trayectoria que invocó esta trayectoria alternativa
+\end{UCtrayectoriaA}

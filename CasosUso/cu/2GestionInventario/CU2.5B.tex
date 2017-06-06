@@ -1,0 +1,93 @@
+% Copie este bloque por cada caso de uso:
+%-------------------------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CU2.5B}{Eliminar TT}{
+	Se podrá modificar algún o algunos datos de un TT previamente registrado en la biblioteca}
+		\UCitem{Versión}{0.1}
+		\UCitem{Actor}{Procesos Técnicos}
+		\UCitem{Propósito}{La información del TT será puesta en un estad de borrado del catálogo para tener un control de las salidas de libros del inventario.}
+		\UCitem{Entradas}{
+			\begin{itemize}
+			\item Selección del TT que se desea eliminar
+		  	\end{itemize}					
+		}
+
+
+		\UCitem{Salidas}{
+			\begin{itemize}
+			\item Mensajes para el usuario
+				\begin{itemize}
+		   			\item \MSGref{MSJ2.3ca1}{Eliminación exitosa}
+		   			\item \MSGref{MSJ2.3ca2}{Eliminación de material}
+		   			\item \MSGref{MSJ2.1b3}{Error de conexión} 
+		   		\end{itemize}
+		  	\end{itemize} 
+		}
+
+
+		\UCitem{Precondiciones}{ 
+			\begin{itemize} 
+				\item Se debió efectuar el \UCref{CU2.3ac}
+				\item El sistema debe de estar conectado a la base de datos
+				\item El material a eliminar debe haber sido registrado anteriormente
+			\end{itemize}
+		}
+		\UCitem{Postcondiciones}{
+			\begin{itemize}
+				\item Se actualiza la base de datos sin los datos del material eliminado
+			\end{itemize}			
+		}
+		\UCitem{Autor}{
+			\begin{itemize}
+				\item Cortés Frias Diego Antonio
+			\end{itemize}					
+		}
+		\UCitem{Revisó}{
+			\begin{itemize}
+				\item Ro
+			\end{itemize}					
+		}
+		\UCitem{Estatus}{
+			\begin{itemize}
+				\item En revisión
+			\end{itemize}					
+		}
+\end{UseCase}
+
+%----------------- COMIENZA la descripción de Trayectoria Principal
+
+\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Selecciona uno de los equipos audiovisuales mostrados en la tabla 'Seleccionar TT' de la pantalla \IUref{IU2.3cca}{ConsultarCatEqCom}
+		\UCpaso[\UCactor] Presiona el botón \IUbutton{Eliminar Eq de Cómputo Seleccionado}
+		\UCpaso[\UCsist] Despliega la pantalla \IUref{IU2.3ccc1}{EliminarCatTT}
+		\UCpaso[\UCsist] Mostrará los datos del Equipo de computo seleccionado en la pantalla
+		\UCpaso[\UCactor] Confirma presionando el botón \IUbutton{Confirmar}Trayref{C}
+		\UCpaso[\UCsist] Verifica que se cumpla la regla de negocio \BRref{RN2.3ca1}{Eliminación de TT} \Trayref{B}
+		\UCpaso[\UCactor] Actualiza el Estado Borrado del TT con el valor de 1 \Trayref{A}
+		\UCpaso[\UCsist] Muestra el mensaje \MSGref{MSJ2.3ca1}{Eliminación existosa}
+		\UCpaso[\UCactor] Confirma operación haciendo click en el botón \IUbutton{Confirmar} en la ventana emergente que muestra
+\end{UCtrayectoria}
+
+
+%--------------- COMIENZAN las Trayectorias Alternativas
+
+%---------- TRAYECTORIA A
+
+\begin{UCtrayectoriaA}{A}{Falló la conexion en la base de datos}
+			\UCpaso[\UCsist] El sistema mostrará el mensaje \MSGref{MSJ2.1b3}{Error en conexión}
+			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal \Trayref{Principal}
+\end{UCtrayectoriaA}
+
+%---------- TRAYECTORIA B
+
+\begin{UCtrayectoriaA}{B}{Se viola la regla de negocio \BRref{RN2.3ca1}{Eliminación de material}}	
+			\UCpaso[\UCsist] Informa al actor mostrando el mensaje de error \MSGref{MSJ2.3ca2}{Eliminación de material}
+			\UCpaso[\UCsist] Regresa al paso 4 de la trayectoria principal \Trayref{Principal}
+\end{UCtrayectoriaA}
+
+
+%---------- TRAYECTORIA Cancelar
+
+\begin{UCtrayectoriaA}{Cancelar}{El actor presiona el botón \IUbutton{Cancelar}}
+			\UCpaso[\UCsist] Regresa al paso 1 de la trayectoria principal \Trayref{Principal} 
+\end{UCtrayectoriaA}
